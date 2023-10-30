@@ -4,8 +4,8 @@ html, body {
 	height: 100%;
 }
 body {
-	color: #333;
-	background-color: #261e29;
+	color: #2E2E2E;
+	background-color: #D7DDDC;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -15,4 +15,7 @@ body {
 	Roboto, Oxygen-Sans, 
 	Ubuntu, Cantarell, 
 	"Helvetica Neue", sans-serif;
+}
+*::selection {
+	background-color: rgb(215, 221, 220);
 }
