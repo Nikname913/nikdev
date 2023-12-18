@@ -17,15 +17,18 @@
   let opacity
   let regActive = false
   let showModal = false
+  let isRestore = false
   
   let age = ''
   let sex = 'male'
   let login = ''
 
-  let MASTER_PASS = '7kehakbiub2cvjl7vl1isk3nzwm8nbuvi'
+  let MASTER_PASS = ''
+  let RESTORE_PASS = ''
   let passValue = 'Авторизоваться'
 
   let regValue = 'Создать новый аккаунт'
+  let logo = 'image/default.svg'
 
   $: {
 
@@ -104,21 +107,27 @@
 
         if ( data.uid !== 'email-uncorrect' ) {
 
-          console.log(data)
-          showModal = true
-          contentOpacity.set(1)
+          // ----------------------------------------------------------------
+          // console.log(data)
+          // showModal = true
+          // contentOpacity.set(1)
+          // ----------------------------------------------------------------
 
-          authCheck.set({
-            auth: true,
-            passID: data.uid,
-            userID: data.uid,
-            userMail: login
-          })
+          // ----------------------------------------------------------------
+          // authCheck.set({
+          //   auth: true,
+          //   passID: data.uid,
+          //   userID: data.uid,
+          //   userMail: login
+          // })
+          // ----------------------------------------------------------------
 
-          pageRoute.set('my-cabinet')
+          // ----------------------------------------------------------------
+          // pageRoute.set('my-cabinet')
+          // ----------------------------------------------------------------
 
           modalMessage = `
-            Сохраните ваш уникальный UID - ${ data.uid }
+            все отлично - проверьте ваш email, отправили доступы
           `
           showModal = true
           contentOpacity.set(1)
@@ -177,6 +186,20 @@
         "
       >
         <h3 style="margin-top: 28px; margin-bottom: 20px;">{ modalMessage }</h3>
+        <svg 
+          class:bellIcon={true}
+          xmlns="http://www.w3.org/2000/svg" 
+          height="33px" 
+          viewBox="0 0 448 512"
+        >
+          <style>
+            svg.bellIcon{
+              fill:#4300b0;
+              margin-bottom:12px;
+            }
+          </style>
+          <path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/>
+        </svg>
 
         { #if unauth === false }
 
@@ -231,34 +254,14 @@
   </Modal>
 
   <div class:headerLogo={true}>
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      height="30px" 
-      viewBox="0 0 512 512"
-    >
-      <style>
-
-        svg { fill:#fdfcf9; }
-      
-      </style>
-      <path 
-        d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
-      />
-    </svg>
-    <h1 class:headerTitle={true}>
-      hint
-      <span 
-        style="
-          font-size: 16px;
-          display: block;
-          position: absolute;
-          margin-top: -54px;
-          margin-left: 77px;
-        "
-      >
-        beta
-      </span>
-    </h1>
+    <img
+      alt=""
+      src={logo}
+      style="
+        width: 160px;
+        margin-left: -22px;
+      "
+    />
 
     { #if AUTH == false }
 
@@ -290,7 +293,7 @@
       <span 
         on:click={() => {
 
-          modalMessage = 'Выйти из аккаунта?'
+          modalMessage = 'Хотите выйти из аккаунта?'
           unauth = true
           showModal = true
 
@@ -318,6 +321,25 @@
         >
           { userMail }
         </span>
+        <svg 
+          class:userIcon={true}
+          xmlns="http://www.w3.org/2000/svg" 
+          height="36px" 
+          viewBox="0 0 448 512"
+        >
+          <style>
+            svg.userIcon{
+              fill:#ffffff;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              margin-left: -48px;
+              margin-top: 4.4px;
+            }
+          </style>
+          <path d="M370.7 96.1C346.1 39.5 289.7 0 224 0S101.9 39.5 77.3 96.1C60.9 97.5 48 111.2 48 128v64c0 16.8 12.9 30.5 29.3 31.9C101.9 280.5 158.3 320 224 320s122.1-39.5 146.7-96.1c16.4-1.4 29.3-15.1 29.3-31.9V128c0-16.8-12.9-30.5-29.3-31.9zM336 144v16c0 53-43 96-96 96H208c-53 0-96-43-96-96V144c0-26.5 21.5-48 48-48H288c26.5 0 48 21.5 48 48zM189.3 162.7l-6-21.2c-.9-3.3-3.9-5.5-7.3-5.5s-6.4 2.2-7.3 5.5l-6 21.2-21.2 6c-3.3 .9-5.5 3.9-5.5 7.3s2.2 6.4 5.5 7.3l21.2 6 6 21.2c.9 3.3 3.9 5.5 7.3 5.5s6.4-2.2 7.3-5.5l6-21.2 21.2-6c3.3-.9 5.5-3.9 5.5-7.3s-2.2-6.4-5.5-7.3l-21.2-6zM112.7 316.5C46.7 342.6 0 407 0 482.3C0 498.7 13.3 512 29.7 512H128V448c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64l98.3 0c16.4 0 29.7-13.3 29.7-29.7c0-75.3-46.7-139.7-112.7-165.8C303.9 338.8 265.5 352 224 352s-79.9-13.2-111.3-35.5zM176 448c-8.8 0-16 7.2-16 16v48h32V464c0-8.8-7.2-16-16-16zm96 32a16 16 0 1 0 0-32 16 16 0 1 0 0 32z"/>
+        </svg>
       </span>
 
     { /if }
@@ -329,23 +351,56 @@
       
       { #if regActive === false }
 
-        <input 
-          bind:value={MASTER_PASS}
-          type="text"
-          maxlength="100"
-          placeholder="введите ваш мастер-пароль от системы"
-          style="
-            display: block;
-            position: relative;
-            box-sizing: border-box;
-            width: 100%;
-            border: none;
-            outline: none;
-            border-radius: 6px;
-            background-color: transparent;
-            letter-spacing: 0.8px;
-          "
-        />
+        { #if isRestore == false }
+
+          <input 
+            bind:value={MASTER_PASS}
+            type="text"
+            maxlength="100"
+            placeholder="Введите ваш мастер-пароль от системы"
+            style="
+              display: block;
+              position: relative;
+              box-sizing: border-box;
+              width: 100%;
+              height: 48px;
+              border: none;
+              outline: none;
+              text-align: center;
+              border-radius: 6px;
+              background-color: transparent;
+              letter-spacing: 0.8px;
+              border-bottom: 2px solid rgb(67, 0, 176);
+            "
+          />
+
+        { /if }
+
+        { #if isRestore == true }
+
+          <input 
+            bind:value={RESTORE_PASS}
+            type="text"
+            maxlength="100"
+            placeholder="Введите email - тот на который регистрировались"
+            style="
+              display: block;
+              position: relative;
+              box-sizing: border-box;
+              width: 100%;
+              height: 48px;
+              border: none;
+              outline: none;
+              text-align: center;
+              border-radius: 6px;
+              background-color: transparent;
+              letter-spacing: 0.8px;
+              border-bottom: 2px solid rgb(67, 0, 176);
+            "
+          />
+
+        { /if }
+
         <div 
           style="
             display: flex;
@@ -354,42 +409,84 @@
             margin-top: 30px;
           "
         >
-          <Button 
-            on:click={() => {
 
-              if ( MASTER_PASS.length < 10 ) {
+          { #if isRestore == false }
 
-                passValue = 'Введите пароль'
-                setTimeout(() => {
-                  passValue = 'Авторизоваться'
-                }, 2000)
+            <Button 
+              on:click={() => {
 
-              } else {
+                if ( MASTER_PASS.length < 10 ) {
 
-                autorization()
+                  passValue = 'Введите пароль'
+                  setTimeout(() => {
+                    passValue = 'Авторизоваться'
+                  }, 2000)
 
-              }
+                } else {
 
-            }}
-            disabled={regActive}
-            filled
-            style="
-              font-size: 15px;
-              padding: 13px 22px 16px;
-            "
-          >{ passValue }</Button>
-          <span 
-            style="
-              color: gray; 
-              opacity: 0.8; 
-              cursor: pointer;
-              display: block;
-              margin-left: 20px;
-              margin-right: 13px;
-            "
-          >
-            Помогите вспомнить пароль
-          </span>
+                  autorization()
+
+                }
+
+              }}
+              disabled={regActive}
+              filled
+              style="
+                font-size: 15px;
+                padding: 13px 22px 16px;
+              "
+            >{ passValue }</Button>
+
+          { /if }
+          { #if isRestore == true }
+
+            <Button 
+              on:click={() => {}}
+              disabled={true}
+              filled
+              style="
+                font-size: 15px;
+                padding: 13px 22px 16px;
+              "
+            >{"Восстановить пароль"}</Button>
+
+          { /if }
+
+          { #if isRestore == false }
+
+            <span 
+              on:click={() => isRestore = true}
+              style="
+                color: gray; 
+                opacity: 0.8; 
+                cursor: pointer;
+                display: block;
+                margin-left: 20px;
+                margin-right: 13px;
+              "
+            >
+              Помогите вспомнить пароль
+            </span>
+
+          { /if }
+          { #if isRestore == true }
+
+            <span 
+              on:click={() => isRestore = false}
+              style="
+                color: gray; 
+                opacity: 0.8; 
+                cursor: pointer;
+                display: block;
+                margin-left: 20px;
+                margin-right: 13px;
+              "
+            >
+              Вернуться назад к авторизации
+            </span>
+
+          { /if }
+
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             height="22px" 
@@ -397,7 +494,7 @@
           >
             <style>
 
-              svg { fill:#gray; cursor: pointer; }
+              svg { fill: gray; cursor: pointer; }
             
             </style>
             <path 
@@ -462,7 +559,7 @@
         >
           <style>
 
-            svg { fill:#gray; cursor: pointer; }
+            svg { fill: gray; cursor: pointer; }
           
           </style>
           <path 
@@ -478,18 +575,21 @@
             bind:value={login}
             type="text"
             maxlength="100"
-            placeholder="введите адрес вашей электронной почты для связи"
+            placeholder="Введите адрес вашей электронной почты для связи"
             style="
               display: block;
               position: relative;
               box-sizing: border-box;
+              height: 48px;
+              text-align: center;
               width: 100%;
               border: none;
               outline: none;
               border-radius: 6px;
               background-color: transparent;
               letter-spacing: 0.8px;
-              margin-top: 30px;
+              margin-top: 24px;
+              border-bottom: 2px solid rgb(67, 0, 176);
             "
           />
           <div style="margin-top: 30px; display: flex; flex-direction: row; align-items: center;">
@@ -631,7 +731,7 @@
         text-align: center;
         cursor: pointer;
         top: 100%;
-        margin-top: 20px;
+        margin-top: -44px;
       "
     >
       свернуть окно авторизации
@@ -656,14 +756,7 @@
     box-shadow: 0px 0px 5px #323835;
     padding: 10px 100px;
     z-index: 10;
-  }
-  .headerTitle {
-    color: #FDFCF9;
-    font-family: 'Cabin Sketch', cursive;
-    font-weight: 200;
-    font-size: 40px;
-    letter-spacing: 2px;
-    margin-left: 14px;
+    overflow: hidden;
   }
   .headerLogo {
     display: flex;

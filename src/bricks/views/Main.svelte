@@ -129,7 +129,7 @@
     { #if AUTH == true }
 
       <div class:mainViewMenuItem={true}>
-        <span class:mainViewMenuItemLine={true}>все хинты</span>
+        <span class:mainViewMenuItemLine={true}>основное меню hint</span>
         <div class:mainViewMenuItemSub={true} style="margin-top: 0px; margin-bottom: 0px;">
           <span 
             class:mainViewMenuItemLine={true} 
@@ -322,9 +322,9 @@
           height: 66px;
           border-radius: 33px;
           background-color: #D33639;
-          margin-top: -33px;
+          margin-top: -40px;
           left: 100%;
-          margin-left: -33px;
+          margin-left: -40px;
           padding-right: 5px;
           box-sizing: border-box;
           cursor: pointer;
@@ -591,7 +591,7 @@
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    height: 340px;
+    height: 280px;
     border: none;
     outline: none;
     background-color: #FDFCF9;

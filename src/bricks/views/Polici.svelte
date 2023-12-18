@@ -5,6 +5,9 @@
 
   let AUTH = false
 
+  let titleImage1 = 'image/hintTitle1.png'
+  let titleImage2 = 'image/hintTitle2.png'
+
   let helloDownload = true
 
   $: {
@@ -64,7 +67,7 @@
       { #if AUTH == true }
 
         <div class:mainViewMenuItem={true}>
-          <span class:mainViewMenuItemLine={true}>все хинты</span>
+          <span class:mainViewMenuItemLine={true}>основное меню hint</span>
           <div class:mainViewMenuItemSub={true} style="margin-top: 0px; margin-bottom: 0px;">
             <span 
               class:mainViewMenuItemLine={true} 
@@ -222,7 +225,63 @@
       <h3 class:mainViewContentTitle={true}>
         <i style="font-style: normal; letter-spacing: 2px;">HINT</i> - политика анонимности пользователей
       </h3>
-      <span style="color: gray; opacity: 0.8; margin-top: 26px; display: block;">приветственное сообщение для новых пользователей</span>
+      <div
+        style="
+          display: flex;
+          flex-flow: row;
+          gap: 22px;
+        "
+      >
+        <img 
+          alt=""
+          src={ titleImage1 }
+          style="
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 34px;
+            box-shadow: 2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white;
+            border-radius: 8px;
+          "
+        />
+        <img 
+          alt=""
+          src={ titleImage2 }
+          style="
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 34px;
+            box-shadow: 2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white;
+            border-radius: 8px;
+          "
+        />
+        <img 
+          alt=""
+          src={ titleImage1 }
+          style="
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 34px;
+            box-shadow: 2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white;
+            border-radius: 8px;
+          "
+        />
+      </div>
+      <span 
+        style="
+          text-align: center;
+          color: #323835; 
+          opacity: 0.99; 
+          margin: 0 auto;
+          margin-top: 30px; 
+          line-height: 23px;
+          display: block;
+        "
+      >
+        Получайте анонимные советы и мнения на вашу проблему - от живых пользователей, совершенно бесплатно. Настраивайте аудиторию, от которой хотите получить совет, оценивайте ответы и давайте советы сами
+      </span>
 
     </div>
 

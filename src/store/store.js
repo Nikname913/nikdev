@@ -9,6 +9,7 @@ export const authCheck = writable({
   userMail: 'none',
   age: 'none',
   gender: 'none',
+  rate: 5,
   style: [
     { rass: '' },
     { emo: '' },

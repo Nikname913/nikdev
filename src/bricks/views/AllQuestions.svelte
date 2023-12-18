@@ -2,14 +2,17 @@
 
   import { pageRoute, authCheck, myQuestionsData, allQuestionsData } from "../../store/store"
   import { Divider, Modal, Dialog, StarRating, Button, RadioChipGroup } from 'attractions'
+  import { onMount } from "svelte"
 
   // ----------------------------------------------------------------
-  // <StarRating style="margin: 0 auto;" name="restaurant" bind:value={hintRate} />
+  // <StarRating style="margin: 0 auto;" name="default" bind:value={hintRate} />
   // ----------------------------------------------------------------
 
   let categories = [
 
+    // ----------------------------------------------------------------
     { value: '0', label: 'Все' },
+    // ----------------------------------------------------------------
     { value: '1', label: 'Общее' },
     { value: '2', label: 'Карьера' },
     { value: '3', label: 'Личная жизнь' },
@@ -33,13 +36,24 @@
   let sendData = false
 
   export let questionsData
-  let questionsDataFilter
+  let questionsDataFilter = questionsData
   let questionsIndex = 0
 
   const changeCategory = (event) => {
 
     console.log(event.detail.value)
     filterCategory = event.detail.value
+    questionsIndex = 0
+
+    if ( event.detail.value != '0' ) {
+
+      questionsDataFilter = questionsData.filter(item => item.category == filterCategory)
+
+    } else {
+
+      questionsDataFilter = questionsData
+
+    }
 
   }
 
@@ -65,24 +79,26 @@
 
       sendData = true
 
-      setTimeout(() => {
+      setTimeout( async () => {
         sendData = false
+        text = ''
+
+        let updateMyQuestions = await fetch('http://localhost:3008/get-data', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify({})
+          
+        })
+        .then(res => res.json())
+
+        myQuestionsData.set(updateMyQuestions.data)
+        allQuestionsData.set(updateMyQuestions.data)
+
+        console.log(updateMyQuestions)
+
       }, 1000)
-
-      let updateMyQuestions = await fetch('http://localhost:3008/get-data', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({})
-        
-      })
-      .then(res => res.json())
-
-      myQuestionsData.set(updateMyQuestions.data)
-      allQuestionsData.set(updateMyQuestions.data)
-
-      console.log(updateMyQuestions)
 
     } else {
 
@@ -98,6 +114,9 @@
 
   $: {
 
+    // ----------------------------------------------------------------
+    // ----------------------------------------------------------------
+
     if ( filterCategory != '0' ) {
 
       questionsDataFilter = questionsData.filter(item => item.category == filterCategory)
@@ -107,6 +126,9 @@
       questionsDataFilter = questionsData
 
     }
+
+    // ----------------------------------------------------------------
+    // ----------------------------------------------------------------
 
     authCheck.subscribe(value => {
       AUTH = value.auth
@@ -120,6 +142,12 @@
 
   }
 
+  onMount(() => {
+
+    console.log(userAge)
+
+  })
+
 </script>
 
 <div class:mainView={true}>
@@ -128,7 +156,7 @@
     { #if AUTH == true }
 
       <div class:mainViewMenuItem={true}>
-        <span class:mainViewMenuItemLine={true}>все хинты</span>
+        <span class:mainViewMenuItemLine={true}>основное меню hint</span>
         <div class:mainViewMenuItemSub={true} style="margin-top: 0px; margin-bottom: 0px;">
           <span 
             class:mainViewMenuItemLine={true} 
@@ -310,7 +338,7 @@
           "
         >
           <h3 style="margin-top: 28px; margin-bottom: 14px;">Насколько этот хинт был полезным</h3>
-          <StarRating style="margin: 0;" name="restaurant" bind:value={hintRate} />
+          <StarRating style="margin: 0;" name="default" bind:value={hintRate} />
           <Button 
             filled
             style="
@@ -361,7 +389,7 @@
             justify-content: flex-start;
           "
         >
-          <RadioChipGroup value={ categories } on:change={changeCategory} items={ categories } name="categories" />
+          <RadioChipGroup on:change={changeCategory} items={ categories } name="categories" />
           <svg 
             class:resetCategory={true}
             xmlns="http://www.w3.org/2000/svg" 
@@ -451,6 +479,18 @@
                 { :else }
 
                   <span style="filter: blur(3px)">{ questionsDataFilter[questionsIndex].text }</span>
+                  <span 
+                    style="
+                      width: 100%; 
+                      display: block;
+                      color: rgb(101, 101, 101);
+                      font-size: 15px;
+                      opacity: 0.8;
+                      margin-top: 8px;
+                    "
+                  >
+                    {"Пожелания к характеристикам пользователей, которые могут дать ответ, отличаются от ваших. В стадии бета-тестирования вы можете видеть сам вопрос и пожелания по аудитории к нему"}
+                  </span>
 
                 { /if }
 
@@ -635,7 +675,7 @@
     display: block;
     position: relative;
     width: 60%;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 80px);
     border-radius: 6px;
   }
   .mainViewContentTitle {

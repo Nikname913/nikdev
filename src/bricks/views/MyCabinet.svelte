@@ -5,7 +5,7 @@
   import { onMount } from "svelte"
 
   // ----------------------------------------------------------------
-  // <StarRating style="margin: 0 auto;" name="restaurant" bind:value={hintRate} />
+  // <StarRating style="margin: 0 auto;" name="default" bind:value={hintRate} />
   // ----------------------------------------------------------------
 
   // ----------------------------------------------------------------
@@ -17,7 +17,7 @@
 
   let isLoading = false
 
-  let hintRate = 1
+  let hintRate = 5
   let showModal = false
 
   let sex = 'male'
@@ -35,6 +35,7 @@
   let AUTH = false
   let userMail
   let userId
+  let userRate
 
   export let questionsData
   let questionsIndex = 0
@@ -113,8 +114,20 @@
     })
     .then(res => res.json())
     .then(data => {
-      
-      console.log(data)
+
+      authCheck.update((data) => {
+        return {
+          ...data,
+          age: ageNumber,
+          gender: sex,
+          style: [
+            { rass },
+            { emo },
+            { radi },
+            { sder }
+          ]
+        }
+      })
 
       setTimeout(() => {
 
@@ -133,6 +146,7 @@
           sex = data.body.gender
           ageNumber = data.body.age
           defaultAgeNumber = data.body.age
+          userRate = data.rate.reduce((a, b) => a + b) / data.rate.length
 
           if ( sex == 'none' ) {
 
@@ -188,6 +202,9 @@
       sex = data.body.gender
       ageNumber = data.body.age
       defaultAgeNumber = data.body.age
+      userRate = data.rate.reduce((a, b) => a.rate + b.rate) / data.rate.length
+
+      console.log(userRate)
 
       if ( sex == 'none' ) {
 
@@ -216,7 +233,7 @@
     { #if AUTH == true }
 
       <div class:mainViewMenuItem={true}>
-        <span class:mainViewMenuItemLine={true}>все хинты</span>
+        <span class:mainViewMenuItemLine={true}>основное меню hint</span>
         <div class:mainViewMenuItemSub={true} style="margin-top: 0px; margin-bottom: 0px;">
           <span 
             class:mainViewMenuItemLine={true} 
@@ -398,7 +415,7 @@
           "
         >
           <h3 style="margin-top: 28px; margin-bottom: 14px;">Насколько этот хинт был полезным</h3>
-          <StarRating style="margin: 0;" name="restaurant" bind:value={hintRate} />
+          <StarRating style="margin: 0;" name="default" value={hintRate} disabled />
           <Button 
             filled
             style="
@@ -440,7 +457,24 @@
         "
       >
 
-        <h3 class:mainViewContentTitle={true}>Личный кабинет | { userMail }</h3>
+        <h3 class:mainViewContentTitle={true}>
+          Личный кабинет | { userMail }
+          <div 
+            style="
+              display: flex;
+              flex-direction: row;
+              items-align: center;
+              position: absolute;
+              top: 0;
+              left: 100%;
+              margin-top: 20px;
+              margin-left: -300px;
+            "
+          >
+            <StarRating style="margin: 0;" name="default" value={ userRate ? Math.floor(userRate) : 5 } />
+            <span style="margin-top: 7.5px; margin-left: 10px; font-size: 24px;">{ userRate ? userRate.toFixed(2) : 5 }</span>
+          </div>
+        </h3>
         <span style="line-height: 24px; margin-top: 20px; display: block;">
           Сервис hint - максимально обезличенный, поэтому вам не удастся настроить ваше имя, ник или аватар в виде вашей фотки. Однако сервис позволяет настроить вам ваши характеристики, как одного из представителей глобальной аудитории hint. Вам будут показываться те вопросы, таргетинг которых соответствует вашему портрету. Надеемся, что вам понравится в hint
         </span>

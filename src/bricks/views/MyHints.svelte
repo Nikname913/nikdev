@@ -3,7 +3,7 @@
   import { pageRoute, authCheck } from "../../store/store"
   import { Divider, Modal, Dialog, StarRating, Button } from 'attractions'
 
-  // <StarRating style="margin: 0 auto;" name="restaurant" bind:value={hintRate} />
+  // <StarRating style="margin: 0 auto;" name="default" bind:value={hintRate} />
 
   let hintRate = 1
   let showModal = false
@@ -33,7 +33,7 @@
     { #if AUTH == true }
 
       <div class:mainViewMenuItem={true}>
-        <span class:mainViewMenuItemLine={true}>все хинты</span>
+        <span class:mainViewMenuItemLine={true}>основное меню hint</span>
         <div class:mainViewMenuItemSub={true} style="margin-top: 0px; margin-bottom: 0px;">
           <span 
             class:mainViewMenuItemLine={true} 
@@ -216,7 +216,7 @@
           "
         >
           <h3 style="margin-top: 28px; margin-bottom: 14px;">Насколько этот хинт был полезным</h3>
-          <StarRating style="margin: 0;" name="restaurant" bind:value={hintRate} />
+          <StarRating style="margin: 0;" name="default" bind:value={hintRate} />
           <Button 
             filled
             style="

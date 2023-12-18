@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -30,6 +30,14 @@ var app = (function () {
     }
     function safe_not_equal(a, b) {
         return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    let src_url_equal_anchor;
+    function src_url_equal(element_src, url) {
+        if (!src_url_equal_anchor) {
+            src_url_equal_anchor = document.createElement('a');
+        }
+        src_url_equal_anchor.href = url;
+        return element_src === src_url_equal_anchor.href;
     }
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
@@ -816,6 +824,7 @@ var app = (function () {
       userMail: 'none',
       age: 'none',
       gender: 'none',
+      rate: 5,
       style: [
         { rass: '' },
         { emo: '' },
@@ -7094,8 +7103,8 @@ var app = (function () {
     const { console: console_1$a } = globals;
     const file$b = "src\\bricks\\Header.svelte";
 
-    // (181:8) { #if unauth === false }
-    function create_if_block_11(ctx) {
+    // (204:8) { #if unauth === false }
+    function create_if_block_17(ctx) {
     	let button;
     	let current;
 
@@ -7103,13 +7112,13 @@ var app = (function () {
     			props: {
     				filled: true,
     				style: "\r\n              font-size: 15px;\r\n              padding: 13px 42px 16px;\r\n              margin-top: 13px;\r\n              margin-bottom: 20px;\r\n            ",
-    				$$slots: { default: [create_default_slot_8$2] },
+    				$$slots: { default: [create_default_slot_9$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button.$on("click", /*click_handler*/ ctx[16]);
+    	button.$on("click", /*click_handler*/ ctx[19]);
 
     	const block = {
     		c: function create() {
@@ -7122,7 +7131,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 2) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7144,17 +7153,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_11.name,
+    		id: create_if_block_17.name,
     		type: "if",
-    		source: "(181:8) { #if unauth === false }",
+    		source: "(204:8) { #if unauth === false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (183:10) <Button               filled              style="                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              "              on:click={() => showModal = false}            >
-    function create_default_slot_8$2(ctx) {
+    // (206:10) <Button               filled              style="                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              "              on:click={() => showModal = false}            >
+    function create_default_slot_9$1(ctx) {
     	let t;
 
     	const block = {
@@ -7171,17 +7180,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8$2.name,
+    		id: create_default_slot_9$1.name,
     		type: "slot",
-    		source: "(183:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              \\\"              on:click={() => showModal = false}            >",
+    		source: "(206:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              \\\"              on:click={() => showModal = false}            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (195:8) { #if unauth === true }
-    function create_if_block_10$1(ctx) {
+    // (218:8) { #if unauth === true }
+    function create_if_block_16(ctx) {
     	let button;
     	let current;
 
@@ -7189,13 +7198,13 @@ var app = (function () {
     			props: {
     				filled: true,
     				style: "\r\n              font-size: 15px;\r\n              padding: 13px 42px 16px;\r\n              margin-top: 13px;\r\n              margin-bottom: 20px;\r\n            ",
-    				$$slots: { default: [create_default_slot_7$2] },
+    				$$slots: { default: [create_default_slot_8$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button.$on("click", /*click_handler_1*/ ctx[17]);
+    	button.$on("click", /*click_handler_1*/ ctx[20]);
 
     	const block = {
     		c: function create() {
@@ -7208,7 +7217,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 2) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7230,17 +7239,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_10$1.name,
+    		id: create_if_block_16.name,
     		type: "if",
-    		source: "(195:8) { #if unauth === true }",
+    		source: "(218:8) { #if unauth === true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (197:10) <Button               filled              style="                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              "              on:click={() => {                                 showModal = false                authCheck.set({                  auth: false,                  passID: 'none',                  userID: 'none'                })                              }}            >
-    function create_default_slot_7$2(ctx) {
+    // (220:10) <Button               filled              style="                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              "              on:click={() => {                                 showModal = false                authCheck.set({                  auth: false,                  passID: 'none',                  userID: 'none'                })                              }}            >
+    function create_default_slot_8$2(ctx) {
     	let t;
 
     	const block = {
@@ -7257,27 +7266,32 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7$2.name,
+    		id: create_default_slot_8$2.name,
     		type: "slot",
-    		source: "(197:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              \\\"              on:click={() => {                                 showModal = false                authCheck.set({                  auth: false,                  passID: 'none',                  userID: 'none'                })                              }}            >",
+    		source: "(220:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              \\\"              on:click={() => {                                 showModal = false                authCheck.set({                  auth: false,                  passID: 'none',                  userID: 'none'                })                              }}            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (168:4) <Dialog title="" {closeCallback}>
-    function create_default_slot_6$2(ctx) {
+    // (177:4) <Dialog title="" {closeCallback}>
+    function create_default_slot_7$2(ctx) {
     	let div;
     	let h3;
     	let t0;
     	let t1;
+    	let svg;
+    	let style;
     	let t2;
+    	let path;
     	let t3;
+    	let t4;
+    	let t5;
     	let span;
     	let current;
-    	let if_block0 = /*unauth*/ ctx[3] === false && create_if_block_11(ctx);
-    	let if_block1 = /*unauth*/ ctx[3] === true && create_if_block_10$1(ctx);
+    	let if_block0 = /*unauth*/ ctx[3] === false && create_if_block_17(ctx);
+    	let if_block1 = /*unauth*/ ctx[3] === true && create_if_block_16(ctx);
 
     	const block = {
     		c: function create() {
@@ -7285,37 +7299,55 @@ var app = (function () {
     			h3 = element("h3");
     			t0 = text(/*modalMessage*/ ctx[1]);
     			t1 = space();
-    			if (if_block0) if_block0.c();
-    			t2 = space();
-    			if (if_block1) if_block1.c();
+    			svg = svg_element("svg");
+    			style = svg_element("style");
+    			t2 = text("svg.bellIcon{\r\n              fill:#4300b0;\r\n              margin-bottom:12px;\r\n            }\r\n          ");
+    			path = svg_element("path");
     			t3 = space();
+    			if (if_block0) if_block0.c();
+    			t4 = space();
+    			if (if_block1) if_block1.c();
+    			t5 = space();
     			span = element("span");
     			span.textContent = "Помощь в использовании";
     			set_style(h3, "margin-top", "28px");
     			set_style(h3, "margin-bottom", "20px");
-    			add_location(h3, file$b, 178, 8, 3625);
+    			add_location(h3, file$b, 187, 8, 4188);
+    			add_location(style, file$b, 194, 10, 4437);
+    			attr_dev(path, "d", "M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z");
+    			add_location(path, file$b, 200, 10, 4582);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "height", "33px");
+    			attr_dev(svg, "viewBox", "0 0 448 512");
+    			toggle_class(svg, "bellIcon", true);
+    			add_location(svg, file$b, 188, 8, 4270);
     			set_style(span, "color", "gray");
     			set_style(span, "opacity", "0.6");
     			set_style(span, "margin-bottom", "28px");
     			set_style(span, "cursor", "pointer");
-    			add_location(span, file$b, 218, 8, 4639);
+    			add_location(span, file$b, 241, 8, 5939);
     			set_style(div, "width", "100%");
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
     			set_style(div, "justify-content", "flex-start");
     			set_style(div, "margin-top", "14px");
-    			add_location(div, file$b, 168, 6, 3386);
+    			add_location(div, file$b, 177, 6, 3949);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, h3);
     			append_dev(h3, t0);
     			append_dev(div, t1);
-    			if (if_block0) if_block0.m(div, null);
-    			append_dev(div, t2);
-    			if (if_block1) if_block1.m(div, null);
+    			append_dev(div, svg);
+    			append_dev(svg, style);
+    			append_dev(style, t2);
+    			append_dev(svg, path);
     			append_dev(div, t3);
+    			if (if_block0) if_block0.m(div, null);
+    			append_dev(div, t4);
+    			if (if_block1) if_block1.m(div, null);
+    			append_dev(div, t5);
     			append_dev(div, span);
     			current = true;
     		},
@@ -7330,10 +7362,10 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_11(ctx);
+    					if_block0 = create_if_block_17(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
-    					if_block0.m(div, t2);
+    					if_block0.m(div, t4);
     				}
     			} else if (if_block0) {
     				group_outros();
@@ -7353,10 +7385,10 @@ var app = (function () {
     						transition_in(if_block1, 1);
     					}
     				} else {
-    					if_block1 = create_if_block_10$1(ctx);
+    					if_block1 = create_if_block_16(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
-    					if_block1.m(div, t3);
+    					if_block1.m(div, t5);
     				}
     			} else if (if_block1) {
     				group_outros();
@@ -7388,25 +7420,25 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6$2.name,
+    		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(168:4) <Dialog title=\\\"\\\" {closeCallback}>",
+    		source: "(177:4) <Dialog title=\\\"\\\" {closeCallback}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (167:2) <Modal bind:open={showModal} let:closeCallback>
-    function create_default_slot_5$2(ctx) {
+    // (176:2) <Modal bind:open={showModal} let:closeCallback>
+    function create_default_slot_6$2(ctx) {
     	let dialog;
     	let current;
 
     	dialog = new Dialog$1({
     			props: {
     				title: "",
-    				closeCallback: /*closeCallback*/ ctx[31],
-    				$$slots: { default: [create_default_slot_6$2] },
+    				closeCallback: /*closeCallback*/ ctx[37],
+    				$$slots: { default: [create_default_slot_7$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7422,9 +7454,9 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const dialog_changes = {};
-    			if (dirty[1] & /*closeCallback*/ 1) dialog_changes.closeCallback = /*closeCallback*/ ctx[31];
+    			if (dirty[1] & /*closeCallback*/ 64) dialog_changes.closeCallback = /*closeCallback*/ ctx[37];
 
-    			if (dirty[0] & /*showModal, unauth, modalMessage*/ 138 | dirty[1] & /*$$scope*/ 2) {
+    			if (dirty[0] & /*showModal, unauth, modalMessage*/ 138 | dirty[1] & /*$$scope*/ 128) {
     				dialog_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7446,17 +7478,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$2.name,
+    		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(167:2) <Modal bind:open={showModal} let:closeCallback>",
+    		source: "(176:2) <Modal bind:open={showModal} let:closeCallback>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (263:4) { #if AUTH == false }
-    function create_if_block_9$2(ctx) {
+    // (266:4) { #if AUTH == false }
+    function create_if_block_15(ctx) {
     	let span;
     	let mounted;
     	let dispose;
@@ -7473,13 +7505,13 @@ var app = (function () {
     			set_style(span, "left", "100%");
     			set_style(span, "margin-left", "-400px");
     			set_style(span, "margin-top", "-5px");
-    			add_location(span, file$b, 264, 6, 5924);
+    			add_location(span, file$b, 267, 6, 6399);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_2*/ ctx[19], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_2*/ ctx[22], false, false, false);
     				mounted = true;
     			}
     		},
@@ -7493,22 +7525,27 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_9$2.name,
+    		id: create_if_block_15.name,
     		type: "if",
-    		source: "(263:4) { #if AUTH == false }",
+    		source: "(266:4) { #if AUTH == false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (288:4) { #if AUTH == true }
-    function create_if_block_8$3(ctx) {
+    // (291:4) { #if AUTH == true }
+    function create_if_block_14(ctx) {
     	let span1;
     	let t0;
     	let t1;
     	let span0;
     	let t2;
+    	let t3;
+    	let svg;
+    	let style;
+    	let t4;
+    	let path;
     	let mounted;
     	let dispose;
 
@@ -7519,12 +7556,25 @@ var app = (function () {
     			t1 = space();
     			span0 = element("span");
     			t2 = text(/*userMail*/ ctx[4]);
+    			t3 = space();
+    			svg = svg_element("svg");
+    			style = svg_element("style");
+    			t4 = text("svg.userIcon{\r\n              fill:#ffffff;\r\n              display: block;\r\n              position: absolute;\r\n              top: 0;\r\n              left: 0;\r\n              margin-left: -48px;\r\n              margin-top: 4.4px;\r\n            }\r\n          ");
+    			path = svg_element("path");
     			set_style(span0, "display", "block");
     			set_style(span0, "position", "absolute");
     			set_style(span0, "opacity", "0.8");
     			set_style(span0, "font-size", "14px");
     			set_style(span0, "margin-top", "3px");
-    			add_location(span0, file$b, 309, 8, 6862);
+    			add_location(span0, file$b, 312, 8, 7344);
+    			add_location(style, file$b, 329, 10, 7759);
+    			attr_dev(path, "d", "M370.7 96.1C346.1 39.5 289.7 0 224 0S101.9 39.5 77.3 96.1C60.9 97.5 48 111.2 48 128v64c0 16.8 12.9 30.5 29.3 31.9C101.9 280.5 158.3 320 224 320s122.1-39.5 146.7-96.1c16.4-1.4 29.3-15.1 29.3-31.9V128c0-16.8-12.9-30.5-29.3-31.9zM336 144v16c0 53-43 96-96 96H208c-53 0-96-43-96-96V144c0-26.5 21.5-48 48-48H288c26.5 0 48 21.5 48 48zM189.3 162.7l-6-21.2c-.9-3.3-3.9-5.5-7.3-5.5s-6.4 2.2-7.3 5.5l-6 21.2-21.2 6c-3.3 .9-5.5 3.9-5.5 7.3s2.2 6.4 5.5 7.3l21.2 6 6 21.2c.9 3.3 3.9 5.5 7.3 5.5s6.4-2.2 7.3-5.5l6-21.2 21.2-6c3.3-.9 5.5-3.9 5.5-7.3s-2.2-6.4-5.5-7.3l-21.2-6zM112.7 316.5C46.7 342.6 0 407 0 482.3C0 498.7 13.3 512 29.7 512H128V448c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64l98.3 0c16.4 0 29.7-13.3 29.7-29.7c0-75.3-46.7-139.7-112.7-165.8C303.9 338.8 265.5 352 224 352s-79.9-13.2-111.3-35.5zM176 448c-8.8 0-16 7.2-16 16v48h32V464c0-8.8-7.2-16-16-16zm96 32a16 16 0 1 0 0-32 16 16 0 1 0 0 32z");
+    			add_location(path, file$b, 340, 10, 8051);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "height", "36px");
+    			attr_dev(svg, "viewBox", "0 0 448 512");
+    			toggle_class(svg, "userIcon", true);
+    			add_location(svg, file$b, 323, 8, 7592);
     			set_style(span1, "color", "#FDFCF9");
     			set_style(span1, "letter-spacing", "1px");
     			set_style(span1, "cursor", "pointer");
@@ -7533,7 +7583,7 @@ var app = (function () {
     			set_style(span1, "left", "100%");
     			set_style(span1, "margin-left", "-400px");
     			set_style(span1, "margin-top", "-20px");
-    			add_location(span1, file$b, 289, 6, 6416);
+    			add_location(span1, file$b, 292, 6, 6891);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span1, anchor);
@@ -7541,9 +7591,14 @@ var app = (function () {
     			append_dev(span1, t1);
     			append_dev(span1, span0);
     			append_dev(span0, t2);
+    			append_dev(span1, t3);
+    			append_dev(span1, svg);
+    			append_dev(svg, style);
+    			append_dev(style, t4);
+    			append_dev(svg, path);
 
     			if (!mounted) {
-    				dispose = listen_dev(span1, "click", /*click_handler_3*/ ctx[20], false, false, false);
+    				dispose = listen_dev(span1, "click", /*click_handler_3*/ ctx[23], false, false, false);
     				mounted = true;
     			}
     		},
@@ -7560,16 +7615,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_8$3.name,
+    		id: create_if_block_14.name,
     		type: "if",
-    		source: "(288:4) { #if AUTH == true }",
+    		source: "(291:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (326:2) { #if opacity == 0 }
+    // (348:2) { #if opacity == 0 }
     function create_if_block_1$a(ctx) {
     	let div1;
     	let t0;
@@ -7599,7 +7654,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", /*click_handler_5*/ ctx[23]);
+    	button.$on("click", /*click_handler_8*/ ctx[29]);
     	let if_block1 = /*regActive*/ ctx[6] === true && create_if_block_2$a(ctx);
 
     	const block = {
@@ -7615,7 +7670,7 @@ var app = (function () {
     			t3 = space();
     			svg = svg_element("svg");
     			style = svg_element("style");
-    			t4 = text("svg { fill:#gray; cursor: pointer; }\r\n          \r\n          ");
+    			t4 = text("svg { fill: gray; cursor: pointer; }\r\n          \r\n          ");
     			path = svg_element("path");
     			t5 = space();
     			if (if_block1) if_block1.c();
@@ -7625,22 +7680,22 @@ var app = (function () {
     			set_style(span, "display", "block");
     			set_style(span, "margin-left", "20px");
     			set_style(span, "margin-right", "13px");
-    			add_location(span, file$b, 441, 8, 10386);
-    			add_location(style, file$b, 462, 10, 10931);
+    			add_location(span, file$b, 538, 8, 14225);
+    			add_location(style, file$b, 559, 10, 14770);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$b, 467, 10, 11034);
+    			add_location(path, file$b, 564, 10, 14873);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "22px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
-    			add_location(svg, file$b, 457, 8, 10797);
+    			add_location(svg, file$b, 554, 8, 14636);
     			set_style(div0, "display", "flex");
     			set_style(div0, "flex-direction", "row");
     			set_style(div0, "align-items", "center");
     			set_style(div0, "margin-top", "0px");
-    			add_location(div0, file$b, 422, 6, 9933);
-    			attr_dev(div1, "class", "svelte-j7o6p6");
+    			add_location(div0, file$b, 519, 6, 13772);
+    			attr_dev(div1, "class", "svelte-1pjyu2a");
     			toggle_class(div1, "authForm", true);
-    			add_location(div1, file$b, 327, 4, 7175);
+    			add_location(div1, file$b, 349, 4, 9049);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7660,7 +7715,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_6*/ ctx[24], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_9*/ ctx[30], false, false, false);
     				mounted = true;
     			}
     		},
@@ -7691,7 +7746,7 @@ var app = (function () {
     			const button_changes = {};
     			if (dirty[0] & /*regActive*/ 64) button_changes.disabled = /*regActive*/ ctx[6];
 
-    			if (dirty[1] & /*$$scope*/ 2) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7747,133 +7802,381 @@ var app = (function () {
     		block,
     		id: create_if_block_1$a.name,
     		type: "if",
-    		source: "(326:2) { #if opacity == 0 }",
+    		source: "(348:2) { #if opacity == 0 }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (330:6) { #if regActive === false }
+    // (352:6) { #if regActive === false }
     function create_if_block_7$3(ctx) {
-    	let input;
     	let t0;
-    	let div;
-    	let button;
     	let t1;
-    	let span0;
+    	let div;
+    	let t2;
     	let t3;
+    	let t4;
+    	let t5;
     	let svg;
     	let style;
-    	let t4;
+    	let t6;
     	let path;
-    	let t5;
-    	let span1;
+    	let t7;
+    	let span;
     	let current;
+    	let if_block0 = /*isRestore*/ ctx[8] == false && create_if_block_13(ctx);
+    	let if_block1 = /*isRestore*/ ctx[8] == true && create_if_block_12(ctx);
+    	let if_block2 = /*isRestore*/ ctx[8] == false && create_if_block_11(ctx);
+    	let if_block3 = /*isRestore*/ ctx[8] == true && create_if_block_10$1(ctx);
+    	let if_block4 = /*isRestore*/ ctx[8] == false && create_if_block_9$2(ctx);
+    	let if_block5 = /*isRestore*/ ctx[8] == true && create_if_block_8$3(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block0) if_block0.c();
+    			t0 = space();
+    			if (if_block1) if_block1.c();
+    			t1 = space();
+    			div = element("div");
+    			if (if_block2) if_block2.c();
+    			t2 = space();
+    			if (if_block3) if_block3.c();
+    			t3 = space();
+    			if (if_block4) if_block4.c();
+    			t4 = space();
+    			if (if_block5) if_block5.c();
+    			t5 = space();
+    			svg = svg_element("svg");
+    			style = svg_element("style");
+    			t6 = text("svg { fill: gray; cursor: pointer; }\r\n            \r\n            ");
+    			path = svg_element("path");
+    			t7 = space();
+    			span = element("span");
+    			span.textContent = "Чтобы зарегистрироваться в системе, нажмите на кнопку ниже";
+    			add_location(style, file$b, 494, 12, 12798);
+    			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
+    			add_location(path, file$b, 499, 12, 12909);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "height", "22px");
+    			attr_dev(svg, "viewBox", "0 0 512 512");
+    			add_location(svg, file$b, 489, 10, 12654);
+    			set_style(div, "display", "flex");
+    			set_style(div, "flex-direction", "row");
+    			set_style(div, "align-items", "center");
+    			set_style(div, "margin-top", "30px");
+    			add_location(div, file$b, 403, 8, 10574);
+    			set_style(span, "color", "gray");
+    			set_style(span, "opacity", "0.8");
+    			set_style(span, "cursor", "pointer");
+    			set_style(span, "display", "block");
+    			set_style(span, "margin-top", "25px");
+    			set_style(span, "margin-bottom", "31.1px");
+    			add_location(span, file$b, 504, 8, 13428);
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block0) if_block0.m(target, anchor);
+    			insert_dev(target, t0, anchor);
+    			if (if_block1) if_block1.m(target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    			if (if_block2) if_block2.m(div, null);
+    			append_dev(div, t2);
+    			if (if_block3) if_block3.m(div, null);
+    			append_dev(div, t3);
+    			if (if_block4) if_block4.m(div, null);
+    			append_dev(div, t4);
+    			if (if_block5) if_block5.m(div, null);
+    			append_dev(div, t5);
+    			append_dev(div, svg);
+    			append_dev(svg, style);
+    			append_dev(style, t6);
+    			append_dev(svg, path);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, span, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*isRestore*/ ctx[8] == false) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_13(ctx);
+    					if_block0.c();
+    					if_block0.m(t0.parentNode, t0);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (/*isRestore*/ ctx[8] == true) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+    				} else {
+    					if_block1 = create_if_block_12(ctx);
+    					if_block1.c();
+    					if_block1.m(t1.parentNode, t1);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			if (/*isRestore*/ ctx[8] == false) {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+
+    					if (dirty[0] & /*isRestore*/ 256) {
+    						transition_in(if_block2, 1);
+    					}
+    				} else {
+    					if_block2 = create_if_block_11(ctx);
+    					if_block2.c();
+    					transition_in(if_block2, 1);
+    					if_block2.m(div, t2);
+    				}
+    			} else if (if_block2) {
+    				group_outros();
+
+    				transition_out(if_block2, 1, 1, () => {
+    					if_block2 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (/*isRestore*/ ctx[8] == true) {
+    				if (if_block3) {
+    					if (dirty[0] & /*isRestore*/ 256) {
+    						transition_in(if_block3, 1);
+    					}
+    				} else {
+    					if_block3 = create_if_block_10$1(ctx);
+    					if_block3.c();
+    					transition_in(if_block3, 1);
+    					if_block3.m(div, t3);
+    				}
+    			} else if (if_block3) {
+    				group_outros();
+
+    				transition_out(if_block3, 1, 1, () => {
+    					if_block3 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (/*isRestore*/ ctx[8] == false) {
+    				if (if_block4) {
+    					if_block4.p(ctx, dirty);
+    				} else {
+    					if_block4 = create_if_block_9$2(ctx);
+    					if_block4.c();
+    					if_block4.m(div, t4);
+    				}
+    			} else if (if_block4) {
+    				if_block4.d(1);
+    				if_block4 = null;
+    			}
+
+    			if (/*isRestore*/ ctx[8] == true) {
+    				if (if_block5) {
+    					if_block5.p(ctx, dirty);
+    				} else {
+    					if_block5 = create_if_block_8$3(ctx);
+    					if_block5.c();
+    					if_block5.m(div, t5);
+    				}
+    			} else if (if_block5) {
+    				if_block5.d(1);
+    				if_block5 = null;
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block2);
+    			transition_in(if_block3);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block2);
+    			transition_out(if_block3);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block0) if_block0.d(detaching);
+    			if (detaching) detach_dev(t0);
+    			if (if_block1) if_block1.d(detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    			if (if_block2) if_block2.d();
+    			if (if_block3) if_block3.d();
+    			if (if_block4) if_block4.d();
+    			if (if_block5) if_block5.d();
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_7$3.name,
+    		type: "if",
+    		source: "(352:6) { #if regActive === false }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (354:8) { #if isRestore == false }
+    function create_if_block_13(ctx) {
+    	let input;
     	let mounted;
     	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			input = element("input");
+    			attr_dev(input, "type", "text");
+    			attr_dev(input, "maxlength", "100");
+    			attr_dev(input, "placeholder", "Введите ваш мастер-пароль от системы");
+    			set_style(input, "display", "block");
+    			set_style(input, "position", "relative");
+    			set_style(input, "box-sizing", "border-box");
+    			set_style(input, "width", "100%");
+    			set_style(input, "height", "48px");
+    			set_style(input, "border", "none");
+    			set_style(input, "outline", "none");
+    			set_style(input, "text-align", "center");
+    			set_style(input, "border-radius", "6px");
+    			set_style(input, "background-color", "transparent");
+    			set_style(input, "letter-spacing", "0.8px");
+    			set_style(input, "border-bottom", "2px solid rgb(67, 0, 176)");
+    			add_location(input, file$b, 355, 10, 9171);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, input, anchor);
+    			set_input_value(input, /*MASTER_PASS*/ ctx[12]);
+
+    			if (!mounted) {
+    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[24]);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*MASTER_PASS*/ 4096 && input.value !== /*MASTER_PASS*/ ctx[12]) {
+    				set_input_value(input, /*MASTER_PASS*/ ctx[12]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(input);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_13.name,
+    		type: "if",
+    		source: "(354:8) { #if isRestore == false }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (379:8) { #if isRestore == true }
+    function create_if_block_12(ctx) {
+    	let input;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			input = element("input");
+    			attr_dev(input, "type", "text");
+    			attr_dev(input, "maxlength", "100");
+    			attr_dev(input, "placeholder", "Введите email - тот на который регистрировались");
+    			set_style(input, "display", "block");
+    			set_style(input, "position", "relative");
+    			set_style(input, "box-sizing", "border-box");
+    			set_style(input, "width", "100%");
+    			set_style(input, "height", "48px");
+    			set_style(input, "border", "none");
+    			set_style(input, "outline", "none");
+    			set_style(input, "text-align", "center");
+    			set_style(input, "border-radius", "6px");
+    			set_style(input, "background-color", "transparent");
+    			set_style(input, "letter-spacing", "0.8px");
+    			set_style(input, "border-bottom", "2px solid rgb(67, 0, 176)");
+    			add_location(input, file$b, 380, 10, 9886);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, input, anchor);
+    			set_input_value(input, /*RESTORE_PASS*/ ctx[13]);
+
+    			if (!mounted) {
+    				dispose = listen_dev(input, "input", /*input_input_handler_1*/ ctx[25]);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*RESTORE_PASS*/ 8192 && input.value !== /*RESTORE_PASS*/ ctx[13]) {
+    				set_input_value(input, /*RESTORE_PASS*/ ctx[13]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(input);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_12.name,
+    		type: "if",
+    		source: "(379:8) { #if isRestore == true }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (413:10) { #if isRestore == false }
+    function create_if_block_11(ctx) {
+    	let button;
+    	let current;
 
     	button = new Button$1({
     			props: {
     				disabled: /*regActive*/ ctx[6],
     				filled: true,
-    				style: "\r\n              font-size: 15px;\r\n              padding: 13px 22px 16px;\r\n            ",
-    				$$slots: { default: [create_default_slot_4$2] },
+    				style: "\r\n                font-size: 15px;\r\n                padding: 13px 22px 16px;\r\n              ",
+    				$$slots: { default: [create_default_slot_5$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button.$on("click", /*click_handler_4*/ ctx[22]);
+    	button.$on("click", /*click_handler_4*/ ctx[26]);
 
     	const block = {
     		c: function create() {
-    			input = element("input");
-    			t0 = space();
-    			div = element("div");
     			create_component(button.$$.fragment);
-    			t1 = space();
-    			span0 = element("span");
-    			span0.textContent = "Помогите вспомнить пароль";
-    			t3 = space();
-    			svg = svg_element("svg");
-    			style = svg_element("style");
-    			t4 = text("svg { fill:#gray; cursor: pointer; }\r\n            \r\n            ");
-    			path = svg_element("path");
-    			t5 = space();
-    			span1 = element("span");
-    			span1.textContent = "Чтобы зарегистрироваться в системе, нажмите на кнопку ниже";
-    			attr_dev(input, "type", "text");
-    			attr_dev(input, "maxlength", "100");
-    			attr_dev(input, "placeholder", "введите ваш мастер-пароль от системы");
-    			set_style(input, "display", "block");
-    			set_style(input, "position", "relative");
-    			set_style(input, "box-sizing", "border-box");
-    			set_style(input, "width", "100%");
-    			set_style(input, "border", "none");
-    			set_style(input, "outline", "none");
-    			set_style(input, "border-radius", "6px");
-    			set_style(input, "background-color", "transparent");
-    			set_style(input, "letter-spacing", "0.8px");
-    			add_location(input, file$b, 331, 8, 7257);
-    			set_style(span0, "color", "gray");
-    			set_style(span0, "opacity", "0.8");
-    			set_style(span0, "cursor", "pointer");
-    			set_style(span0, "display", "block");
-    			set_style(span0, "margin-left", "20px");
-    			set_style(span0, "margin-right", "13px");
-    			add_location(span0, file$b, 380, 10, 8499);
-    			add_location(style, file$b, 397, 12, 8959);
-    			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$b, 402, 12, 9070);
-    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "height", "22px");
-    			attr_dev(svg, "viewBox", "0 0 512 512");
-    			add_location(svg, file$b, 392, 10, 8815);
-    			set_style(div, "display", "flex");
-    			set_style(div, "flex-direction", "row");
-    			set_style(div, "align-items", "center");
-    			set_style(div, "margin-top", "30px");
-    			add_location(div, file$b, 348, 8, 7759);
-    			set_style(span1, "color", "gray");
-    			set_style(span1, "opacity", "0.8");
-    			set_style(span1, "cursor", "pointer");
-    			set_style(span1, "display", "block");
-    			set_style(span1, "margin-top", "25px");
-    			set_style(span1, "margin-bottom", "31.1px");
-    			add_location(span1, file$b, 407, 8, 9589);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, input, anchor);
-    			set_input_value(input, /*MASTER_PASS*/ ctx[11]);
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, div, anchor);
-    			mount_component(button, div, null);
-    			append_dev(div, t1);
-    			append_dev(div, span0);
-    			append_dev(div, t3);
-    			append_dev(div, svg);
-    			append_dev(svg, style);
-    			append_dev(style, t4);
-    			append_dev(svg, path);
-    			insert_dev(target, t5, anchor);
-    			insert_dev(target, span1, anchor);
+    			mount_component(button, target, anchor);
     			current = true;
-
-    			if (!mounted) {
-    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[21]);
-    				mounted = true;
-    			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*MASTER_PASS*/ 2048 && input.value !== /*MASTER_PASS*/ ctx[11]) {
-    				set_input_value(input, /*MASTER_PASS*/ ctx[11]);
-    			}
-
     			const button_changes = {};
     			if (dirty[0] & /*regActive*/ 64) button_changes.disabled = /*regActive*/ ctx[6];
 
-    			if (dirty[0] & /*passValue*/ 4096 | dirty[1] & /*$$scope*/ 2) {
+    			if (dirty[0] & /*passValue*/ 16384 | dirty[1] & /*$$scope*/ 128) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7889,42 +8192,115 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(input);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(div);
-    			destroy_component(button);
-    			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(span1);
-    			mounted = false;
-    			dispose();
+    			destroy_component(button, detaching);
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_7$3.name,
+    		id: create_if_block_11.name,
     		type: "if",
-    		source: "(330:6) { #if regActive === false }",
+    		source: "(413:10) { #if isRestore == false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (357:10) <Button               on:click={() => {                  if ( MASTER_PASS.length < 10 ) {                    passValue = 'Введите пароль'                  setTimeout(() => {                    passValue = 'Авторизоваться'                  }, 2000)                  } else {                    autorization()                  }                }}              disabled={regActive}              filled              style="                font-size: 15px;                padding: 13px 22px 16px;              "            >
-    function create_default_slot_4$2(ctx) {
+    // (415:12) <Button                 on:click={() => {                    if ( MASTER_PASS.length < 10 ) {                      passValue = 'Введите пароль'                    setTimeout(() => {                      passValue = 'Авторизоваться'                    }, 2000)                    } else {                      autorization()                    }                  }}                disabled={regActive}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
+    function create_default_slot_5$2(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text(/*passValue*/ ctx[12]);
+    			t = text(/*passValue*/ ctx[14]);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*passValue*/ 4096) set_data_dev(t, /*passValue*/ ctx[12]);
+    			if (dirty[0] & /*passValue*/ 16384) set_data_dev(t, /*passValue*/ ctx[14]);
     		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_5$2.name,
+    		type: "slot",
+    		source: "(415:12) <Button                 on:click={() => {                    if ( MASTER_PASS.length < 10 ) {                      passValue = 'Введите пароль'                    setTimeout(() => {                      passValue = 'Авторизоваться'                    }, 2000)                    } else {                      autorization()                    }                  }}                disabled={regActive}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (441:10) { #if isRestore == true }
+    function create_if_block_10$1(ctx) {
+    	let button;
+    	let current;
+
+    	button = new Button$1({
+    			props: {
+    				disabled: true,
+    				filled: true,
+    				style: "\r\n                font-size: 15px;\r\n                padding: 13px 22px 16px;\r\n              ",
+    				$$slots: { default: [create_default_slot_4$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", click_handler_5);
+
+    	const block = {
+    		c: function create() {
+    			create_component(button.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(button, target, anchor);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_10$1.name,
+    		type: "if",
+    		source: "(441:10) { #if isRestore == true }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (443:12) <Button                 on:click={() => {}}                disabled={true}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
+    function create_default_slot_4$2(ctx) {
+    	let t_value = "Восстановить пароль" + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t);
     		}
@@ -7934,14 +8310,104 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(357:10) <Button               on:click={() => {                  if ( MASTER_PASS.length < 10 ) {                    passValue = 'Введите пароль'                  setTimeout(() => {                    passValue = 'Авторизоваться'                  }, 2000)                  } else {                    autorization()                  }                }}              disabled={regActive}              filled              style=\\\"                font-size: 15px;                padding: 13px 22px 16px;              \\\"            >",
+    		source: "(443:12) <Button                 on:click={() => {}}                disabled={true}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (431:8) <Button             on:click={() => {              regActive = true            }}            disabled={regActive}            filled            style="              font-size: 15px;              padding: 13px 22px 16px;            "          >
+    // (455:10) { #if isRestore == false }
+    function create_if_block_9$2(ctx) {
+    	let span;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			span.textContent = "Помогите вспомнить пароль";
+    			set_style(span, "color", "gray");
+    			set_style(span, "opacity", "0.8");
+    			set_style(span, "cursor", "pointer");
+    			set_style(span, "display", "block");
+    			set_style(span, "margin-left", "20px");
+    			set_style(span, "margin-right", "13px");
+    			add_location(span, file$b, 456, 12, 11790);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+
+    			if (!mounted) {
+    				dispose = listen_dev(span, "click", /*click_handler_6*/ ctx[27], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_9$2.name,
+    		type: "if",
+    		source: "(455:10) { #if isRestore == false }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (472:10) { #if isRestore == true }
+    function create_if_block_8$3(ctx) {
+    	let span;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			span.textContent = "Вернуться назад к авторизации";
+    			set_style(span, "color", "gray");
+    			set_style(span, "opacity", "0.8");
+    			set_style(span, "cursor", "pointer");
+    			set_style(span, "display", "block");
+    			set_style(span, "margin-left", "20px");
+    			set_style(span, "margin-right", "13px");
+    			add_location(span, file$b, 473, 12, 12239);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+
+    			if (!mounted) {
+    				dispose = listen_dev(span, "click", /*click_handler_7*/ ctx[28], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_8$3.name,
+    		type: "if",
+    		source: "(472:10) { #if isRestore == true }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (528:8) <Button             on:click={() => {              regActive = true            }}            disabled={regActive}            filled            style="              font-size: 15px;              padding: 13px 22px 16px;            "          >
     function create_default_slot_3$2(ctx) {
     	let t_value = "Зарегистрироваться" + "";
     	let t;
@@ -7963,14 +8429,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(431:8) <Button             on:click={() => {              regActive = true            }}            disabled={regActive}            filled            style=\\\"              font-size: 15px;              padding: 13px 22px 16px;            \\\"          >",
+    		source: "(528:8) <Button             on:click={() => {              regActive = true            }}            disabled={regActive}            filled            style=\\\"              font-size: 15px;              padding: 13px 22px 16px;            \\\"          >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (474:6) { #if regActive === true }
+    // (571:6) { #if regActive === true }
     function create_if_block_2$a(ctx) {
     	let div3;
     	let input0;
@@ -8002,10 +8468,10 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*sex*/ ctx[9] == 'male' && create_if_block_6$4(ctx);
-    	let if_block1 = /*sex*/ ctx[9] == 'female' && create_if_block_5$6(ctx);
-    	let if_block2 = /*sex*/ ctx[9] == 'male' && create_if_block_4$a(ctx);
-    	let if_block3 = /*sex*/ ctx[9] == 'female' && create_if_block_3$a(ctx);
+    	let if_block0 = /*sex*/ ctx[10] == 'male' && create_if_block_6$4(ctx);
+    	let if_block1 = /*sex*/ ctx[10] == 'female' && create_if_block_5$6(ctx);
+    	let if_block2 = /*sex*/ ctx[10] == 'male' && create_if_block_4$a(ctx);
+    	let if_block3 = /*sex*/ ctx[10] == 'female' && create_if_block_3$a(ctx);
 
     	checkbox0 = new Checkbox$1({
     			props: {
@@ -8043,7 +8509,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", /*registration*/ ctx[15]);
+    	button.$on("click", /*registration*/ ctx[18]);
 
     	const block = {
     		c: function create() {
@@ -8083,41 +8549,44 @@ var app = (function () {
     			span2.textContent = "Вернуться назад";
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "maxlength", "100");
-    			attr_dev(input0, "placeholder", "введите адрес вашей электронной почты для связи");
+    			attr_dev(input0, "placeholder", "Введите адрес вашей электронной почты для связи");
     			set_style(input0, "display", "block");
     			set_style(input0, "position", "relative");
     			set_style(input0, "box-sizing", "border-box");
+    			set_style(input0, "height", "48px");
+    			set_style(input0, "text-align", "center");
     			set_style(input0, "width", "100%");
     			set_style(input0, "border", "none");
     			set_style(input0, "outline", "none");
     			set_style(input0, "border-radius", "6px");
     			set_style(input0, "background-color", "transparent");
     			set_style(input0, "letter-spacing", "0.8px");
-    			set_style(input0, "margin-top", "30px");
-    			add_location(input0, file$b, 476, 10, 11600);
+    			set_style(input0, "margin-top", "24px");
+    			set_style(input0, "border-bottom", "2px solid rgb(67, 0, 176)");
+    			add_location(input0, file$b, 573, 10, 15439);
     			attr_dev(path0, "d", "M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z");
-    			add_location(path0, file$b, 508, 14, 12781);
+    			add_location(path0, file$b, 608, 14, 16741);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "height", "70px");
     			attr_dev(svg0, "viewBox", "0 0 320 512");
     			toggle_class(svg0, "svgMale", true);
-    			add_location(svg0, file$b, 495, 12, 12276);
+    			add_location(svg0, file$b, 595, 12, 16236);
     			set_style(span0, "margin-left", "26px");
     			set_style(span0, "margin-right", "28px");
-    			add_location(span0, file$b, 510, 12, 13166);
+    			add_location(span0, file$b, 610, 12, 17126);
     			attr_dev(path1, "d", "M160 0a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM88 384H70.2c-10.9 0-18.6-10.7-15.2-21.1L93.3 248.1 59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l53.6-89.2c20.3-33.7 56.7-54.3 96-54.3h11.6c39.3 0 75.7 20.6 96 54.3l53.6 89.2c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9l-33.9-56.3L265 362.9c3.5 10.4-4.3 21.1-15.2 21.1H232v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V384H152v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V384z");
-    			add_location(path1, file$b, 524, 14, 13769);
+    			add_location(path1, file$b, 624, 14, 17729);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "height", "70px");
     			attr_dev(svg1, "viewBox", "0 0 320 512");
     			toggle_class(svg1, "svgfemale", true);
-    			add_location(svg1, file$b, 511, 12, 13256);
+    			add_location(svg1, file$b, 611, 12, 17216);
     			set_style(div0, "margin-top", "30px");
     			set_style(div0, "display", "flex");
     			set_style(div0, "flex-direction", "row");
     			set_style(div0, "align-items", "center");
-    			add_location(div0, file$b, 494, 10, 12174);
-    			add_location(span1, file$b, 543, 12, 14823);
+    			add_location(div0, file$b, 594, 10, 16134);
+    			add_location(span1, file$b, 643, 12, 18783);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "maxlength", "2");
     			attr_dev(input1, "placeholder", "30");
@@ -8132,30 +8601,30 @@ var app = (function () {
     			set_style(input1, "border-radius", "6px");
     			set_style(input1, "background-color", "#FDFCF9");
     			set_style(input1, "margin-left", "28px");
-    			add_location(input1, file$b, 544, 12, 14869);
+    			add_location(input1, file$b, 644, 12, 18829);
     			set_style(div1, "margin-top", "36px");
     			set_style(div1, "display", "flex");
     			set_style(div1, "flex-direction", "row");
     			set_style(div1, "align-items", "center");
-    			add_location(div1, file$b, 542, 10, 14721);
+    			add_location(div1, file$b, 642, 10, 18681);
     			set_style(span2, "color", "gray");
     			set_style(span2, "opacity", "0.8");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "display", "block");
     			set_style(span2, "margin-left", "20px");
     			set_style(span2, "margin-right", "13px");
-    			add_location(span2, file$b, 595, 12, 16384);
+    			add_location(span2, file$b, 695, 12, 20344);
     			set_style(div2, "display", "flex");
     			set_style(div2, "flex-direction", "row");
     			set_style(div2, "align-items", "center");
     			set_style(div2, "margin-top", "30px");
-    			add_location(div2, file$b, 579, 10, 15947);
-    			add_location(div3, file$b, 475, 8, 11583);
+    			add_location(div2, file$b, 679, 10, 19907);
+    			add_location(div3, file$b, 572, 8, 15422);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
     			append_dev(div3, input0);
-    			set_input_value(input0, /*login*/ ctx[10]);
+    			set_input_value(input0, /*login*/ ctx[11]);
     			append_dev(div3, t0);
     			append_dev(div3, div0);
     			append_dev(div0, svg0);
@@ -8178,7 +8647,7 @@ var app = (function () {
     			append_dev(div1, span1);
     			append_dev(div1, t7);
     			append_dev(div1, input1);
-    			set_input_value(input1, /*age*/ ctx[8]);
+    			set_input_value(input1, /*age*/ ctx[9]);
     			append_dev(div1, t8);
     			mount_component(checkbox1, div1, null);
     			append_dev(div3, t9);
@@ -8190,22 +8659,22 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[25]),
-    					listen_dev(svg0, "click", /*click_handler_7*/ ctx[26], false, false, false),
-    					listen_dev(svg1, "click", /*click_handler_8*/ ctx[27], false, false, false),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[28]),
-    					listen_dev(span2, "click", /*click_handler_9*/ ctx[29], false, false, false)
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[31]),
+    					listen_dev(svg0, "click", /*click_handler_10*/ ctx[32], false, false, false),
+    					listen_dev(svg1, "click", /*click_handler_11*/ ctx[33], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[34]),
+    					listen_dev(span2, "click", /*click_handler_12*/ ctx[35], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*login*/ 1024 && input0.value !== /*login*/ ctx[10]) {
-    				set_input_value(input0, /*login*/ ctx[10]);
+    			if (dirty[0] & /*login*/ 2048 && input0.value !== /*login*/ ctx[11]) {
+    				set_input_value(input0, /*login*/ ctx[11]);
     			}
 
-    			if (/*sex*/ ctx[9] == 'male') {
+    			if (/*sex*/ ctx[10] == 'male') {
     				if (if_block0) ; else {
     					if_block0 = create_if_block_6$4(ctx);
     					if_block0.c();
@@ -8216,7 +8685,7 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (/*sex*/ ctx[9] == 'female') {
+    			if (/*sex*/ ctx[10] == 'female') {
     				if (if_block1) ; else {
     					if_block1 = create_if_block_5$6(ctx);
     					if_block1.c();
@@ -8227,7 +8696,7 @@ var app = (function () {
     				if_block1 = null;
     			}
 
-    			if (/*sex*/ ctx[9] == 'male') {
+    			if (/*sex*/ ctx[10] == 'male') {
     				if (if_block2) ; else {
     					if_block2 = create_if_block_4$a(ctx);
     					if_block2.c();
@@ -8238,7 +8707,7 @@ var app = (function () {
     				if_block2 = null;
     			}
 
-    			if (/*sex*/ ctx[9] == 'female') {
+    			if (/*sex*/ ctx[10] == 'female') {
     				if (if_block3) ; else {
     					if_block3 = create_if_block_3$a(ctx);
     					if_block3.c();
@@ -8251,26 +8720,26 @@ var app = (function () {
 
     			const checkbox0_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 2) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				checkbox0_changes.$$scope = { dirty, ctx };
     			}
 
     			checkbox0.$set(checkbox0_changes);
 
-    			if (dirty[0] & /*age*/ 256 && input1.value !== /*age*/ ctx[8]) {
-    				set_input_value(input1, /*age*/ ctx[8]);
+    			if (dirty[0] & /*age*/ 512 && input1.value !== /*age*/ ctx[9]) {
+    				set_input_value(input1, /*age*/ ctx[9]);
     			}
 
     			const checkbox1_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 2) {
+    			if (dirty[1] & /*$$scope*/ 128) {
     				checkbox1_changes.$$scope = { dirty, ctx };
     			}
 
     			checkbox1.$set(checkbox1_changes);
     			const button_changes = {};
 
-    			if (dirty[0] & /*regValue*/ 8192 | dirty[1] & /*$$scope*/ 2) {
+    			if (dirty[0] & /*regValue*/ 32768 | dirty[1] & /*$$scope*/ 128) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8307,14 +8776,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$a.name,
     		type: "if",
-    		source: "(474:6) { #if regActive === true }",
+    		source: "(571:6) { #if regActive === true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (503:14) { #if sex == 'male' }
+    // (603:14) { #if sex == 'male' }
     function create_if_block_6$4(ctx) {
     	let style;
     	let t;
@@ -8323,7 +8792,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgMale{fill:#4300b0;cursor:pointer;}");
-    			add_location(style, file$b, 503, 16, 12550);
+    			add_location(style, file$b, 603, 16, 16510);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -8338,14 +8807,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$4.name,
     		type: "if",
-    		source: "(503:14) { #if sex == 'male' }",
+    		source: "(603:14) { #if sex == 'male' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (506:14) { #if sex == 'female' }
+    // (606:14) { #if sex == 'female' }
     function create_if_block_5$6(ctx) {
     	let style;
     	let t;
@@ -8354,7 +8823,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgMale{fill:#323835;cursor:pointer;}");
-    			add_location(style, file$b, 506, 16, 12686);
+    			add_location(style, file$b, 606, 16, 16646);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -8369,14 +8838,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$6.name,
     		type: "if",
-    		source: "(506:14) { #if sex == 'female' }",
+    		source: "(606:14) { #if sex == 'female' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (519:14) { #if sex == 'male' }
+    // (619:14) { #if sex == 'male' }
     function create_if_block_4$a(ctx) {
     	let style;
     	let t;
@@ -8385,7 +8854,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgfemale{fill:#323835;cursor:pointer;}");
-    			add_location(style, file$b, 519, 16, 13534);
+    			add_location(style, file$b, 619, 16, 17494);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -8400,14 +8869,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$a.name,
     		type: "if",
-    		source: "(519:14) { #if sex == 'male' }",
+    		source: "(619:14) { #if sex == 'male' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (522:14) { #if sex == 'female' }
+    // (622:14) { #if sex == 'female' }
     function create_if_block_3$a(ctx) {
     	let style;
     	let t;
@@ -8416,7 +8885,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgfemale{fill:#4300b0;cursor:pointer;}");
-    			add_location(style, file$b, 522, 16, 13672);
+    			add_location(style, file$b, 622, 16, 17632);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -8431,14 +8900,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$a.name,
     		type: "if",
-    		source: "(522:14) { #if sex == 'female' }",
+    		source: "(622:14) { #if sex == 'female' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (527:12) <Checkbox                disabled                name="male"                value="male"                title="select male"                selectorStyle="                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                "              >
+    // (627:12) <Checkbox                disabled                name="male"                value="male"                title="select male"                selectorStyle="                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                "              >
     function create_default_slot_2$5(ctx) {
     	let span;
 
@@ -8447,7 +8916,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Пол не указан";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$b, 539, 14, 14615);
+    			add_location(span, file$b, 639, 14, 18575);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -8462,14 +8931,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$5.name,
     		type: "slot",
-    		source: "(527:12) <Checkbox                disabled                name=\\\"male\\\"                value=\\\"male\\\"                title=\\\"select male\\\"                selectorStyle=\\\"                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                \\\"              >",
+    		source: "(627:12) <Checkbox                disabled                name=\\\"male\\\"                value=\\\"male\\\"                title=\\\"select male\\\"                selectorStyle=\\\"                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (564:12) <Checkbox                disabled                name="male"                value="male"                title="select male"                selectorStyle="                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                "              >
+    // (664:12) <Checkbox                disabled                name="male"                value="male"                title="select male"                selectorStyle="                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                "              >
     function create_default_slot_1$5(ctx) {
     	let span;
 
@@ -8478,7 +8947,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Возраст не указан";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$b, 576, 14, 15837);
+    			add_location(span, file$b, 676, 14, 19797);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -8493,26 +8962,26 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$5.name,
     		type: "slot",
-    		source: "(564:12) <Checkbox                disabled                name=\\\"male\\\"                value=\\\"male\\\"                title=\\\"select male\\\"                selectorStyle=\\\"                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                \\\"              >",
+    		source: "(664:12) <Checkbox                disabled                name=\\\"male\\\"                value=\\\"male\\\"                title=\\\"select male\\\"                selectorStyle=\\\"                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (588:12) <Button                 on:click={registration}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
+    // (688:12) <Button                 on:click={registration}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
     function create_default_slot$5(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text(/*regValue*/ ctx[13]);
+    			t = text(/*regValue*/ ctx[15]);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*regValue*/ 8192) set_data_dev(t, /*regValue*/ ctx[13]);
+    			if (dirty[0] & /*regValue*/ 32768) set_data_dev(t, /*regValue*/ ctx[15]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t);
@@ -8523,14 +8992,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(588:12) <Button                 on:click={registration}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
+    		source: "(688:12) <Button                 on:click={registration}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (619:2) { #if opacity == 0 }
+    // (719:2) { #if opacity == 0 }
     function create_if_block$a(ctx) {
     	let span;
     	let mounted;
@@ -8551,14 +9020,14 @@ var app = (function () {
     			set_style(span, "text-align", "center");
     			set_style(span, "cursor", "pointer");
     			set_style(span, "top", "100%");
-    			set_style(span, "margin-top", "20px");
-    			add_location(span, file$b, 619, 4, 16901);
+    			set_style(span, "margin-top", "-44px");
+    			add_location(span, file$b, 719, 4, 20861);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_10*/ ctx[30], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_13*/ ctx[36], false, false, false);
     				mounted = true;
     			}
     		},
@@ -8574,7 +9043,7 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(619:2) { #if opacity == 0 }",
+    		source: "(719:2) { #if opacity == 0 }",
     		ctx
     	});
 
@@ -8587,30 +9056,24 @@ var app = (function () {
     	let updating_open;
     	let t0;
     	let div;
-    	let svg;
-    	let style;
+    	let img;
+    	let img_src_value;
     	let t1;
-    	let path;
     	let t2;
-    	let h1;
     	let t3;
-    	let span;
-    	let t5;
-    	let t6;
-    	let t7;
-    	let t8;
+    	let t4;
     	let current;
 
     	function modal_open_binding(value) {
-    		/*modal_open_binding*/ ctx[18](value);
+    		/*modal_open_binding*/ ctx[21](value);
     	}
 
     	let modal_props = {
     		$$slots: {
     			default: [
-    				create_default_slot_5$2,
-    				({ closeCallback }) => ({ 31: closeCallback }),
-    				({ closeCallback }) => [0, closeCallback ? 1 : 0]
+    				create_default_slot_6$2,
+    				({ closeCallback }) => ({ 37: closeCallback }),
+    				({ closeCallback }) => [0, closeCallback ? 64 : 0]
     			]
     		},
     		$$scope: { ctx }
@@ -8622,8 +9085,8 @@ var app = (function () {
 
     	modal = new Modal$1({ props: modal_props, $$inline: true });
     	binding_callbacks.push(() => bind(modal, 'open', modal_open_binding));
-    	let if_block0 = /*AUTH*/ ctx[0] == false && create_if_block_9$2(ctx);
-    	let if_block1 = /*AUTH*/ ctx[0] == true && create_if_block_8$3(ctx);
+    	let if_block0 = /*AUTH*/ ctx[0] == false && create_if_block_15(ctx);
+    	let if_block1 = /*AUTH*/ ctx[0] == true && create_if_block_14(ctx);
     	let if_block2 = /*opacity*/ ctx[5] == 0 && create_if_block_1$a(ctx);
     	let if_block3 = /*opacity*/ ctx[5] == 0 && create_if_block$a(ctx);
 
@@ -8633,46 +9096,27 @@ var app = (function () {
     			create_component(modal.$$.fragment);
     			t0 = space();
     			div = element("div");
-    			svg = svg_element("svg");
-    			style = svg_element("style");
-    			t1 = text("svg { fill:#fdfcf9; }\r\n      \r\n      ");
-    			path = svg_element("path");
-    			t2 = space();
-    			h1 = element("h1");
-    			t3 = text("hint\r\n      ");
-    			span = element("span");
-    			span.textContent = "beta";
-    			t5 = space();
+    			img = element("img");
+    			t1 = space();
     			if (if_block0) if_block0.c();
-    			t6 = space();
+    			t2 = space();
     			if (if_block1) if_block1.c();
-    			t7 = space();
+    			t3 = space();
     			if (if_block2) if_block2.c();
-    			t8 = space();
+    			t4 = space();
     			if (if_block3) if_block3.c();
-    			add_location(style, file$b, 238, 6, 5054);
-    			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$b, 243, 6, 5126);
-    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "height", "30px");
-    			attr_dev(svg, "viewBox", "0 0 512 512");
-    			add_location(svg, file$b, 233, 4, 4940);
-    			set_style(span, "font-size", "16px");
-    			set_style(span, "display", "block");
-    			set_style(span, "position", "absolute");
-    			set_style(span, "margin-top", "-54px");
-    			set_style(span, "margin-left", "77px");
-    			add_location(span, file$b, 249, 6, 5656);
-    			attr_dev(h1, "class", "svelte-j7o6p6");
-    			toggle_class(h1, "headerTitle", true);
-    			add_location(h1, file$b, 247, 4, 5607);
-    			attr_dev(div, "class", "svelte-j7o6p6");
+    			attr_dev(img, "alt", "");
+    			if (!src_url_equal(img.src, img_src_value = /*logo*/ ctx[16])) attr_dev(img, "src", img_src_value);
+    			set_style(img, "width", "160px");
+    			set_style(img, "margin-left", "-22px");
+    			add_location(img, file$b, 256, 4, 6240);
+    			attr_dev(div, "class", "svelte-1pjyu2a");
     			toggle_class(div, "headerLogo", true);
-    			add_location(div, file$b, 232, 2, 4905);
+    			add_location(div, file$b, 255, 2, 6205);
     			set_style(section, "height", (/*opacity*/ ctx[5] == 1 ? 80 : 600) + "px");
-    			attr_dev(section, "class", "svelte-j7o6p6");
+    			attr_dev(section, "class", "svelte-1pjyu2a");
     			toggle_class(section, "header", true);
-    			add_location(section, file$b, 164, 0, 3210);
+    			add_location(section, file$b, 173, 0, 3773);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8682,28 +9126,21 @@ var app = (function () {
     			mount_component(modal, section, null);
     			append_dev(section, t0);
     			append_dev(section, div);
-    			append_dev(div, svg);
-    			append_dev(svg, style);
-    			append_dev(style, t1);
-    			append_dev(svg, path);
-    			append_dev(div, t2);
-    			append_dev(div, h1);
-    			append_dev(h1, t3);
-    			append_dev(h1, span);
-    			append_dev(div, t5);
+    			append_dev(div, img);
+    			append_dev(div, t1);
     			if (if_block0) if_block0.m(div, null);
-    			append_dev(div, t6);
+    			append_dev(div, t2);
     			if (if_block1) if_block1.m(div, null);
-    			append_dev(section, t7);
+    			append_dev(section, t3);
     			if (if_block2) if_block2.m(section, null);
-    			append_dev(section, t8);
+    			append_dev(section, t4);
     			if (if_block3) if_block3.m(section, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
     			const modal_changes = {};
 
-    			if (dirty[0] & /*showModal, unauth, modalMessage*/ 138 | dirty[1] & /*$$scope, closeCallback*/ 3) {
+    			if (dirty[0] & /*showModal, unauth, modalMessage*/ 138 | dirty[1] & /*$$scope, closeCallback*/ 192) {
     				modal_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8719,9 +9156,9 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_9$2(ctx);
+    					if_block0 = create_if_block_15(ctx);
     					if_block0.c();
-    					if_block0.m(div, t6);
+    					if_block0.m(div, t2);
     				}
     			} else if (if_block0) {
     				if_block0.d(1);
@@ -8732,7 +9169,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_8$3(ctx);
+    					if_block1 = create_if_block_14(ctx);
     					if_block1.c();
     					if_block1.m(div, null);
     				}
@@ -8752,7 +9189,7 @@ var app = (function () {
     					if_block2 = create_if_block_1$a(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
-    					if_block2.m(section, t8);
+    					if_block2.m(section, t4);
     				}
     			} else if (if_block2) {
     				group_outros();
@@ -8813,6 +9250,10 @@ var app = (function () {
     	return block;
     }
 
+    const click_handler_5 = () => {
+    	
+    };
+
     function instance$c($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Header', slots, []);
@@ -8828,12 +9269,15 @@ var app = (function () {
     	let opacity;
     	let regActive = false;
     	let showModal = false;
+    	let isRestore = false;
     	let age = '';
     	let sex = 'male';
     	let login = '';
-    	let MASTER_PASS = '7kehakbiub2cvjl7vl1isk3nzwm8nbuvi';
+    	let MASTER_PASS = '';
+    	let RESTORE_PASS = '';
     	let passValue = 'Авторизоваться';
     	let regValue = 'Создать новый аккаунт';
+    	let logo = 'image/default.svg';
 
     	const autorization = () => {
     		let sendData = { login: MASTER_PASS };
@@ -8882,35 +9326,38 @@ var app = (function () {
     				body: JSON.stringify(sendData)
     			}).then(res => res.json()).then(data => {
     				if (data.uid !== 'email-uncorrect') {
-    					console.log(data);
-    					$$invalidate(7, showModal = true);
-    					contentOpacity.set(1);
-
-    					authCheck.set({
-    						auth: true,
-    						passID: data.uid,
-    						userID: data.uid,
-    						userMail: login
-    					});
-
-    					pageRoute.set('my-cabinet');
-
+    					// ----------------------------------------------------------------
+    					// console.log(data)
+    					// showModal = true
+    					// contentOpacity.set(1)
+    					// ----------------------------------------------------------------
+    					// ----------------------------------------------------------------
+    					// authCheck.set({
+    					//   auth: true,
+    					//   passID: data.uid,
+    					//   userID: data.uid,
+    					//   userMail: login
+    					// })
+    					// ----------------------------------------------------------------
+    					// ----------------------------------------------------------------
+    					// pageRoute.set('my-cabinet')
+    					// ----------------------------------------------------------------
     					$$invalidate(1, modalMessage = `
-            Сохраните ваш уникальный UID - ${data.uid}
+            все отлично - проверьте ваш email, отправили доступы
           `);
 
     					$$invalidate(7, showModal = true);
     					contentOpacity.set(1);
     				} else {
-    					$$invalidate(10, login = 'почта уже используется в системе');
+    					$$invalidate(11, login = 'почта уже используется в системе');
     				}
     			});
     		} else {
-    			$$invalidate(13, regValue = 'Заполните все данные');
+    			$$invalidate(15, regValue = 'Заполните все данные');
 
     			setTimeout(
     				() => {
-    					$$invalidate(13, regValue = 'Создать новый аккаунт');
+    					$$invalidate(15, regValue = 'Создать новый аккаунт');
     				},
     				2000
     			);
@@ -8947,23 +9394,28 @@ var app = (function () {
     	};
 
     	const click_handler_3 = () => {
-    		$$invalidate(1, modalMessage = 'Выйти из аккаунта?');
+    		$$invalidate(1, modalMessage = 'Хотите выйти из аккаунта?');
     		$$invalidate(3, unauth = true);
     		$$invalidate(7, showModal = true);
     	};
 
     	function input_input_handler() {
     		MASTER_PASS = this.value;
-    		$$invalidate(11, MASTER_PASS);
+    		$$invalidate(12, MASTER_PASS);
+    	}
+
+    	function input_input_handler_1() {
+    		RESTORE_PASS = this.value;
+    		$$invalidate(13, RESTORE_PASS);
     	}
 
     	const click_handler_4 = () => {
     		if (MASTER_PASS.length < 10) {
-    			$$invalidate(12, passValue = 'Введите пароль');
+    			$$invalidate(14, passValue = 'Введите пароль');
 
     			setTimeout(
     				() => {
-    					$$invalidate(12, passValue = 'Авторизоваться');
+    					$$invalidate(14, passValue = 'Авторизоваться');
     				},
     				2000
     			);
@@ -8972,33 +9424,36 @@ var app = (function () {
     		}
     	};
 
-    	const click_handler_5 = () => {
+    	const click_handler_6 = () => $$invalidate(8, isRestore = true);
+    	const click_handler_7 = () => $$invalidate(8, isRestore = false);
+
+    	const click_handler_8 = () => {
     		$$invalidate(6, regActive = true);
     	};
 
-    	const click_handler_6 = () => {
+    	const click_handler_9 = () => {
     		pageRoute.set('about');
     		contentOpacity.set(1);
     	};
 
     	function input0_input_handler() {
     		login = this.value;
-    		$$invalidate(10, login);
+    		$$invalidate(11, login);
     	}
 
-    	const click_handler_7 = () => $$invalidate(9, sex = 'male');
-    	const click_handler_8 = () => $$invalidate(9, sex = 'female');
+    	const click_handler_10 = () => $$invalidate(10, sex = 'male');
+    	const click_handler_11 = () => $$invalidate(10, sex = 'female');
 
     	function input1_input_handler() {
     		age = this.value;
-    		$$invalidate(8, age);
+    		$$invalidate(9, age);
     	}
 
-    	const click_handler_9 = () => {
+    	const click_handler_12 = () => {
     		$$invalidate(6, regActive = false);
     	};
 
-    	const click_handler_10 = () => contentOpacity.set(1);
+    	const click_handler_13 = () => contentOpacity.set(1);
 
     	$$self.$capture_state = () => ({
     		authCheck,
@@ -9016,12 +9471,15 @@ var app = (function () {
     		opacity,
     		regActive,
     		showModal,
+    		isRestore,
     		age,
     		sex,
     		login,
     		MASTER_PASS,
+    		RESTORE_PASS,
     		passValue,
     		regValue,
+    		logo,
     		autorization,
     		registration
     	});
@@ -9035,12 +9493,15 @@ var app = (function () {
     		if ('opacity' in $$props) $$invalidate(5, opacity = $$props.opacity);
     		if ('regActive' in $$props) $$invalidate(6, regActive = $$props.regActive);
     		if ('showModal' in $$props) $$invalidate(7, showModal = $$props.showModal);
-    		if ('age' in $$props) $$invalidate(8, age = $$props.age);
-    		if ('sex' in $$props) $$invalidate(9, sex = $$props.sex);
-    		if ('login' in $$props) $$invalidate(10, login = $$props.login);
-    		if ('MASTER_PASS' in $$props) $$invalidate(11, MASTER_PASS = $$props.MASTER_PASS);
-    		if ('passValue' in $$props) $$invalidate(12, passValue = $$props.passValue);
-    		if ('regValue' in $$props) $$invalidate(13, regValue = $$props.regValue);
+    		if ('isRestore' in $$props) $$invalidate(8, isRestore = $$props.isRestore);
+    		if ('age' in $$props) $$invalidate(9, age = $$props.age);
+    		if ('sex' in $$props) $$invalidate(10, sex = $$props.sex);
+    		if ('login' in $$props) $$invalidate(11, login = $$props.login);
+    		if ('MASTER_PASS' in $$props) $$invalidate(12, MASTER_PASS = $$props.MASTER_PASS);
+    		if ('RESTORE_PASS' in $$props) $$invalidate(13, RESTORE_PASS = $$props.RESTORE_PASS);
+    		if ('passValue' in $$props) $$invalidate(14, passValue = $$props.passValue);
+    		if ('regValue' in $$props) $$invalidate(15, regValue = $$props.regValue);
+    		if ('logo' in $$props) $$invalidate(16, logo = $$props.logo);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -9078,12 +9539,15 @@ var app = (function () {
     		opacity,
     		regActive,
     		showModal,
+    		isRestore,
     		age,
     		sex,
     		login,
     		MASTER_PASS,
+    		RESTORE_PASS,
     		passValue,
     		regValue,
+    		logo,
     		autorization,
     		registration,
     		click_handler,
@@ -9092,15 +9556,18 @@ var app = (function () {
     		click_handler_2,
     		click_handler_3,
     		input_input_handler,
+    		input_input_handler_1,
     		click_handler_4,
-    		click_handler_5,
     		click_handler_6,
-    		input0_input_handler,
     		click_handler_7,
     		click_handler_8,
-    		input1_input_handler,
     		click_handler_9,
-    		click_handler_10
+    		input0_input_handler,
+    		click_handler_10,
+    		click_handler_11,
+    		input1_input_handler,
+    		click_handler_12,
+    		click_handler_13
     	];
     }
 
@@ -9151,7 +9618,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			span0 = element("span");
-    			span0.textContent = "все хинты";
+    			span0.textContent = "основное меню hint";
     			t1 = space();
     			div0 = element("div");
     			span1 = element("span");
@@ -9175,33 +9642,33 @@ var app = (function () {
     			t13 = space();
     			span8 = element("span");
     			span8.textContent = "список вопросов";
-    			attr_dev(span0, "class", "svelte-s7u2sa");
+    			attr_dev(span0, "class", "svelte-17sb0vh");
     			toggle_class(span0, "mainViewMenuItemLine", true);
     			add_location(span0, file$a, 131, 8, 3007);
     			set_style(span1, "margin-top", "11px");
     			set_style(span1, "cursor", "pointer");
-    			attr_dev(span1, "class", "svelte-s7u2sa");
+    			attr_dev(span1, "class", "svelte-17sb0vh");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$a, 133, 10, 3168);
+    			add_location(span1, file$a, 133, 10, 3177);
     			set_style(span2, "margin-top", "12px");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "color", "#4300b0");
     			set_style(span2, "margin-left", "30px");
-    			attr_dev(span2, "class", "svelte-s7u2sa");
+    			attr_dev(span2, "class", "svelte-17sb0vh");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$a, 142, 10, 3438);
+    			add_location(span2, file$a, 142, 10, 3447);
     			set_style(span3, "margin-top", "6px");
     			set_style(span3, "cursor", "pointer");
-    			attr_dev(span3, "class", "svelte-s7u2sa");
+    			attr_dev(span3, "class", "svelte-17sb0vh");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$a, 148, 10, 3641);
+    			add_location(span3, file$a, 148, 10, 3650);
     			set_style(span4, "margin-top", "12px");
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "color", "#4300b0");
     			set_style(span4, "margin-left", "30px");
-    			attr_dev(span4, "class", "svelte-s7u2sa");
+    			attr_dev(span4, "class", "svelte-17sb0vh");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$a, 157, 10, 3904);
+    			add_location(span4, file$a, 157, 10, 3913);
     			set_style(span5, "display", "block");
     			set_style(span5, "position", "absolute");
     			set_style(span5, "width", "3px");
@@ -9212,29 +9679,29 @@ var app = (function () {
     			set_style(span5, "margin-top", "-10px");
     			set_style(span5, "margin-left", "-10px");
     			set_style(span5, "border-radius", "2px");
-    			add_location(span5, file$a, 171, 12, 4352);
+    			add_location(span5, file$a, 171, 12, 4361);
     			set_style(span6, "margin-top", "6px");
     			set_style(span6, "cursor", "pointer");
-    			attr_dev(span6, "class", "svelte-s7u2sa");
+    			attr_dev(span6, "class", "svelte-17sb0vh");
     			toggle_class(span6, "mainViewMenuItemLine", true);
-    			add_location(span6, file$a, 163, 10, 4107);
+    			add_location(span6, file$a, 163, 10, 4116);
     			set_style(span7, "margin-top", "12px");
     			set_style(span7, "cursor", "pointer");
     			set_style(span7, "color", "#4300b0");
     			set_style(span7, "margin-left", "30px");
-    			attr_dev(span7, "class", "svelte-s7u2sa");
+    			attr_dev(span7, "class", "svelte-17sb0vh");
     			toggle_class(span7, "mainViewMenuItemLine", true);
-    			add_location(span7, file$a, 186, 10, 4781);
+    			add_location(span7, file$a, 186, 10, 4790);
     			set_style(span8, "margin-top", "6px");
     			set_style(span8, "cursor", "pointer");
-    			attr_dev(span8, "class", "svelte-s7u2sa");
+    			attr_dev(span8, "class", "svelte-17sb0vh");
     			toggle_class(span8, "mainViewMenuItemLine", true);
-    			add_location(span8, file$a, 192, 10, 4984);
+    			add_location(span8, file$a, 192, 10, 4993);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
-    			attr_dev(div0, "class", "svelte-s7u2sa");
+    			attr_dev(div0, "class", "svelte-17sb0vh");
     			toggle_class(div0, "mainViewMenuItemSub", true);
-    			add_location(div0, file$a, 132, 8, 3073);
+    			add_location(div0, file$a, 132, 8, 3082);
     			toggle_class(div1, "mainViewMenuItem", true);
     			add_location(div1, file$a, 130, 6, 2962);
     		},
@@ -9302,12 +9769,12 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "мои характеристики";
     			set_style(span, "cursor", "pointer");
-    			attr_dev(span, "class", "svelte-s7u2sa");
+    			attr_dev(span, "class", "svelte-17sb0vh");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$a, 209, 8, 5401);
+    			add_location(span, file$a, 209, 8, 5410);
     			set_style(div, "margin-top", "11px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$a, 208, 6, 5330);
+    			add_location(div, file$a, 208, 6, 5339);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9350,12 +9817,12 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "главная страница";
     			set_style(span, "cursor", "pointer");
-    			attr_dev(span, "class", "svelte-s7u2sa");
+    			attr_dev(span, "class", "svelte-17sb0vh");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$a, 225, 8, 5767);
+    			add_location(span, file$a, 225, 8, 5776);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$a, 224, 6, 5697);
+    			add_location(div, file$a, 224, 6, 5706);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9398,12 +9865,12 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "войти в аккаунт";
     			set_style(span, "cursor", "pointer");
-    			attr_dev(span, "class", "svelte-s7u2sa");
+    			attr_dev(span, "class", "svelte-17sb0vh");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$a, 240, 8, 6126);
+    			add_location(span, file$a, 240, 8, 6135);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$a, 239, 6, 6056);
+    			add_location(div, file$a, 239, 6, 6065);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9442,7 +9909,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Мужчины";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$a, 395, 10, 10842);
+    			add_location(span, file$a, 395, 10, 10851);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9473,7 +9940,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Женщины";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$a, 412, 10, 11336);
+    			add_location(span, file$a, 412, 10, 11345);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9504,7 +9971,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Рассудительно";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$a, 448, 8, 12376);
+    			add_location(span, file$a, 448, 8, 12385);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9535,7 +10002,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Эмоционально";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$a, 465, 8, 12847);
+    			add_location(span, file$a, 465, 8, 12856);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9566,7 +10033,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Радикально";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$a, 482, 8, 13317);
+    			add_location(span, file$a, 482, 8, 13326);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9597,7 +10064,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Сдержанно";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$a, 499, 8, 13785);
+    			add_location(span, file$a, 499, 8, 13794);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9834,7 +10301,7 @@ var app = (function () {
     			set_style(div, "margin-top", "42px");
     			set_style(div, "margin-left", "40px");
     			set_style(div, "transform", "scale(140%) ");
-    			add_location(div, file$a, 535, 8, 14767);
+    			add_location(div, file$a, 535, 8, 14776);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10171,48 +10638,48 @@ var app = (function () {
     			set_style(span0, "opacity", "0.4");
     			set_style(span0, "border-radius", "1px");
     			set_style(span0, "margin-top", "20px");
-    			add_location(span0, file$a, 253, 4, 6385);
+    			add_location(span0, file$a, 253, 4, 6394);
     			set_style(span1, "cursor", "pointer");
-    			attr_dev(span1, "class", "svelte-s7u2sa");
+    			attr_dev(span1, "class", "svelte-17sb0vh");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$a, 266, 6, 6706);
+    			add_location(span1, file$a, 266, 6, 6715);
     			set_style(div0, "margin-top", "18px");
     			toggle_class(div0, "mainViewMenuItem", true);
-    			add_location(div0, file$a, 265, 4, 6637);
+    			add_location(div0, file$a, 265, 4, 6646);
     			set_style(span2, "cursor", "pointer");
-    			attr_dev(span2, "class", "svelte-s7u2sa");
+    			attr_dev(span2, "class", "svelte-17sb0vh");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$a, 277, 6, 6992);
+    			add_location(span2, file$a, 277, 6, 7001);
     			set_style(div1, "margin-top", "11px");
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$a, 276, 4, 6923);
+    			add_location(div1, file$a, 276, 4, 6932);
     			set_style(span3, "cursor", "pointer");
-    			attr_dev(span3, "class", "svelte-s7u2sa");
+    			attr_dev(span3, "class", "svelte-17sb0vh");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$a, 288, 6, 7288);
+    			add_location(span3, file$a, 288, 6, 7297);
     			set_style(div2, "margin-top", "11px");
     			toggle_class(div2, "mainViewMenuItem", true);
-    			add_location(div2, file$a, 287, 4, 7219);
+    			add_location(div2, file$a, 287, 4, 7228);
     			set_style(div3, "width", "20%");
     			toggle_class(div3, "mainViewMenu", true);
     			add_location(div3, file$a, 126, 2, 2873);
-    			attr_dev(h3, "class", "svelte-s7u2sa");
+    			attr_dev(h3, "class", "svelte-17sb0vh");
     			toggle_class(h3, "mainViewContentTitle", true);
-    			add_location(h3, file$a, 301, 4, 7567);
+    			add_location(h3, file$a, 301, 4, 7576);
     			attr_dev(textarea, "type", "text");
     			textarea.disabled = /*isLoading*/ ctx[1];
     			attr_dev(textarea, "placeholder", "Напишите ваш вопрос здесь - постарайтесь лаконично но подробно все описать, ограничение 1000 символов, минимальный объем текста 150 символов");
     			attr_dev(textarea, "maxlength", "1100");
-    			attr_dev(textarea, "class", "svelte-s7u2sa");
+    			attr_dev(textarea, "class", "svelte-17sb0vh");
     			toggle_class(textarea, "mainViewContentText", true);
-    			add_location(textarea, file$a, 304, 6, 7740);
-    			add_location(style, file$a, 338, 10, 8886);
+    			add_location(textarea, file$a, 304, 6, 7749);
+    			add_location(style, file$a, 338, 10, 8895);
     			attr_dev(path, "d", "M576 128c0-35.3-28.7-64-64-64H205.3c-17 0-33.3 6.7-45.3 18.7L9.4 233.4c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6L160 429.3c12 12 28.3 18.7 45.3 18.7H512c35.3 0 64-28.7 64-64V128zM271 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z");
-    			add_location(path, file$a, 341, 10, 8956);
+    			add_location(path, file$a, 341, 10, 8965);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "28px");
     			attr_dev(svg, "viewBox", "0 0 576 512");
-    			add_location(svg, file$a, 333, 8, 8752);
+    			add_location(svg, file$a, 333, 8, 8761);
     			set_style(span4, "display", "flex");
     			set_style(span4, "flex-direction", "row");
     			set_style(span4, "align-items", "center");
@@ -10222,17 +10689,17 @@ var app = (function () {
     			set_style(span4, "height", "66px");
     			set_style(span4, "border-radius", "33px");
     			set_style(span4, "background-color", "#D33639");
-    			set_style(span4, "margin-top", "-33px");
+    			set_style(span4, "margin-top", "-40px");
     			set_style(span4, "left", "100%");
-    			set_style(span4, "margin-left", "-33px");
+    			set_style(span4, "margin-left", "-40px");
     			set_style(span4, "padding-right", "5px");
     			set_style(span4, "box-sizing", "border-box");
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "box-shadow", "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)");
-    			add_location(span4, file$a, 312, 6, 8077);
-    			add_location(div4, file$a, 303, 4, 7727);
+    			add_location(span4, file$a, 312, 6, 8086);
+    			add_location(div4, file$a, 303, 4, 7736);
     			set_style(span5, "display", "block");
-    			add_location(span5, file$a, 347, 8, 9566);
+    			add_location(span5, file$a, 347, 8, 9575);
     			set_style(span6, "display", "block");
     			set_style(span6, "width", "60px");
     			set_style(span6, "height", "38px");
@@ -10243,7 +10710,7 @@ var app = (function () {
     			set_style(span6, "text-align", "center");
     			set_style(span6, "margin-left", "22px");
     			set_style(span6, "margin-right", "14px");
-    			add_location(span6, file$a, 350, 8, 9661);
+    			add_location(span6, file$a, 350, 8, 9670);
     			set_style(span7, "display", "block");
     			set_style(span7, "width", "60px");
     			set_style(span7, "height", "38px");
@@ -10252,29 +10719,29 @@ var app = (function () {
     			set_style(span7, "font-size", "14px");
     			set_style(span7, "line-height", "36px");
     			set_style(span7, "text-align", "center");
-    			add_location(span7, file$a, 366, 8, 10081);
+    			add_location(span7, file$a, 366, 8, 10090);
     			set_style(div5, "display", "flex");
     			set_style(div5, "flex-direction", "row");
     			set_style(div5, "align-items", "center");
     			set_style(div5, "margin-bottom", "20px");
-    			add_location(div5, file$a, 346, 6, 9465);
+    			add_location(div5, file$a, 346, 6, 9474);
     			set_style(div6, "margin-top", "30px");
-    			add_location(div6, file$a, 345, 4, 9426);
+    			add_location(div6, file$a, 345, 4, 9435);
     			set_style(span8, "display", "block");
-    			add_location(span8, file$a, 430, 6, 11893);
+    			add_location(span8, file$a, 430, 6, 11902);
     			set_style(div7, "display", "flex");
     			set_style(div7, "flex-direction", "row");
     			set_style(div7, "align-items", "center");
     			set_style(div7, "margin-top", "58px");
-    			add_location(div7, file$a, 429, 4, 11797);
+    			add_location(div7, file$a, 429, 4, 11806);
     			set_style(div8, "display", "flex");
     			set_style(div8, "flex-direction", "row");
     			set_style(div8, "align-items", "center");
-    			add_location(div8, file$a, 502, 4, 13869);
-    			attr_dev(div9, "class", "svelte-s7u2sa");
+    			add_location(div8, file$a, 502, 4, 13878);
+    			attr_dev(div9, "class", "svelte-17sb0vh");
     			toggle_class(div9, "mainViewContent", true);
-    			add_location(div9, file$a, 299, 2, 7521);
-    			attr_dev(div10, "class", "svelte-s7u2sa");
+    			add_location(div9, file$a, 299, 2, 7530);
+    			attr_dev(div10, "class", "svelte-17sb0vh");
     			toggle_class(div10, "mainView", true);
     			add_location(div10, file$a, 125, 0, 2842);
     		},
@@ -10868,10 +11335,9 @@ var app = (function () {
     /* src\bricks\views\AllQuestions.svelte generated by Svelte v3.47.0 */
 
     const { console: console_1$8 } = globals;
-
     const file$9 = "src\\bricks\\views\\AllQuestions.svelte";
 
-    // (128:4) { #if AUTH == true }
+    // (156:4) { #if AUTH == true }
     function create_if_block_9$1(ctx) {
     	let div1;
     	let span0;
@@ -10899,7 +11365,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			span0 = element("span");
-    			span0.textContent = "все хинты";
+    			span0.textContent = "основное меню hint";
     			t1 = space();
     			div0 = element("div");
     			span1 = element("span");
@@ -10923,45 +11389,45 @@ var app = (function () {
     			span8 = element("span");
     			t14 = text("список вопросов\r\n            ");
     			span7 = element("span");
-    			attr_dev(span0, "class", "svelte-ir4puz");
+    			attr_dev(span0, "class", "svelte-1ol0f7j");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$9, 130, 8, 2948);
+    			add_location(span0, file$9, 158, 8, 3777);
     			set_style(span1, "margin-top", "11px");
     			set_style(span1, "cursor", "pointer");
-    			attr_dev(span1, "class", "svelte-ir4puz");
+    			attr_dev(span1, "class", "svelte-1ol0f7j");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$9, 132, 10, 3109);
+    			add_location(span1, file$9, 160, 10, 3947);
     			set_style(span2, "margin-top", "12px");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "color", "#4300b0");
     			set_style(span2, "margin-left", "30px");
-    			attr_dev(span2, "class", "svelte-ir4puz");
+    			attr_dev(span2, "class", "svelte-1ol0f7j");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$9, 141, 10, 3379);
+    			add_location(span2, file$9, 169, 10, 4217);
     			set_style(span3, "margin-top", "6px");
     			set_style(span3, "cursor", "pointer");
-    			attr_dev(span3, "class", "svelte-ir4puz");
+    			attr_dev(span3, "class", "svelte-1ol0f7j");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$9, 147, 10, 3582);
+    			add_location(span3, file$9, 175, 10, 4420);
     			set_style(span4, "margin-top", "12px");
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "color", "#4300b0");
     			set_style(span4, "margin-left", "30px");
-    			attr_dev(span4, "class", "svelte-ir4puz");
+    			attr_dev(span4, "class", "svelte-1ol0f7j");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$9, 156, 10, 3845);
+    			add_location(span4, file$9, 184, 10, 4683);
     			set_style(span5, "margin-top", "6px");
     			set_style(span5, "cursor", "pointer");
-    			attr_dev(span5, "class", "svelte-ir4puz");
+    			attr_dev(span5, "class", "svelte-1ol0f7j");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$9, 162, 10, 4048);
+    			add_location(span5, file$9, 190, 10, 4886);
     			set_style(span6, "margin-top", "12px");
     			set_style(span6, "cursor", "pointer");
     			set_style(span6, "color", "#4300b0");
     			set_style(span6, "margin-left", "30px");
-    			attr_dev(span6, "class", "svelte-ir4puz");
+    			attr_dev(span6, "class", "svelte-1ol0f7j");
     			toggle_class(span6, "mainViewMenuItemLine", true);
-    			add_location(span6, file$9, 171, 10, 4310);
+    			add_location(span6, file$9, 199, 10, 5148);
     			set_style(span7, "display", "block");
     			set_style(span7, "position", "absolute");
     			set_style(span7, "width", "3px");
@@ -10972,19 +11438,19 @@ var app = (function () {
     			set_style(span7, "margin-top", "-10px");
     			set_style(span7, "margin-left", "-10px");
     			set_style(span7, "border-radius", "2px");
-    			add_location(span7, file$9, 185, 12, 4771);
+    			add_location(span7, file$9, 213, 12, 5609);
     			set_style(span8, "margin-top", "6px");
     			set_style(span8, "cursor", "pointer");
-    			attr_dev(span8, "class", "svelte-ir4puz");
+    			attr_dev(span8, "class", "svelte-1ol0f7j");
     			toggle_class(span8, "mainViewMenuItemLine", true);
-    			add_location(span8, file$9, 177, 10, 4513);
+    			add_location(span8, file$9, 205, 10, 5351);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
-    			attr_dev(div0, "class", "svelte-ir4puz");
+    			attr_dev(div0, "class", "svelte-1ol0f7j");
     			toggle_class(div0, "mainViewMenuItemSub", true);
-    			add_location(div0, file$9, 131, 8, 3014);
+    			add_location(div0, file$9, 159, 8, 3852);
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$9, 129, 6, 2903);
+    			add_location(div1, file$9, 157, 6, 3732);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -11030,14 +11496,14 @@ var app = (function () {
     		block,
     		id: create_if_block_9$1.name,
     		type: "if",
-    		source: "(128:4) { #if AUTH == true }",
+    		source: "(156:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (206:4) { #if AUTH == true }
+    // (234:4) { #if AUTH == true }
     function create_if_block_8$2(ctx) {
     	let div;
     	let span;
@@ -11050,12 +11516,12 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "мои характеристики";
     			set_style(span, "cursor", "pointer");
-    			attr_dev(span, "class", "svelte-ir4puz");
+    			attr_dev(span, "class", "svelte-1ol0f7j");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$9, 208, 8, 5342);
+    			add_location(span, file$9, 236, 8, 6180);
     			set_style(div, "margin-top", "11px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$9, 207, 6, 5271);
+    			add_location(div, file$9, 235, 6, 6109);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11078,14 +11544,14 @@ var app = (function () {
     		block,
     		id: create_if_block_8$2.name,
     		type: "if",
-    		source: "(206:4) { #if AUTH == true }",
+    		source: "(234:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (222:4) { #if AUTH == true }
+    // (250:4) { #if AUTH == true }
     function create_if_block_7$2(ctx) {
     	let div;
     	let span;
@@ -11098,12 +11564,12 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "главная страница";
     			set_style(span, "cursor", "pointer");
-    			attr_dev(span, "class", "svelte-ir4puz");
+    			attr_dev(span, "class", "svelte-1ol0f7j");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$9, 224, 8, 5708);
+    			add_location(span, file$9, 252, 8, 6546);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$9, 223, 6, 5638);
+    			add_location(div, file$9, 251, 6, 6476);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11126,14 +11592,14 @@ var app = (function () {
     		block,
     		id: create_if_block_7$2.name,
     		type: "if",
-    		source: "(222:4) { #if AUTH == true }",
+    		source: "(250:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (237:4) { #if AUTH == false }
+    // (265:4) { #if AUTH == false }
     function create_if_block_6$3(ctx) {
     	let div;
     	let span;
@@ -11146,12 +11612,12 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "войти в аккаунт";
     			set_style(span, "cursor", "pointer");
-    			attr_dev(span, "class", "svelte-ir4puz");
+    			attr_dev(span, "class", "svelte-1ol0f7j");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$9, 239, 8, 6067);
+    			add_location(span, file$9, 267, 8, 6905);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$9, 238, 6, 5997);
+    			add_location(div, file$9, 266, 6, 6835);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11174,14 +11640,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$3.name,
     		type: "if",
-    		source: "(237:4) { #if AUTH == false }",
+    		source: "(265:4) { #if AUTH == false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (314:10) <Button               filled              style="                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 22px;                margin-bottom: 28px;              "            >
+    // (342:10) <Button               filled              style="                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 22px;                margin-bottom: 28px;              "            >
     function create_default_slot_2$3(ctx) {
     	let t;
 
@@ -11201,14 +11667,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$3.name,
     		type: "slot",
-    		source: "(314:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 22px;                margin-bottom: 28px;              \\\"            >",
+    		source: "(342:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 22px;                margin-bottom: 28px;              \\\"            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (301:6) <Dialog title="" {closeCallback}>
+    // (329:6) <Dialog title="" {closeCallback}>
     function create_default_slot_1$3(ctx) {
     	let div;
     	let h3;
@@ -11223,7 +11689,7 @@ var app = (function () {
     		/*starrating_value_binding*/ ctx[25](value);
     	}
 
-    	let starrating_props = { style: "margin: 0;", name: "restaurant" };
+    	let starrating_props = { style: "margin: 0;", name: "default" };
 
     	if (/*hintRate*/ ctx[3] !== void 0) {
     		starrating_props.value = /*hintRate*/ ctx[3];
@@ -11253,14 +11719,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			set_style(h3, "margin-top", "28px");
     			set_style(h3, "margin-bottom", "14px");
-    			add_location(h3, file$9, 311, 10, 7863);
+    			add_location(h3, file$9, 339, 10, 8701);
     			set_style(div, "width", "100%");
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
     			set_style(div, "justify-content", "flex-start");
     			set_style(div, "margin-top", "14px");
-    			add_location(div, file$9, 301, 8, 7604);
+    			add_location(div, file$9, 329, 8, 8442);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11311,14 +11777,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(301:6) <Dialog title=\\\"\\\" {closeCallback}>",
+    		source: "(329:6) <Dialog title=\\\"\\\" {closeCallback}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (300:4) <Modal bind:open={showModal} let:closeCallback>
+    // (328:4) <Modal bind:open={showModal} let:closeCallback>
     function create_default_slot$3(ctx) {
     	let dialog;
     	let current;
@@ -11369,14 +11835,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(300:4) <Modal bind:open={showModal} let:closeCallback>",
+    		source: "(328:4) <Modal bind:open={showModal} let:closeCallback>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (385:8) { #if questionsDataFilter.length > 0 }
+    // (413:8) { #if questionsDataFilter.length > 0 }
     function create_if_block_1$8(ctx) {
     	let if_block_anchor;
     	let current;
@@ -11435,14 +11901,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$8.name,
     		type: "if",
-    		source: "(385:8) { #if questionsDataFilter.length > 0 }",
+    		source: "(413:8) { #if questionsDataFilter.length > 0 }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (387:12) { #if filterCategory == 0 || questionsDataFilter[questionsIndex].category == filterCategory }
+    // (415:12) { #if filterCategory == 0 || questionsDataFilter[questionsIndex].category == filterCategory }
     function create_if_block_2$8(ctx) {
     	let div3;
     	let span1;
@@ -11633,16 +12099,16 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t37 = space();
     			if (if_block2) if_block2.c();
-    			add_location(style0, file$9, 409, 20, 11159);
+    			add_location(style0, file$9, 437, 20, 11973);
     			attr_dev(path0, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path0, file$9, 414, 20, 11311);
+    			add_location(path0, file$9, 442, 20, 12125);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "height", "24px");
     			attr_dev(svg0, "viewBox", "0 0 512 512");
     			toggle_class(svg0, "localSvg", true);
-    			add_location(svg0, file$9, 403, 18, 10932);
+    			add_location(svg0, file$9, 431, 18, 11746);
     			set_style(span0, "margin-left", "11px");
-    			add_location(span0, file$9, 418, 18, 11848);
+    			add_location(span0, file$9, 446, 18, 12662);
     			set_style(span1, "color", "gray");
     			set_style(span1, "width", "100%");
     			set_style(span1, "display", "flex");
@@ -11653,55 +12119,55 @@ var app = (function () {
     			set_style(span1, "letter-spacing", "1px");
     			set_style(span1, "font-weight", "500");
     			set_style(span1, "opacity", "0.6");
-    			add_location(span1, file$9, 389, 16, 10451);
+    			add_location(span1, file$9, 417, 16, 11265);
     			set_style(span2, "color", "#656565");
     			set_style(span2, "font-size", "15px");
     			set_style(span2, "opacity", "0.8");
-    			add_location(span2, file$9, 459, 18, 13748);
+    			add_location(span2, file$9, 499, 18, 15133);
     			set_style(span3, "color", "#656565");
     			set_style(span3, "font-size", "15px");
     			set_style(span3, "opacity", "0.8");
-    			add_location(span3, file$9, 460, 18, 13849);
+    			add_location(span3, file$9, 500, 18, 15234);
     			set_style(span4, "color", "#656565");
     			set_style(span4, "font-size", "15px");
     			set_style(span4, "opacity", "0.8");
-    			add_location(span4, file$9, 461, 18, 14056);
-    			add_location(div0, file$9, 458, 16, 13723);
+    			add_location(span4, file$9, 501, 18, 15441);
+    			add_location(div0, file$9, 498, 16, 15108);
     			set_style(span5, "color", "#656565");
     			set_style(span5, "font-size", "15px");
     			set_style(span5, "opacity", "0.8");
-    			add_location(span5, file$9, 464, 18, 14400);
+    			add_location(span5, file$9, 504, 18, 15785);
     			set_style(span6, "color", "#656565");
     			set_style(span6, "font-size", "15px");
     			set_style(span6, "opacity", "0.8");
-    			add_location(span6, file$9, 465, 18, 14507);
+    			add_location(span6, file$9, 505, 18, 15892);
     			set_style(span7, "color", "#656565");
     			set_style(span7, "font-size", "15px");
     			set_style(span7, "opacity", "0.8");
-    			add_location(span7, file$9, 466, 18, 14679);
+    			add_location(span7, file$9, 506, 18, 16064);
     			set_style(span8, "color", "#656565");
     			set_style(span8, "font-size", "15px");
     			set_style(span8, "opacity", "0.8");
-    			add_location(span8, file$9, 467, 18, 14853);
+    			add_location(span8, file$9, 507, 18, 16238);
     			set_style(span9, "color", "#656565");
     			set_style(span9, "font-size", "15px");
     			set_style(span9, "opacity", "0.8");
-    			add_location(span9, file$9, 468, 18, 15025);
-    			add_location(div1, file$9, 463, 16, 14375);
+    			add_location(span9, file$9, 508, 18, 16410);
+    			add_location(div1, file$9, 503, 16, 15760);
     			attr_dev(textarea, "type", "text");
     			attr_dev(textarea, "placeholder", "Будьте собой, пишите так, как будто даете совет близкому другу, но помните, что один из главных принципов сервиса - не навредить другому. Ограничение по символам - от 40 до 1000 символов");
     			attr_dev(textarea, "maxlength", "1000");
-    			attr_dev(textarea, "class", "svelte-ir4puz");
+    			attr_dev(textarea, "class", "svelte-1ol0f7j");
     			toggle_class(textarea, "mainViewContentText", true);
-    			add_location(textarea, file$9, 472, 18, 15286);
-    			add_location(style1, file$9, 506, 22, 16890);
+    			add_location(textarea, file$9, 512, 18, 16671);
+    			add_location(style1, file$9, 546, 22, 18275);
     			attr_dev(path1, "d", "M576 128c0-35.3-28.7-64-64-64H205.3c-17 0-33.3 6.7-45.3 18.7L9.4 233.4c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6L160 429.3c12 12 28.3 18.7 45.3 18.7H512c35.3 0 64-28.7 64-64V128zM271 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z");
-    			add_location(path1, file$9, 509, 22, 17000);
+    			add_location(path1, file$9, 549, 22, 18385);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "height", "33px");
     			attr_dev(svg1, "viewBox", "0 0 576 512");
     			toggle_class(svg1, "svg-clear", true);
-    			add_location(svg1, file$9, 500, 20, 16650);
+    			add_location(svg1, file$9, 540, 20, 18035);
     			set_style(span10, "display", "flex");
     			set_style(span10, "flex-direction", "row");
     			set_style(span10, "align-items", "center");
@@ -11718,14 +12184,14 @@ var app = (function () {
     			set_style(span10, "box-sizing", "border-box");
     			set_style(span10, "cursor", "pointer");
     			set_style(span10, "box-shadow", "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)");
-    			add_location(span10, file$9, 479, 18, 15723);
+    			add_location(span10, file$9, 519, 18, 17108);
     			set_style(div2, "width", "100%");
     			set_style(div2, "position", "relative");
-    			add_location(div2, file$9, 471, 16, 15220);
+    			add_location(div2, file$9, 511, 16, 16605);
     			set_style(div3, "margin-top", "20px");
-    			attr_dev(div3, "class", "svelte-ir4puz");
+    			attr_dev(div3, "class", "svelte-1ol0f7j");
     			toggle_class(div3, "mainViewContentQuestion", true);
-    			add_location(div3, file$9, 388, 14, 10365);
+    			add_location(div3, file$9, 416, 14, 11179);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -11908,35 +12374,51 @@ var app = (function () {
     		block,
     		id: create_if_block_2$8.name,
     		type: "if",
-    		source: "(387:12) { #if filterCategory == 0 || questionsDataFilter[questionsIndex].category == filterCategory }",
+    		source: "(415:12) { #if filterCategory == 0 || questionsDataFilter[questionsIndex].category == filterCategory }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (451:16) { :else }
+    // (479:16) { :else }
     function create_else_block$1(ctx) {
-    	let span;
-    	let t_value = /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].text + "";
-    	let t;
+    	let span0;
+    	let t0_value = /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].text + "";
+    	let t0;
+    	let t1;
+    	let span1;
 
     	const block = {
     		c: function create() {
-    			span = element("span");
-    			t = text(t_value);
-    			set_style(span, "filter", "blur(3px)");
-    			add_location(span, file$9, 452, 18, 13427);
+    			span0 = element("span");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			span1 = element("span");
+    			span1.textContent = `${"Пожелания к характеристикам пользователей, которые могут дать ответ, отличаются от ваших. В стадии бета-тестирования вы можете видеть сам вопрос и пожелания по аудитории к нему"}`;
+    			set_style(span0, "filter", "blur(3px)");
+    			add_location(span0, file$9, 480, 18, 14241);
+    			set_style(span1, "width", "100%");
+    			set_style(span1, "display", "block");
+    			set_style(span1, "color", "rgb(101, 101, 101)");
+    			set_style(span1, "font-size", "15px");
+    			set_style(span1, "opacity", "0.8");
+    			set_style(span1, "margin-top", "8px");
+    			add_location(span1, file$9, 481, 18, 14344);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, span, anchor);
-    			append_dev(span, t);
+    			insert_dev(target, span0, anchor);
+    			append_dev(span0, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, span1, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*questionsDataFilter, questionsIndex*/ 1536 && t_value !== (t_value = /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].text + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*questionsDataFilter, questionsIndex*/ 1536 && t0_value !== (t0_value = /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].text + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(span);
+    			if (detaching) detach_dev(span0);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(span1);
     		}
     	};
 
@@ -11944,14 +12426,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(451:16) { :else }",
+    		source: "(479:16) { :else }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (437:16) { #if userAge >= questionsDataFilter[questionsIndex].target.age[0]                                       && userAge <= questionsDataFilter[questionsIndex].target.age[1]                    && (                                             ( questionsDataFilter[questionsIndex].target.gender[0] == true && userGender == 'male' ) ||                      ( questionsDataFilter[questionsIndex].target.gender[1] == true && userGender == 'female' )                                           )                                       }
+    // (465:16) { #if userAge >= questionsDataFilter[questionsIndex].target.age[0]                                       && userAge <= questionsDataFilter[questionsIndex].target.age[1]                    && (                                             ( questionsDataFilter[questionsIndex].target.gender[0] == true && userGender == 'male' ) ||                      ( questionsDataFilter[questionsIndex].target.gender[1] == true && userGender == 'female' )                                           )                                       }
     function create_if_block_5$4(ctx) {
     	let span;
     	let t_value = /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].text + "";
@@ -11961,7 +12443,7 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			t = text(t_value);
-    			add_location(span, file$9, 448, 18, 13319);
+    			add_location(span, file$9, 476, 18, 14133);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -11979,14 +12461,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$4.name,
     		type: "if",
-    		source: "(437:16) { #if userAge >= questionsDataFilter[questionsIndex].target.age[0]                                       && userAge <= questionsDataFilter[questionsIndex].target.age[1]                    && (                                             ( questionsDataFilter[questionsIndex].target.gender[0] == true && userGender == 'male' ) ||                      ( questionsDataFilter[questionsIndex].target.gender[1] == true && userGender == 'female' )                                           )                                       }",
+    		source: "(465:16) { #if userAge >= questionsDataFilter[questionsIndex].target.age[0]                                       && userAge <= questionsDataFilter[questionsIndex].target.age[1]                    && (                                             ( questionsDataFilter[questionsIndex].target.gender[0] == true && userGender == 'male' ) ||                      ( questionsDataFilter[questionsIndex].target.gender[1] == true && userGender == 'female' )                                           )                                       }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (514:18) { #if text.length >= 40 }
+    // (554:18) { #if text.length >= 40 }
     function create_if_block_4$8(ctx) {
     	let span;
     	let svg;
@@ -12003,14 +12485,14 @@ var app = (function () {
     			style = svg_element("style");
     			t = text("svg { fill: #fdfcf9 }\r\n                        ");
     			path = svg_element("path");
-    			add_location(style, file$9, 544, 24, 18863);
+    			add_location(style, file$9, 584, 24, 20248);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z");
-    			add_location(path, file$9, 547, 24, 18979);
+    			add_location(path, file$9, 587, 24, 20364);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "33px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "svg-ok", true);
-    			add_location(svg, file$9, 538, 22, 18614);
+    			add_location(svg, file$9, 578, 22, 19999);
     			set_style(span, "display", "flex");
     			set_style(span, "flex-direction", "row");
     			set_style(span, "align-items", "center");
@@ -12028,9 +12510,9 @@ var app = (function () {
     			set_style(span, "box-sizing", "border-box");
     			set_style(span, "cursor", "pointer");
     			set_style(span, "box-shadow", "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)");
-    			attr_dev(span, "class", "svelte-ir4puz");
+    			attr_dev(span, "class", "svelte-1ol0f7j");
     			toggle_class(span, "sendingData", /*sendData*/ ctx[8] ? true : false);
-    			add_location(span, file$9, 515, 20, 17547);
+    			add_location(span, file$9, 555, 20, 18932);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -12060,14 +12542,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$8.name,
     		type: "if",
-    		source: "(514:18) { #if text.length >= 40 }",
+    		source: "(554:18) { #if text.length >= 40 }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (553:18) { #if text.length < 40 }
+    // (593:18) { #if text.length < 40 }
     function create_if_block_3$8(ctx) {
     	let span;
     	let svg;
@@ -12082,14 +12564,14 @@ var app = (function () {
     			style = svg_element("style");
     			t = text("svg { fill: #fdfcf9 }\r\n                        ");
     			path = svg_element("path");
-    			add_location(style, file$9, 582, 24, 20593);
+    			add_location(style, file$9, 622, 24, 21978);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z");
-    			add_location(path, file$9, 585, 24, 20709);
+    			add_location(path, file$9, 625, 24, 22094);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "33px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "svg-ok", true);
-    			add_location(svg, file$9, 576, 22, 20344);
+    			add_location(svg, file$9, 616, 22, 21729);
     			set_style(span, "display", "flex");
     			set_style(span, "flex-direction", "row");
     			set_style(span, "align-items", "center");
@@ -12108,7 +12590,7 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			set_style(span, "filter", "grayscale(1)");
     			set_style(span, "box-shadow", "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)");
-    			add_location(span, file$9, 554, 20, 19341);
+    			add_location(span, file$9, 594, 20, 20726);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -12126,14 +12608,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$8.name,
     		type: "if",
-    		source: "(553:18) { #if text.length < 40 }",
+    		source: "(593:18) { #if text.length < 40 }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (599:8) { #if questionsData.length === 0 }
+    // (639:8) { #if questionsData.length === 0 }
     function create_if_block$8(ctx) {
     	let span;
 
@@ -12145,7 +12627,7 @@ var app = (function () {
     			set_style(span, "opacity", "0.8");
     			set_style(span, "margin-top", "26px");
     			set_style(span, "display", "block");
-    			add_location(span, file$9, 600, 10, 21153);
+    			add_location(span, file$9, 640, 10, 22538);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -12159,7 +12641,7 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(599:8) { #if questionsData.length === 0 }",
+    		source: "(639:8) { #if questionsData.length === 0 }",
     		ctx
     	});
 
@@ -12233,7 +12715,6 @@ var app = (function () {
 
     	radiochipgroup = new RadioChipGroup({
     			props: {
-    				value: /*categories*/ ctx[11],
     				items: /*categories*/ ctx[11],
     				name: "categories"
     			},
@@ -12297,64 +12778,64 @@ var app = (function () {
     			set_style(span0, "opacity", "0.4");
     			set_style(span0, "border-radius", "1px");
     			set_style(span0, "margin-top", "20px");
-    			add_location(span0, file$9, 251, 4, 6324);
+    			add_location(span0, file$9, 279, 4, 7162);
     			set_style(span1, "cursor", "pointer");
-    			attr_dev(span1, "class", "svelte-ir4puz");
+    			attr_dev(span1, "class", "svelte-1ol0f7j");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$9, 264, 6, 6645);
+    			add_location(span1, file$9, 292, 6, 7483);
     			set_style(div0, "margin-top", "18px");
     			toggle_class(div0, "mainViewMenuItem", true);
-    			add_location(div0, file$9, 263, 4, 6576);
+    			add_location(div0, file$9, 291, 4, 7414);
     			set_style(span2, "cursor", "pointer");
-    			attr_dev(span2, "class", "svelte-ir4puz");
+    			attr_dev(span2, "class", "svelte-1ol0f7j");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$9, 275, 6, 6931);
+    			add_location(span2, file$9, 303, 6, 7769);
     			set_style(div1, "margin-top", "11px");
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$9, 274, 4, 6862);
+    			add_location(div1, file$9, 302, 4, 7700);
     			set_style(span3, "cursor", "pointer");
-    			attr_dev(span3, "class", "svelte-ir4puz");
+    			attr_dev(span3, "class", "svelte-1ol0f7j");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$9, 286, 6, 7227);
+    			add_location(span3, file$9, 314, 6, 8065);
     			set_style(div2, "margin-top", "11px");
     			toggle_class(div2, "mainViewMenuItem", true);
-    			add_location(div2, file$9, 285, 4, 7158);
+    			add_location(div2, file$9, 313, 4, 7996);
     			set_style(div3, "width", "20%");
     			set_style(div3, "padding-top", "30px");
     			toggle_class(div3, "mainViewMenu", true);
-    			add_location(div3, file$9, 125, 2, 2795);
-    			attr_dev(h3, "class", "svelte-ir4puz");
+    			add_location(div3, file$9, 153, 2, 3624);
+    			attr_dev(h3, "class", "svelte-1ol0f7j");
     			toggle_class(h3, "mainViewContentTitle", true);
-    			add_location(h3, file$9, 354, 8, 9022);
-    			add_location(style, file$9, 370, 12, 9604);
+    			add_location(h3, file$9, 382, 8, 9857);
+    			add_location(style, file$9, 398, 12, 10418);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z");
-    			add_location(path, file$9, 378, 12, 9832);
+    			add_location(path, file$9, 406, 12, 10646);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "24px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "resetCategory", true);
-    			add_location(svg, file$9, 364, 10, 9420);
+    			add_location(svg, file$9, 392, 10, 10234);
     			set_style(div4, "display", "flex");
     			set_style(div4, "flex-direction", "row");
     			set_style(div4, "align-items", "center");
     			set_style(div4, "justify-content", "flex-start");
-    			add_location(div4, file$9, 355, 8, 9105);
+    			add_location(div4, file$9, 383, 8, 9940);
     			set_style(div5, "width", "calc(100% + 30px)");
     			set_style(div5, "overflow-y", "scroll");
     			set_style(div5, "padding-right", "30px");
     			set_style(div5, "box-sizing", "border-box");
     			set_style(div5, "height", "100%");
-    			add_location(div5, file$9, 327, 6, 8418);
+    			add_location(div5, file$9, 355, 6, 9253);
     			set_style(div6, "width", "100%");
     			set_style(div6, "height", "100%");
     			set_style(div6, "overflow", "hidden");
-    			add_location(div6, file$9, 326, 4, 8352);
-    			attr_dev(div7, "class", "svelte-ir4puz");
+    			add_location(div6, file$9, 354, 4, 9187);
+    			attr_dev(div7, "class", "svelte-1ol0f7j");
     			toggle_class(div7, "mainViewContent", true);
-    			add_location(div7, file$9, 297, 2, 7460);
-    			attr_dev(div8, "class", "svelte-ir4puz");
+    			add_location(div7, file$9, 325, 2, 8298);
+    			attr_dev(div8, "class", "svelte-1ol0f7j");
     			toggle_class(div8, "mainView", true);
-    			add_location(div8, file$9, 124, 0, 2764);
+    			add_location(div8, file$9, 152, 0, 3593);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12557,7 +13038,9 @@ var app = (function () {
     	validate_slots('AllQuestions', slots, []);
 
     	let categories = [
+    		// ----------------------------------------------------------------
     		{ value: '0', label: 'Все' },
+    		// ----------------------------------------------------------------
     		{ value: '1', label: 'Общее' },
     		{ value: '2', label: 'Карьера' },
     		{ value: '3', label: 'Личная жизнь' },
@@ -12576,12 +13059,19 @@ var app = (function () {
     	let text = '';
     	let sendData = false;
     	let { questionsData } = $$props;
-    	let questionsDataFilter;
+    	let questionsDataFilter = questionsData;
     	let questionsIndex = 0;
 
     	const changeCategory = event => {
     		console.log(event.detail.value);
     		$$invalidate(1, filterCategory = event.detail.value);
+    		$$invalidate(10, questionsIndex = 0);
+
+    		if (event.detail.value != '0') {
+    			$$invalidate(9, questionsDataFilter = questionsData.filter(item => item.category == filterCategory));
+    		} else {
+    			$$invalidate(9, questionsDataFilter = questionsData);
+    		}
     	};
 
     	const addHint = async () => {
@@ -12603,23 +13093,24 @@ var app = (function () {
     			$$invalidate(8, sendData = true);
 
     			setTimeout(
-    				() => {
+    				async () => {
     					$$invalidate(8, sendData = false);
+    					$$invalidate(7, text = '');
+
+    					let updateMyQuestions = await fetch('http://localhost:3008/get-data', {
+    						method: 'POST',
+    						headers: {
+    							'Content-Type': 'application/json;charset=utf-8'
+    						},
+    						body: JSON.stringify({})
+    					}).then(res => res.json());
+
+    					myQuestionsData.set(updateMyQuestions.data);
+    					allQuestionsData.set(updateMyQuestions.data);
+    					console.log(updateMyQuestions);
     				},
     				1000
     			);
-
-    			let updateMyQuestions = await fetch('http://localhost:3008/get-data', {
-    				method: 'POST',
-    				headers: {
-    					'Content-Type': 'application/json;charset=utf-8'
-    				},
-    				body: JSON.stringify({})
-    			}).then(res => res.json());
-
-    			myQuestionsData.set(updateMyQuestions.data);
-    			allQuestionsData.set(updateMyQuestions.data);
-    			console.log(updateMyQuestions);
     		} else {
     			$$invalidate(8, sendData = true);
 
@@ -12631,6 +13122,10 @@ var app = (function () {
     			);
     		}
     	};
+
+    	onMount(() => {
+    		console.log(userAge);
+    	});
 
     	const writable_props = ['questionsData'];
 
@@ -12722,6 +13217,7 @@ var app = (function () {
     		StarRating,
     		Button: Button$1,
     		RadioChipGroup,
+    		onMount,
     		categories,
     		filterCategory,
     		hintRate,
@@ -12762,12 +13258,16 @@ var app = (function () {
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty[0] & /*filterCategory, questionsData, AUTH, UID*/ 16391) {
     			{
+    				// ----------------------------------------------------------------
+    				// ----------------------------------------------------------------
     				if (filterCategory != '0') {
     					$$invalidate(9, questionsDataFilter = questionsData.filter(item => item.category == filterCategory));
     				} else if (filterCategory == '0') {
     					$$invalidate(9, questionsDataFilter = questionsData);
     				}
 
+    				// ----------------------------------------------------------------
+    				// ----------------------------------------------------------------
     				authCheck.subscribe(value => {
     					$$invalidate(2, AUTH = value.auth);
     					$$invalidate(14, UID = value.userID);
@@ -12877,7 +13377,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			span0 = element("span");
-    			span0.textContent = "все хинты";
+    			span0.textContent = "основное меню hint";
     			t1 = space();
     			div0 = element("div");
     			span1 = element("span");
@@ -12903,19 +13403,19 @@ var app = (function () {
     			span8.textContent = "список вопросов";
     			attr_dev(span0, "class", "svelte-1uzqah4");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$8, 35, 8, 729);
+    			add_location(span0, file$8, 35, 8, 726);
     			set_style(span1, "margin-top", "11px");
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-1uzqah4");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$8, 37, 10, 890);
+    			add_location(span1, file$8, 37, 10, 896);
     			set_style(span2, "margin-top", "12px");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "color", "#4300b0");
     			set_style(span2, "margin-left", "30px");
     			attr_dev(span2, "class", "svelte-1uzqah4");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$8, 46, 10, 1160);
+    			add_location(span2, file$8, 46, 10, 1166);
     			set_style(span3, "display", "block");
     			set_style(span3, "position", "absolute");
     			set_style(span3, "width", "3px");
@@ -12926,43 +13426,43 @@ var app = (function () {
     			set_style(span3, "margin-top", "-10px");
     			set_style(span3, "margin-left", "-10px");
     			set_style(span3, "border-radius", "2px");
-    			add_location(span3, file$8, 60, 12, 1609);
+    			add_location(span3, file$8, 60, 12, 1615);
     			set_style(span4, "margin-top", "6px");
     			set_style(span4, "cursor", "pointer");
     			attr_dev(span4, "class", "svelte-1uzqah4");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$8, 52, 10, 1363);
+    			add_location(span4, file$8, 52, 10, 1369);
     			set_style(span5, "margin-top", "12px");
     			set_style(span5, "cursor", "pointer");
     			set_style(span5, "color", "#4300b0");
     			set_style(span5, "margin-left", "30px");
     			attr_dev(span5, "class", "svelte-1uzqah4");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$8, 75, 10, 2038);
+    			add_location(span5, file$8, 75, 10, 2044);
     			set_style(span6, "margin-top", "6px");
     			set_style(span6, "cursor", "pointer");
     			attr_dev(span6, "class", "svelte-1uzqah4");
     			toggle_class(span6, "mainViewMenuItemLine", true);
-    			add_location(span6, file$8, 81, 10, 2241);
+    			add_location(span6, file$8, 81, 10, 2247);
     			set_style(span7, "margin-top", "12px");
     			set_style(span7, "cursor", "pointer");
     			set_style(span7, "color", "#4300b0");
     			set_style(span7, "margin-left", "30px");
     			attr_dev(span7, "class", "svelte-1uzqah4");
     			toggle_class(span7, "mainViewMenuItemLine", true);
-    			add_location(span7, file$8, 90, 10, 2503);
+    			add_location(span7, file$8, 90, 10, 2509);
     			set_style(span8, "margin-top", "6px");
     			set_style(span8, "cursor", "pointer");
     			attr_dev(span8, "class", "svelte-1uzqah4");
     			toggle_class(span8, "mainViewMenuItemLine", true);
-    			add_location(span8, file$8, 96, 10, 2706);
+    			add_location(span8, file$8, 96, 10, 2712);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
     			attr_dev(div0, "class", "svelte-1uzqah4");
     			toggle_class(div0, "mainViewMenuItemSub", true);
-    			add_location(div0, file$8, 36, 8, 795);
+    			add_location(div0, file$8, 36, 8, 801);
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$8, 34, 6, 684);
+    			add_location(div1, file$8, 34, 6, 681);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -13030,10 +13530,10 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-1uzqah4");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$8, 113, 8, 3124);
+    			add_location(span, file$8, 113, 8, 3130);
     			set_style(div, "margin-top", "11px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$8, 112, 6, 3053);
+    			add_location(div, file$8, 112, 6, 3059);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -13078,10 +13578,10 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-1uzqah4");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$8, 129, 8, 3490);
+    			add_location(span, file$8, 129, 8, 3496);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$8, 128, 6, 3420);
+    			add_location(div, file$8, 128, 6, 3426);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -13126,10 +13626,10 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-1uzqah4");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$8, 144, 8, 3849);
+    			add_location(span, file$8, 144, 8, 3855);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$8, 143, 6, 3779);
+    			add_location(div, file$8, 143, 6, 3785);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -13201,7 +13701,7 @@ var app = (function () {
     		/*starrating_value_binding*/ ctx[16](value);
     	}
 
-    	let starrating_props = { style: "margin: 0;", name: "restaurant" };
+    	let starrating_props = { style: "margin: 0;", name: "default" };
 
     	if (/*hintRate*/ ctx[3] !== void 0) {
     		starrating_props.value = /*hintRate*/ ctx[3];
@@ -13231,14 +13731,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			set_style(h3, "margin-top", "28px");
     			set_style(h3, "margin-bottom", "14px");
-    			add_location(h3, file$8, 217, 10, 5647);
+    			add_location(h3, file$8, 217, 10, 5653);
     			set_style(div, "width", "100%");
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
     			set_style(div, "justify-content", "flex-start");
     			set_style(div, "margin-top", "14px");
-    			add_location(div, file$8, 207, 8, 5388);
+    			add_location(div, file$8, 207, 8, 5394);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -13433,16 +13933,16 @@ var app = (function () {
     			t11 = space();
     			span4 = element("span");
     			span4.textContent = "* * *";
-    			add_location(style, file$8, 285, 16, 7639);
+    			add_location(style, file$8, 285, 16, 7642);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$8, 290, 16, 7771);
+    			add_location(path, file$8, 290, 16, 7774);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "24px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "localSvg", true);
-    			add_location(svg, file$8, 279, 14, 7436);
+    			add_location(svg, file$8, 279, 14, 7439);
     			set_style(span0, "margin-left", "11px");
-    			add_location(span0, file$8, 294, 14, 8292);
+    			add_location(span0, file$8, 294, 14, 8295);
     			set_style(span1, "color", "gray");
     			set_style(span1, "width", "100%");
     			set_style(span1, "display", "flex");
@@ -13453,24 +13953,24 @@ var app = (function () {
     			set_style(span1, "letter-spacing", "1px");
     			set_style(span1, "font-weight", "500");
     			set_style(span1, "opacity", "0.6");
-    			add_location(span1, file$8, 265, 12, 7011);
-    			add_location(span2, file$8, 311, 12, 9103);
+    			add_location(span1, file$8, 265, 12, 7014);
+    			add_location(span2, file$8, 311, 12, 9106);
     			attr_dev(span3, "class", "svelte-1uzqah4");
     			toggle_class(span3, "mainViewContentHint", true);
-    			add_location(span3, file$8, 315, 14, 9396);
+    			add_location(span3, file$8, 315, 14, 9399);
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "color", "gray");
     			set_style(span4, "opacity", "0.6");
-    			add_location(span4, file$8, 318, 14, 9578);
+    			add_location(span4, file$8, 318, 14, 9581);
     			set_style(div0, "display", "flex");
     			set_style(div0, "flex-direction", "column");
     			set_style(div0, "align-items", "center");
     			set_style(div0, "margin-bottom", "8px");
-    			add_location(div0, file$8, 314, 12, 9287);
+    			add_location(div0, file$8, 314, 12, 9290);
     			set_style(div1, "margin-top", "20px");
     			attr_dev(div1, "class", "svelte-1uzqah4");
     			toggle_class(div1, "mainViewContentQuestion", true);
-    			add_location(div1, file$8, 264, 10, 6929);
+    			add_location(div1, file$8, 264, 10, 6932);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -13556,7 +14056,7 @@ var app = (function () {
     			set_style(span, "opacity", "0.8");
     			set_style(span, "margin-top", "26px");
     			set_style(span, "display", "block");
-    			add_location(span, file$8, 326, 10, 9765);
+    			add_location(span, file$8, 326, 10, 9768);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -13681,51 +14181,51 @@ var app = (function () {
     			set_style(span0, "opacity", "0.4");
     			set_style(span0, "border-radius", "1px");
     			set_style(span0, "margin-top", "20px");
-    			add_location(span0, file$8, 157, 4, 4108);
+    			add_location(span0, file$8, 157, 4, 4114);
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-1uzqah4");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$8, 170, 6, 4429);
+    			add_location(span1, file$8, 170, 6, 4435);
     			set_style(div0, "margin-top", "18px");
     			toggle_class(div0, "mainViewMenuItem", true);
-    			add_location(div0, file$8, 169, 4, 4360);
+    			add_location(div0, file$8, 169, 4, 4366);
     			set_style(span2, "cursor", "pointer");
     			attr_dev(span2, "class", "svelte-1uzqah4");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$8, 181, 6, 4715);
+    			add_location(span2, file$8, 181, 6, 4721);
     			set_style(div1, "margin-top", "11px");
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$8, 180, 4, 4646);
+    			add_location(div1, file$8, 180, 4, 4652);
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-1uzqah4");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$8, 192, 6, 5011);
+    			add_location(span3, file$8, 192, 6, 5017);
     			set_style(div2, "margin-top", "11px");
     			toggle_class(div2, "mainViewMenuItem", true);
-    			add_location(div2, file$8, 191, 4, 4942);
+    			add_location(div2, file$8, 191, 4, 4948);
     			set_style(div3, "width", "20%");
     			set_style(div3, "padding-top", "30px");
     			toggle_class(div3, "mainViewMenu", true);
-    			add_location(div3, file$8, 30, 2, 576);
+    			add_location(div3, file$8, 30, 2, 573);
     			attr_dev(h3, "class", "svelte-1uzqah4");
     			toggle_class(h3, "mainViewContentTitle", true);
-    			add_location(h3, file$8, 260, 8, 6800);
+    			add_location(h3, file$8, 260, 8, 6803);
     			set_style(div4, "width", "calc(100% + 30px)");
     			set_style(div4, "overflow-y", "scroll");
     			set_style(div4, "padding-right", "30px");
     			set_style(div4, "box-sizing", "border-box");
     			set_style(div4, "height", "100%");
-    			add_location(div4, file$8, 233, 6, 6202);
+    			add_location(div4, file$8, 233, 6, 6205);
     			set_style(div5, "width", "100%");
     			set_style(div5, "height", "100%");
     			set_style(div5, "overflow", "hidden");
-    			add_location(div5, file$8, 232, 4, 6136);
+    			add_location(div5, file$8, 232, 4, 6139);
     			attr_dev(div6, "class", "svelte-1uzqah4");
     			toggle_class(div6, "mainViewContent", true);
-    			add_location(div6, file$8, 203, 2, 5244);
+    			add_location(div6, file$8, 203, 2, 5250);
     			attr_dev(div7, "class", "svelte-1uzqah4");
     			toggle_class(div7, "mainView", true);
-    			add_location(div7, file$8, 29, 0, 545);
+    			add_location(div7, file$8, 29, 0, 542);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14098,11 +14598,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[19] = list[i];
+    	child_ctx[23] = list[i];
     	return child_ctx;
     }
 
-    // (27:4) { #if AUTH == true }
+    // (58:4) { #if AUTH == true }
     function create_if_block_6$2(ctx) {
     	let div1;
     	let span0;
@@ -14130,7 +14630,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			span0 = element("span");
-    			span0.textContent = "все хинты";
+    			span0.textContent = "основное меню hint";
     			t1 = space();
     			div0 = element("div");
     			span2 = element("span");
@@ -14156,7 +14656,7 @@ var app = (function () {
     			span8.textContent = "список вопросов";
     			attr_dev(span0, "class", "svelte-1uzqah4");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$7, 29, 8, 652);
+    			add_location(span0, file$7, 60, 8, 1241);
     			set_style(span1, "display", "block");
     			set_style(span1, "position", "absolute");
     			set_style(span1, "width", "3px");
@@ -14167,55 +14667,55 @@ var app = (function () {
     			set_style(span1, "margin-top", "-10px");
     			set_style(span1, "margin-left", "-10px");
     			set_style(span1, "border-radius", "2px");
-    			add_location(span1, file$7, 39, 12, 1066);
+    			add_location(span1, file$7, 70, 12, 1664);
     			set_style(span2, "margin-top", "11px");
     			set_style(span2, "cursor", "pointer");
     			attr_dev(span2, "class", "svelte-1uzqah4");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$7, 31, 10, 813);
+    			add_location(span2, file$7, 62, 10, 1411);
     			set_style(span3, "margin-top", "12px");
     			set_style(span3, "cursor", "pointer");
     			set_style(span3, "color", "#4300b0");
     			set_style(span3, "margin-left", "30px");
     			attr_dev(span3, "class", "svelte-1uzqah4");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$7, 54, 10, 1495);
+    			add_location(span3, file$7, 85, 10, 2093);
     			set_style(span4, "margin-top", "6px");
     			set_style(span4, "cursor", "pointer");
     			attr_dev(span4, "class", "svelte-1uzqah4");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$7, 60, 10, 1698);
+    			add_location(span4, file$7, 91, 10, 2296);
     			set_style(span5, "margin-top", "12px");
     			set_style(span5, "cursor", "pointer");
     			set_style(span5, "color", "#4300b0");
     			set_style(span5, "margin-left", "30px");
     			attr_dev(span5, "class", "svelte-1uzqah4");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$7, 69, 10, 1961);
+    			add_location(span5, file$7, 100, 10, 2559);
     			set_style(span6, "margin-top", "6px");
     			set_style(span6, "cursor", "pointer");
     			attr_dev(span6, "class", "svelte-1uzqah4");
     			toggle_class(span6, "mainViewMenuItemLine", true);
-    			add_location(span6, file$7, 75, 10, 2164);
+    			add_location(span6, file$7, 106, 10, 2762);
     			set_style(span7, "margin-top", "12px");
     			set_style(span7, "cursor", "pointer");
     			set_style(span7, "color", "#4300b0");
     			set_style(span7, "margin-left", "30px");
     			attr_dev(span7, "class", "svelte-1uzqah4");
     			toggle_class(span7, "mainViewMenuItemLine", true);
-    			add_location(span7, file$7, 84, 10, 2426);
+    			add_location(span7, file$7, 115, 10, 3024);
     			set_style(span8, "margin-top", "6px");
     			set_style(span8, "cursor", "pointer");
     			attr_dev(span8, "class", "svelte-1uzqah4");
     			toggle_class(span8, "mainViewMenuItemLine", true);
-    			add_location(span8, file$7, 90, 10, 2629);
+    			add_location(span8, file$7, 121, 10, 3227);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
     			attr_dev(div0, "class", "svelte-1uzqah4");
     			toggle_class(div0, "mainViewMenuItemSub", true);
-    			add_location(div0, file$7, 30, 8, 718);
+    			add_location(div0, file$7, 61, 8, 1316);
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$7, 28, 6, 607);
+    			add_location(div1, file$7, 59, 6, 1196);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -14240,10 +14740,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span2, "click", /*click_handler*/ ctx[5], false, false, false),
-    					listen_dev(span4, "click", /*click_handler_1*/ ctx[6], false, false, false),
-    					listen_dev(span6, "click", /*click_handler_2*/ ctx[7], false, false, false),
-    					listen_dev(span8, "click", /*click_handler_3*/ ctx[8], false, false, false)
+    					listen_dev(span2, "click", /*click_handler*/ ctx[8], false, false, false),
+    					listen_dev(span4, "click", /*click_handler_1*/ ctx[9], false, false, false),
+    					listen_dev(span6, "click", /*click_handler_2*/ ctx[10], false, false, false),
+    					listen_dev(span8, "click", /*click_handler_3*/ ctx[11], false, false, false)
     				];
 
     				mounted = true;
@@ -14261,14 +14761,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$2.name,
     		type: "if",
-    		source: "(27:4) { #if AUTH == true }",
+    		source: "(58:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (105:4) { #if AUTH == true }
+    // (136:4) { #if AUTH == true }
     function create_if_block_5$2(ctx) {
     	let div;
     	let span;
@@ -14283,17 +14783,17 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-1uzqah4");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$7, 107, 8, 3046);
+    			add_location(span, file$7, 138, 8, 3644);
     			set_style(div, "margin-top", "11px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$7, 106, 6, 2975);
+    			add_location(div, file$7, 137, 6, 3573);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[9], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[12], false, false, false);
     				mounted = true;
     			}
     		},
@@ -14309,14 +14809,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$2.name,
     		type: "if",
-    		source: "(105:4) { #if AUTH == true }",
+    		source: "(136:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:4) { #if AUTH == true }
+    // (152:4) { #if AUTH == true }
     function create_if_block_4$6(ctx) {
     	let div;
     	let span;
@@ -14331,17 +14831,17 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-1uzqah4");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$7, 123, 8, 3412);
+    			add_location(span, file$7, 154, 8, 4010);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$7, 122, 6, 3342);
+    			add_location(div, file$7, 153, 6, 3940);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_5*/ ctx[10], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_5*/ ctx[13], false, false, false);
     				mounted = true;
     			}
     		},
@@ -14357,14 +14857,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$6.name,
     		type: "if",
-    		source: "(121:4) { #if AUTH == true }",
+    		source: "(152:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (136:4) { #if AUTH == false }
+    // (167:4) { #if AUTH == false }
     function create_if_block_3$6(ctx) {
     	let div;
     	let span;
@@ -14379,17 +14879,17 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-1uzqah4");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$7, 138, 8, 3771);
+    			add_location(span, file$7, 169, 8, 4369);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$7, 137, 6, 3701);
+    			add_location(div, file$7, 168, 6, 4299);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_6*/ ctx[11], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_6*/ ctx[14], false, false, false);
     				mounted = true;
     			}
     		},
@@ -14405,14 +14905,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$6.name,
     		type: "if",
-    		source: "(136:4) { #if AUTH == false }",
+    		source: "(167:4) { #if AUTH == false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (214:10) <Button               filled              style="                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 28px;                margin-bottom: 20px;              "            >
+    // (245:10) <Button               on:click={sendRateItem}              filled              style="                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 28px;                margin-bottom: 20px;              "            >
     function create_default_slot_2$1(ctx) {
     	let t;
 
@@ -14432,14 +14932,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$1.name,
     		type: "slot",
-    		source: "(214:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 28px;                margin-bottom: 20px;              \\\"            >",
+    		source: "(245:10) <Button               on:click={sendRateItem}              filled              style=\\\"                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 28px;                margin-bottom: 20px;              \\\"            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (201:6) <Dialog title="" {closeCallback}>
+    // (232:6) <Dialog title="" {closeCallback}>
     function create_default_slot_1$1(ctx) {
     	let div;
     	let h3;
@@ -14453,10 +14953,10 @@ var app = (function () {
     	let current;
 
     	function starrating_value_binding(value) {
-    		/*starrating_value_binding*/ ctx[15](value);
+    		/*starrating_value_binding*/ ctx[18](value);
     	}
 
-    	let starrating_props = { name: "restaurant" };
+    	let starrating_props = { name: "default" };
 
     	if (/*hintRate*/ ctx[2] !== void 0) {
     		starrating_props.value = /*hintRate*/ ctx[2];
@@ -14475,6 +14975,8 @@ var app = (function () {
     			$$inline: true
     		});
 
+    	button.$on("click", /*sendRateItem*/ ctx[7]);
+
     	const block = {
     		c: function create() {
     			div = element("div");
@@ -14489,19 +14991,19 @@ var app = (function () {
     			span.textContent = "Пожаловаться на этот хинт";
     			set_style(h3, "margin-top", "28px");
     			set_style(h3, "margin-bottom", "20px");
-    			add_location(h3, file$7, 211, 10, 5573);
+    			add_location(h3, file$7, 242, 10, 6171);
     			set_style(span, "color", "gray");
     			set_style(span, "opacity", "0.6");
     			set_style(span, "margin-bottom", "28px");
     			set_style(span, "cursor", "pointer");
-    			add_location(span, file$7, 222, 10, 6000);
+    			add_location(span, file$7, 254, 10, 6632);
     			set_style(div, "width", "100%");
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
     			set_style(div, "justify-content", "flex-start");
     			set_style(div, "margin-top", "14px");
-    			add_location(div, file$7, 201, 8, 5314);
+    			add_location(div, file$7, 232, 8, 5912);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14526,7 +15028,7 @@ var app = (function () {
     			starrating.$set(starrating_changes);
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 8388608) {
+    			if (dirty & /*$$scope*/ 134217728) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14554,14 +15056,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(201:6) <Dialog title=\\\"\\\" {closeCallback}>",
+    		source: "(232:6) <Dialog title=\\\"\\\" {closeCallback}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (200:4) <Modal bind:open={showModal} let:closeCallback>
+    // (231:4) <Modal bind:open={showModal} let:closeCallback>
     function create_default_slot$1(ctx) {
     	let dialog;
     	let current;
@@ -14569,7 +15071,7 @@ var app = (function () {
     	dialog = new Dialog$1({
     			props: {
     				title: "",
-    				closeCallback: /*closeCallback*/ ctx[22],
+    				closeCallback: /*closeCallback*/ ctx[26],
     				$$slots: { default: [create_default_slot_1$1] },
     				$$scope: { ctx }
     			},
@@ -14586,9 +15088,9 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const dialog_changes = {};
-    			if (dirty & /*closeCallback*/ 4194304) dialog_changes.closeCallback = /*closeCallback*/ ctx[22];
+    			if (dirty & /*closeCallback*/ 67108864) dialog_changes.closeCallback = /*closeCallback*/ ctx[26];
 
-    			if (dirty & /*$$scope, hintRate*/ 8388612) {
+    			if (dirty & /*$$scope, hintRate*/ 134217732) {
     				dialog_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14612,14 +15114,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(200:4) <Modal bind:open={showModal} let:closeCallback>",
+    		source: "(231:4) <Modal bind:open={showModal} let:closeCallback>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (268:8) { #if questionsData.length > 0 }
+    // (300:8) { #if questionsData.length > 0 }
     function create_if_block_1$6(ctx) {
     	let div;
     	let span1;
@@ -14630,28 +15132,28 @@ var app = (function () {
     	let t1;
     	let span0;
     	let t2;
-    	let t3_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].quid.split('*').join('') + "";
+    	let t3_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].quid.split('*').join('') + "";
     	let t3;
     	let t4;
 
-    	let t5_value = (/*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 1
+    	let t5_value = (/*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 1
     	? 'Общее'
-    	: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 2
+    	: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 2
     		? 'Карьера'
-    		: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 3
+    		: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 3
     			? 'Личная жизнь'
-    			: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 4
+    			: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 4
     				? 'Родственники'
-    				: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 5
+    				: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 5
     					? 'Привычки и жизнь'
-    					: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 6
+    					: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 6
     						? 'Психология'
     						: 'Общий совет') + "";
 
     	let t5;
     	let t6;
     	let span2;
-    	let t7_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].text + "";
+    	let t7_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].text + "";
     	let t7;
     	let t8;
     	let divider;
@@ -14667,8 +15169,8 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	let if_block = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].hints.length === 0 && create_if_block_2$6(ctx);
-    	let each_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].hints;
+    	let if_block = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].hints.length === 0 && create_if_block_2$6(ctx);
+    	let each_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].hints;
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -14703,16 +15205,16 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(style, file$7, 290, 16, 7797);
+    			add_location(style, file$7, 322, 16, 8429);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$7, 295, 16, 7929);
+    			add_location(path, file$7, 327, 16, 8561);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "24px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "localSvg", true);
-    			add_location(svg, file$7, 284, 14, 7594);
+    			add_location(svg, file$7, 316, 14, 8226);
     			set_style(span0, "margin-left", "11px");
-    			add_location(span0, file$7, 299, 14, 8450);
+    			add_location(span0, file$7, 331, 14, 9082);
     			set_style(span1, "color", "gray");
     			set_style(span1, "width", "100%");
     			set_style(span1, "display", "flex");
@@ -14723,12 +15225,12 @@ var app = (function () {
     			set_style(span1, "letter-spacing", "1px");
     			set_style(span1, "font-weight", "500");
     			set_style(span1, "opacity", "0.6");
-    			add_location(span1, file$7, 270, 12, 7169);
-    			add_location(span2, file$7, 317, 12, 9279);
+    			add_location(span1, file$7, 302, 12, 7801);
+    			add_location(span2, file$7, 349, 12, 9911);
     			set_style(div, "margin-top", "20px");
     			attr_dev(div, "class", "svelte-1uzqah4");
     			toggle_class(div, "mainViewContentQuestion", true);
-    			add_location(div, file$7, 269, 10, 7087);
+    			add_location(div, file$7, 301, 10, 7719);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14759,25 +15261,25 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*questionsData, questionsIndex*/ 17) && t3_value !== (t3_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].quid.split('*').join('') + "")) set_data_dev(t3, t3_value);
+    			if ((!current || dirty & /*questionsData, questionsIndex*/ 65) && t3_value !== (t3_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].quid.split('*').join('') + "")) set_data_dev(t3, t3_value);
 
-    			if ((!current || dirty & /*questionsData, questionsIndex*/ 17) && t5_value !== (t5_value = (/*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 1
+    			if ((!current || dirty & /*questionsData, questionsIndex*/ 65) && t5_value !== (t5_value = (/*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 1
     			? 'Общее'
-    			: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 2
+    			: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 2
     				? 'Карьера'
-    				: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 3
+    				: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 3
     					? 'Личная жизнь'
-    					: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 4
+    					: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 4
     						? 'Родственники'
-    						: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 5
+    						: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 5
     							? 'Привычки и жизнь'
-    							: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].category == 6
+    							: /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].category == 6
     								? 'Психология'
     								: 'Общий совет') + "")) set_data_dev(t5, t5_value);
 
-    			if ((!current || dirty & /*questionsData, questionsIndex*/ 17) && t7_value !== (t7_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].text + "")) set_data_dev(t7, t7_value);
+    			if ((!current || dirty & /*questionsData, questionsIndex*/ 65) && t7_value !== (t7_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].text + "")) set_data_dev(t7, t7_value);
 
-    			if (/*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].hints.length === 0) {
+    			if (/*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].hints.length === 0) {
     				if (if_block) ; else {
     					if_block = create_if_block_2$6(ctx);
     					if_block.c();
@@ -14788,8 +15290,8 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if (dirty & /*showModal, questionsData, questionsIndex*/ 25) {
-    				each_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[4]].hints;
+    			if (dirty & /*showModal, hintUID, questionsData, questionsIndex, hintText*/ 121) {
+    				each_value = /*questionsData*/ ctx[0][/*questionsIndex*/ ctx[6]].hints;
     				validate_each_argument(each_value);
     				let i;
 
@@ -14833,14 +15335,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$6.name,
     		type: "if",
-    		source: "(268:8) { #if questionsData.length > 0 }",
+    		source: "(300:8) { #if questionsData.length > 0 }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (322:12) { #if questionsData[questionsIndex].hints.length === 0 }
+    // (354:12) { #if questionsData[questionsIndex].hints.length === 0 }
     function create_if_block_2$6(ctx) {
     	let span;
 
@@ -14852,7 +15354,7 @@ var app = (function () {
     			set_style(span, "text-align", "center");
     			set_style(span, "display", "block");
     			set_style(span, "margin-bottom", "15px");
-    			add_location(span, file$7, 323, 14, 9536);
+    			add_location(span, file$7, 355, 14, 10168);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -14866,18 +15368,18 @@ var app = (function () {
     		block,
     		id: create_if_block_2$6.name,
     		type: "if",
-    		source: "(322:12) { #if questionsData[questionsIndex].hints.length === 0 }",
+    		source: "(354:12) { #if questionsData[questionsIndex].hints.length === 0 }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (337:12) { #each questionsData[questionsIndex].hints as hint }
+    // (369:12) { #each questionsData[questionsIndex].hints as hint }
     function create_each_block(ctx) {
-    	let div1;
+    	let div2;
     	let span0;
-    	let t0_value = /*hint*/ ctx[19].hint + "";
+    	let t0_value = /*hint*/ ctx[23].hint + "";
     	let t0;
     	let t1;
     	let div0;
@@ -14888,12 +15390,19 @@ var app = (function () {
     	let t4;
     	let path;
     	let t5;
+    	let div1;
+    	let span2;
+    	let t7;
     	let mounted;
     	let dispose;
 
+    	function click_handler_10() {
+    		return /*click_handler_10*/ ctx[20](/*hint*/ ctx[23]);
+    	}
+
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div2 = element("div");
     			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = space();
@@ -14906,56 +15415,78 @@ var app = (function () {
     			t4 = text("svg.svgLike { fill: #4300b0; opacity: 0.6; margin-top: -5px; cursor: pointer; }");
     			path = svg_element("path");
     			t5 = space();
+    			div1 = element("div");
+    			span2 = element("span");
+    			span2.textContent = "На данном этапе вы можете многократно оценивать каждый хинт - оценки в таком случае не будут суммироваться, а просто произойдет перезапись для каждого хинта";
+    			t7 = space();
     			attr_dev(span0, "class", "svelte-1uzqah4");
     			toggle_class(span0, "mainViewContentHint", true);
-    			add_location(span0, file$7, 339, 16, 10060);
+    			add_location(span0, file$7, 371, 16, 10692);
     			set_style(span1, "cursor", "pointer");
     			set_style(span1, "margin-right", "10px");
-    			add_location(span1, file$7, 346, 18, 10357);
-    			add_location(style, file$7, 360, 20, 10831);
+    			add_location(span1, file$7, 382, 18, 11115);
+    			add_location(style, file$7, 396, 20, 11589);
     			attr_dev(path, "d", "M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z");
-    			add_location(path, file$7, 361, 20, 10947);
+    			add_location(path, file$7, 397, 20, 11705);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "22px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "svgLike", true);
-    			add_location(svg, file$7, 354, 18, 10605);
+    			add_location(svg, file$7, 390, 18, 11363);
     			set_style(div0, "display", "flex");
     			set_style(div0, "flex-direction", "row");
     			set_style(div0, "align-items", "center");
-    			add_location(div0, file$7, 342, 16, 10175);
+    			add_location(div0, file$7, 374, 16, 10807);
+    			set_style(span2, "cursor", "pointer");
+    			set_style(span2, "color", "gray");
+    			set_style(span2, "opacity", "0.6");
+    			set_style(span2, "text-align", "center");
+    			set_style(span2, "margin-top", "10px");
+    			add_location(span2, file$7, 404, 18, 12525);
     			set_style(div1, "display", "flex");
-    			set_style(div1, "flex-direction", "column");
+    			set_style(div1, "flex-direction", "row");
     			set_style(div1, "align-items", "center");
-    			set_style(div1, "margin-bottom", "26px");
-    			add_location(div1, file$7, 338, 14, 9948);
+    			add_location(div1, file$7, 400, 16, 12357);
+    			set_style(div2, "display", "flex");
+    			set_style(div2, "flex-direction", "column");
+    			set_style(div2, "align-items", "center");
+    			set_style(div2, "margin-bottom", "26px");
+    			add_location(div2, file$7, 370, 14, 10580);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, span0);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, span0);
     			append_dev(span0, t0);
-    			append_dev(div1, t1);
-    			append_dev(div1, div0);
+    			append_dev(div2, t1);
+    			append_dev(div2, div0);
     			append_dev(div0, span1);
     			append_dev(div0, t3);
     			append_dev(div0, svg);
     			append_dev(svg, style);
     			append_dev(style, t4);
     			append_dev(svg, path);
-    			append_dev(div1, t5);
+    			append_dev(div2, t5);
+    			append_dev(div2, div1);
+    			append_dev(div1, span2);
+    			append_dev(div2, t7);
 
     			if (!mounted) {
-    				dispose = listen_dev(div0, "click", /*click_handler_10*/ ctx[17], false, false, false);
+    				dispose = [
+    					listen_dev(div0, "click", click_handler_10, false, false, false),
+    					listen_dev(div1, "click", click_handler_11, false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*questionsData, questionsIndex*/ 17 && t0_value !== (t0_value = /*hint*/ ctx[19].hint + "")) set_data_dev(t0, t0_value);
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*questionsData, questionsIndex*/ 65 && t0_value !== (t0_value = /*hint*/ ctx[23].hint + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div2);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -14963,14 +15494,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(337:12) { #each questionsData[questionsIndex].hints as hint }",
+    		source: "(369:12) { #each questionsData[questionsIndex].hints as hint }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (373:8) { #if questionsData.length === 0 }
+    // (425:8) { #if questionsData.length === 0 }
     function create_if_block$6(ctx) {
     	let span;
 
@@ -14982,7 +15513,7 @@ var app = (function () {
     			set_style(span, "opacity", "0.8");
     			set_style(span, "margin-top", "26px");
     			set_style(span, "display", "block");
-    			add_location(span, file$7, 374, 10, 11740);
+    			add_location(span, file$7, 426, 10, 13187);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -14996,7 +15527,7 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(373:8) { #if questionsData.length === 0 }",
+    		source: "(425:8) { #if questionsData.length === 0 }",
     		ctx
     	});
 
@@ -15039,22 +15570,22 @@ var app = (function () {
     	let if_block3 = /*AUTH*/ ctx[1] == false && create_if_block_3$6(ctx);
 
     	function modal_open_binding(value) {
-    		/*modal_open_binding*/ ctx[16](value);
+    		/*modal_open_binding*/ ctx[19](value);
     	}
 
     	let modal_props = {
     		$$slots: {
     			default: [
     				create_default_slot$1,
-    				({ closeCallback }) => ({ 22: closeCallback }),
-    				({ closeCallback }) => closeCallback ? 4194304 : 0
+    				({ closeCallback }) => ({ 26: closeCallback }),
+    				({ closeCallback }) => closeCallback ? 67108864 : 0
     			]
     		},
     		$$scope: { ctx }
     	};
 
-    	if (/*showModal*/ ctx[3] !== void 0) {
-    		modal_props.open = /*showModal*/ ctx[3];
+    	if (/*showModal*/ ctx[5] !== void 0) {
+    		modal_props.open = /*showModal*/ ctx[5];
     	}
 
     	modal = new Modal$1({ props: modal_props, $$inline: true });
@@ -15107,51 +15638,51 @@ var app = (function () {
     			set_style(span0, "opacity", "0.4");
     			set_style(span0, "border-radius", "1px");
     			set_style(span0, "margin-top", "20px");
-    			add_location(span0, file$7, 151, 4, 4034);
+    			add_location(span0, file$7, 182, 4, 4632);
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-1uzqah4");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$7, 164, 6, 4355);
+    			add_location(span1, file$7, 195, 6, 4953);
     			set_style(div0, "margin-top", "18px");
     			toggle_class(div0, "mainViewMenuItem", true);
-    			add_location(div0, file$7, 163, 4, 4286);
+    			add_location(div0, file$7, 194, 4, 4884);
     			set_style(span2, "cursor", "pointer");
     			attr_dev(span2, "class", "svelte-1uzqah4");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$7, 175, 6, 4641);
+    			add_location(span2, file$7, 206, 6, 5239);
     			set_style(div1, "margin-top", "11px");
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$7, 174, 4, 4572);
+    			add_location(div1, file$7, 205, 4, 5170);
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-1uzqah4");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$7, 186, 6, 4937);
+    			add_location(span3, file$7, 217, 6, 5535);
     			set_style(div2, "margin-top", "11px");
     			toggle_class(div2, "mainViewMenuItem", true);
-    			add_location(div2, file$7, 185, 4, 4868);
+    			add_location(div2, file$7, 216, 4, 5466);
     			set_style(div3, "width", "20%");
     			set_style(div3, "padding-top", "30px");
     			toggle_class(div3, "mainViewMenu", true);
-    			add_location(div3, file$7, 24, 2, 499);
+    			add_location(div3, file$7, 55, 2, 1088);
     			attr_dev(h3, "class", "svelte-1uzqah4");
     			toggle_class(h3, "mainViewContentTitle", true);
-    			add_location(h3, file$7, 265, 8, 6965);
+    			add_location(h3, file$7, 297, 8, 7597);
     			set_style(div4, "width", "calc(100% + 30px)");
     			set_style(div4, "overflow-y", "scroll");
     			set_style(div4, "padding-right", "30px");
     			set_style(div4, "box-sizing", "border-box");
     			set_style(div4, "height", "100%");
-    			add_location(div4, file$7, 237, 6, 6365);
+    			add_location(div4, file$7, 269, 6, 6997);
     			set_style(div5, "width", "100%");
     			set_style(div5, "height", "100%");
     			set_style(div5, "overflow", "hidden");
-    			add_location(div5, file$7, 236, 4, 6299);
+    			add_location(div5, file$7, 268, 4, 6931);
     			attr_dev(div6, "class", "svelte-1uzqah4");
     			toggle_class(div6, "mainViewContent", true);
-    			add_location(div6, file$7, 197, 2, 5170);
+    			add_location(div6, file$7, 228, 2, 5768);
     			attr_dev(div7, "class", "svelte-1uzqah4");
     			toggle_class(div7, "mainView", true);
-    			add_location(div7, file$7, 23, 0, 468);
+    			add_location(div7, file$7, 54, 0, 1057);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -15192,10 +15723,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span1, "click", /*click_handler_7*/ ctx[12], false, false, false),
-    					listen_dev(span2, "click", /*click_handler_8*/ ctx[13], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_9*/ ctx[14], false, false, false),
-    					listen_dev(div4, "mousewheel", /*mousewheel_handler*/ ctx[18], false, false, false)
+    					listen_dev(span1, "click", /*click_handler_7*/ ctx[15], false, false, false),
+    					listen_dev(span2, "click", /*click_handler_8*/ ctx[16], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_9*/ ctx[17], false, false, false),
+    					listen_dev(div4, "mousewheel", /*mousewheel_handler*/ ctx[21], false, false, false)
     				];
 
     				mounted = true;
@@ -15256,13 +15787,13 @@ var app = (function () {
 
     			const modal_changes = {};
 
-    			if (dirty & /*$$scope, closeCallback, hintRate*/ 12582916) {
+    			if (dirty & /*$$scope, closeCallback, hintRate*/ 201326596) {
     				modal_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_open && dirty & /*showModal*/ 8) {
+    			if (!updating_open && dirty & /*showModal*/ 32) {
     				updating_open = true;
-    				modal_changes.open = /*showModal*/ ctx[3];
+    				modal_changes.open = /*showModal*/ ctx[5];
     				add_flush_callback(() => updating_open = false);
     			}
 
@@ -15338,14 +15869,40 @@ var app = (function () {
     	return block;
     }
 
+    const click_handler_11 = () => {
+    	
+    };
+
     function instance$8($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('MyQuestions', slots, []);
-    	let hintRate = 1;
+    	let hintRate = 5;
+    	let hintUID = '';
+    	let hintText = '';
     	let showModal = false;
     	let { questionsData } = $$props;
     	let questionsIndex = 0;
     	let AUTH = false;
+    	let UID = '';
+
+    	const sendRateItem = () => {
+    		fetch('http://localhost:3008/add-data-rate', {
+    			method: 'POST',
+    			headers: {
+    				'Content-Type': 'application/json;charset=utf-8'
+    			},
+    			body: JSON.stringify({
+    				uid: hintUID,
+    				rate: hintRate,
+    				from: UID,
+    				text: hintText
+    			})
+    		}).then(res => res.json()).then(data => {
+    			console.log(data);
+    			$$invalidate(5, showModal = false);
+    		});
+    	};
+
     	const writable_props = ['questionsData'];
 
     	Object.keys($$props).forEach(key => {
@@ -15399,19 +15956,23 @@ var app = (function () {
 
     	function modal_open_binding(value) {
     		showModal = value;
-    		$$invalidate(3, showModal);
+    		$$invalidate(5, showModal);
     	}
 
-    	const click_handler_10 = () => $$invalidate(3, showModal = true);
+    	const click_handler_10 = hint => {
+    		$$invalidate(5, showModal = true);
+    		$$invalidate(3, hintUID = hint.uid);
+    		$$invalidate(4, hintText = hint.hint);
+    	};
 
     	const mousewheel_handler = event => {
     		if (event.deltaY < 0) {
     			if (questionsIndex !== 0) {
-    				$$invalidate(4, questionsIndex = questionsIndex - 1);
+    				$$invalidate(6, questionsIndex = questionsIndex - 1);
     			}
     		} else {
     			if (questionsIndex < questionsData.length - 1) {
-    				$$invalidate(4, questionsIndex = questionsIndex + 1);
+    				$$invalidate(6, questionsIndex = questionsIndex + 1);
     			}
     		}
     	};
@@ -15429,18 +15990,25 @@ var app = (function () {
     		StarRating,
     		Button: Button$1,
     		hintRate,
+    		hintUID,
+    		hintText,
     		showModal,
     		questionsData,
     		questionsIndex,
-    		AUTH
+    		AUTH,
+    		UID,
+    		sendRateItem
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('hintRate' in $$props) $$invalidate(2, hintRate = $$props.hintRate);
-    		if ('showModal' in $$props) $$invalidate(3, showModal = $$props.showModal);
+    		if ('hintUID' in $$props) $$invalidate(3, hintUID = $$props.hintUID);
+    		if ('hintText' in $$props) $$invalidate(4, hintText = $$props.hintText);
+    		if ('showModal' in $$props) $$invalidate(5, showModal = $$props.showModal);
     		if ('questionsData' in $$props) $$invalidate(0, questionsData = $$props.questionsData);
-    		if ('questionsIndex' in $$props) $$invalidate(4, questionsIndex = $$props.questionsIndex);
+    		if ('questionsIndex' in $$props) $$invalidate(6, questionsIndex = $$props.questionsIndex);
     		if ('AUTH' in $$props) $$invalidate(1, AUTH = $$props.AUTH);
+    		if ('UID' in $$props) UID = $$props.UID;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -15450,7 +16018,11 @@ var app = (function () {
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*AUTH*/ 2) {
     			{
-    				authCheck.subscribe(value => $$invalidate(1, AUTH = value.auth));
+    				authCheck.subscribe(value => {
+    					$$invalidate(1, AUTH = value.auth);
+    					UID = value.userID;
+    				});
+
     				console.log(AUTH);
     			}
     		}
@@ -15460,8 +16032,11 @@ var app = (function () {
     		questionsData,
     		AUTH,
     		hintRate,
+    		hintUID,
+    		hintText,
     		showModal,
     		questionsIndex,
+    		sendRateItem,
     		click_handler,
     		click_handler_1,
     		click_handler_2,
@@ -15513,7 +16088,7 @@ var app = (function () {
     const { console: console_1$5 } = globals;
     const file$6 = "src\\bricks\\views\\MyCabinet.svelte";
 
-    // (216:4) { #if AUTH == true }
+    // (233:4) { #if AUTH == true }
     function create_if_block_10(ctx) {
     	let div1;
     	let span0;
@@ -15539,7 +16114,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			span0 = element("span");
-    			span0.textContent = "все хинты";
+    			span0.textContent = "основное меню hint";
     			t1 = space();
     			div0 = element("div");
     			span1 = element("span");
@@ -15564,55 +16139,55 @@ var app = (function () {
     			span7.textContent = "список вопросов";
     			attr_dev(span0, "class", "svelte-aolj48");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$6, 218, 8, 4563);
+    			add_location(span0, file$6, 235, 8, 5001);
     			set_style(span1, "margin-top", "11px");
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-aolj48");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$6, 220, 10, 4724);
+    			add_location(span1, file$6, 237, 10, 5171);
     			set_style(span2, "margin-top", "12px");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "color", "#4300b0");
     			set_style(span2, "margin-left", "30px");
     			attr_dev(span2, "class", "svelte-aolj48");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$6, 229, 10, 4994);
+    			add_location(span2, file$6, 246, 10, 5441);
     			set_style(span3, "margin-top", "6px");
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-aolj48");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$6, 235, 10, 5197);
+    			add_location(span3, file$6, 252, 10, 5644);
     			set_style(span4, "margin-top", "12px");
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "color", "#4300b0");
     			set_style(span4, "margin-left", "30px");
     			attr_dev(span4, "class", "svelte-aolj48");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$6, 244, 10, 5460);
+    			add_location(span4, file$6, 261, 10, 5907);
     			set_style(span5, "margin-top", "6px");
     			set_style(span5, "cursor", "pointer");
     			attr_dev(span5, "class", "svelte-aolj48");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$6, 250, 10, 5663);
+    			add_location(span5, file$6, 267, 10, 6110);
     			set_style(span6, "margin-top", "12px");
     			set_style(span6, "cursor", "pointer");
     			set_style(span6, "color", "#4300b0");
     			set_style(span6, "margin-left", "30px");
     			attr_dev(span6, "class", "svelte-aolj48");
     			toggle_class(span6, "mainViewMenuItemLine", true);
-    			add_location(span6, file$6, 259, 10, 5925);
+    			add_location(span6, file$6, 276, 10, 6372);
     			set_style(span7, "margin-top", "6px");
     			set_style(span7, "cursor", "pointer");
     			attr_dev(span7, "class", "svelte-aolj48");
     			toggle_class(span7, "mainViewMenuItemLine", true);
-    			add_location(span7, file$6, 265, 10, 6128);
+    			add_location(span7, file$6, 282, 10, 6575);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
     			attr_dev(div0, "class", "svelte-aolj48");
     			toggle_class(div0, "mainViewMenuItemSub", true);
-    			add_location(div0, file$6, 219, 8, 4629);
+    			add_location(div0, file$6, 236, 8, 5076);
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$6, 217, 6, 4518);
+    			add_location(div1, file$6, 234, 6, 4956);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -15635,10 +16210,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span1, "click", /*click_handler*/ ctx[22], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_1*/ ctx[23], false, false, false),
-    					listen_dev(span5, "click", /*click_handler_2*/ ctx[24], false, false, false),
-    					listen_dev(span7, "click", /*click_handler_3*/ ctx[25], false, false, false)
+    					listen_dev(span1, "click", /*click_handler*/ ctx[23], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_1*/ ctx[24], false, false, false),
+    					listen_dev(span5, "click", /*click_handler_2*/ ctx[25], false, false, false),
+    					listen_dev(span7, "click", /*click_handler_3*/ ctx[26], false, false, false)
     				];
 
     				mounted = true;
@@ -15656,14 +16231,14 @@ var app = (function () {
     		block,
     		id: create_if_block_10.name,
     		type: "if",
-    		source: "(216:4) { #if AUTH == true }",
+    		source: "(233:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (280:4) { #if AUTH == true }
+    // (297:4) { #if AUTH == true }
     function create_if_block_9(ctx) {
     	let div;
     	let span1;
@@ -15688,14 +16263,14 @@ var app = (function () {
     			set_style(span0, "margin-top", "-10px");
     			set_style(span0, "margin-left", "-10px");
     			set_style(span0, "border-radius", "2px");
-    			add_location(span0, file$6, 290, 10, 6769);
+    			add_location(span0, file$6, 307, 10, 7216);
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-aolj48");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$6, 282, 8, 6545);
+    			add_location(span1, file$6, 299, 8, 6992);
     			set_style(div, "margin-top", "11px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$6, 281, 6, 6474);
+    			add_location(div, file$6, 298, 6, 6921);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15704,7 +16279,7 @@ var app = (function () {
     			append_dev(span1, span0);
 
     			if (!mounted) {
-    				dispose = listen_dev(span1, "click", /*click_handler_4*/ ctx[26], false, false, false);
+    				dispose = listen_dev(span1, "click", /*click_handler_4*/ ctx[27], false, false, false);
     				mounted = true;
     			}
     		},
@@ -15720,14 +16295,14 @@ var app = (function () {
     		block,
     		id: create_if_block_9.name,
     		type: "if",
-    		source: "(280:4) { #if AUTH == true }",
+    		source: "(297:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (310:4) { #if AUTH == true }
+    // (327:4) { #if AUTH == true }
     function create_if_block_8$1(ctx) {
     	let div;
     	let span;
@@ -15742,17 +16317,17 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-aolj48");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$6, 312, 8, 7295);
+    			add_location(span, file$6, 329, 8, 7742);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$6, 311, 6, 7225);
+    			add_location(div, file$6, 328, 6, 7672);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_5*/ ctx[27], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_5*/ ctx[28], false, false, false);
     				mounted = true;
     			}
     		},
@@ -15768,14 +16343,14 @@ var app = (function () {
     		block,
     		id: create_if_block_8$1.name,
     		type: "if",
-    		source: "(310:4) { #if AUTH == true }",
+    		source: "(327:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (325:4) { #if AUTH == false }
+    // (342:4) { #if AUTH == false }
     function create_if_block_7$1(ctx) {
     	let div;
     	let span;
@@ -15790,17 +16365,17 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-aolj48");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$6, 327, 8, 7654);
+    			add_location(span, file$6, 344, 8, 8101);
     			set_style(div, "margin-top", "6px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$6, 326, 6, 7584);
+    			add_location(div, file$6, 343, 6, 8031);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_6*/ ctx[28], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_6*/ ctx[29], false, false, false);
     				mounted = true;
     			}
     		},
@@ -15816,14 +16391,14 @@ var app = (function () {
     		block,
     		id: create_if_block_7$1.name,
     		type: "if",
-    		source: "(325:4) { #if AUTH == false }",
+    		source: "(342:4) { #if AUTH == false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (402:10) <Button               filled              style="                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 22px;                margin-bottom: 28px;              "            >
+    // (419:10) <Button               filled              style="                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 22px;                margin-bottom: 28px;              "            >
     function create_default_slot_11(ctx) {
     	let t;
 
@@ -15843,36 +16418,32 @@ var app = (function () {
     		block,
     		id: create_default_slot_11.name,
     		type: "slot",
-    		source: "(402:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 22px;                margin-bottom: 28px;              \\\"            >",
+    		source: "(419:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 22px;                margin-bottom: 28px;              \\\"            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (389:6) <Dialog title="" {closeCallback}>
+    // (406:6) <Dialog title="" {closeCallback}>
     function create_default_slot_10(ctx) {
     	let div;
     	let h3;
     	let t1;
     	let starrating;
-    	let updating_value;
     	let t2;
     	let button;
     	let current;
 
-    	function starrating_value_binding(value) {
-    		/*starrating_value_binding*/ ctx[32](value);
-    	}
-
-    	let starrating_props = { style: "margin: 0;", name: "restaurant" };
-
-    	if (/*hintRate*/ ctx[3] !== void 0) {
-    		starrating_props.value = /*hintRate*/ ctx[3];
-    	}
-
-    	starrating = new StarRating({ props: starrating_props, $$inline: true });
-    	binding_callbacks.push(() => bind(starrating, 'value', starrating_value_binding));
+    	starrating = new StarRating({
+    			props: {
+    				style: "margin: 0;",
+    				name: "default",
+    				value: /*hintRate*/ ctx[15],
+    				disabled: true
+    			},
+    			$$inline: true
+    		});
 
     	button = new Button$1({
     			props: {
@@ -15895,14 +16466,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			set_style(h3, "margin-top", "28px");
     			set_style(h3, "margin-bottom", "14px");
-    			add_location(h3, file$6, 399, 10, 9450);
+    			add_location(h3, file$6, 416, 10, 9897);
     			set_style(div, "width", "100%");
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
     			set_style(div, "justify-content", "flex-start");
     			set_style(div, "margin-top", "14px");
-    			add_location(div, file$6, 389, 8, 9191);
+    			add_location(div, file$6, 406, 8, 9638);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15914,15 +16485,6 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			const starrating_changes = {};
-
-    			if (!updating_value && dirty[0] & /*hintRate*/ 8) {
-    				updating_value = true;
-    				starrating_changes.value = /*hintRate*/ ctx[3];
-    				add_flush_callback(() => updating_value = false);
-    			}
-
-    			starrating.$set(starrating_changes);
     			const button_changes = {};
 
     			if (dirty[1] & /*$$scope*/ 1024) {
@@ -15953,14 +16515,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10.name,
     		type: "slot",
-    		source: "(389:6) <Dialog title=\\\"\\\" {closeCallback}>",
+    		source: "(406:6) <Dialog title=\\\"\\\" {closeCallback}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (388:4) <Modal bind:open={showModal} let:closeCallback>
+    // (405:4) <Modal bind:open={showModal} let:closeCallback>
     function create_default_slot_9(ctx) {
     	let dialog;
     	let current;
@@ -15987,7 +16549,7 @@ var app = (function () {
     			const dialog_changes = {};
     			if (dirty[1] & /*closeCallback*/ 512) dialog_changes.closeCallback = /*closeCallback*/ ctx[40];
 
-    			if (dirty[0] & /*hintRate*/ 8 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[1] & /*$$scope*/ 1024) {
     				dialog_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16011,14 +16573,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(388:4) <Modal bind:open={showModal} let:closeCallback>",
+    		source: "(405:4) <Modal bind:open={showModal} let:closeCallback>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (458:12) { #if sex == 'male' }
+    // (492:12) { #if sex == 'male' }
     function create_if_block_6$1(ctx) {
     	let style;
     	let t;
@@ -16027,7 +16589,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgMale{fill:#4300b0;cursor:pointer;}");
-    			add_location(style, file$6, 458, 14, 11571);
+    			add_location(style, file$6, 492, 14, 12617);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -16042,14 +16604,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$1.name,
     		type: "if",
-    		source: "(458:12) { #if sex == 'male' }",
+    		source: "(492:12) { #if sex == 'male' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (461:12) { #if sex == 'female' }
+    // (495:12) { #if sex == 'female' }
     function create_if_block_5$1(ctx) {
     	let style;
     	let t;
@@ -16058,7 +16620,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgMale{fill:#323835;cursor:pointer;}");
-    			add_location(style, file$6, 461, 14, 11701);
+    			add_location(style, file$6, 495, 14, 12747);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -16073,14 +16635,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$1.name,
     		type: "if",
-    		source: "(461:12) { #if sex == 'female' }",
+    		source: "(495:12) { #if sex == 'female' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (464:12) { #if sex == 'none' }
+    // (498:12) { #if sex == 'none' }
     function create_if_block_4$5(ctx) {
     	let style;
     	let t;
@@ -16089,7 +16651,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgMale{fill:#323835;cursor:pointer;}");
-    			add_location(style, file$6, 464, 14, 11829);
+    			add_location(style, file$6, 498, 14, 12875);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -16104,14 +16666,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$5.name,
     		type: "if",
-    		source: "(464:12) { #if sex == 'none' }",
+    		source: "(498:12) { #if sex == 'none' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (480:12) { #if sex == 'male' }
+    // (514:12) { #if sex == 'male' }
     function create_if_block_3$5(ctx) {
     	let style;
     	let t;
@@ -16120,7 +16682,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgfemale{fill:#323835;cursor:pointer;}");
-    			add_location(style, file$6, 480, 14, 12717);
+    			add_location(style, file$6, 514, 14, 13763);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -16135,14 +16697,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$5.name,
     		type: "if",
-    		source: "(480:12) { #if sex == 'male' }",
+    		source: "(514:12) { #if sex == 'male' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (483:12) { #if sex == 'female' }
+    // (517:12) { #if sex == 'female' }
     function create_if_block_2$5(ctx) {
     	let style;
     	let t;
@@ -16151,7 +16713,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgfemale{fill:#4300b0;cursor:pointer;}");
-    			add_location(style, file$6, 483, 14, 12849);
+    			add_location(style, file$6, 517, 14, 13895);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -16166,14 +16728,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$5.name,
     		type: "if",
-    		source: "(483:12) { #if sex == 'female' }",
+    		source: "(517:12) { #if sex == 'female' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (486:12) { #if sex == 'none' }
+    // (520:12) { #if sex == 'none' }
     function create_if_block_1$5(ctx) {
     	let style;
     	let t;
@@ -16182,7 +16744,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgfemale{fill:#323835;cursor:pointer;}");
-    			add_location(style, file$6, 486, 14, 12979);
+    			add_location(style, file$6, 520, 14, 14025);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -16197,14 +16759,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(486:12) { #if sex == 'none' }",
+    		source: "(520:12) { #if sex == 'none' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (491:10) <Checkbox              on:change={changeGender}              checked={noneGender}              name="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 28px;                margin-right: 11px;              "            >
+    // (525:10) <Checkbox              on:change={changeGender}              checked={noneGender}              name="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 28px;                margin-right: 11px;              "            >
     function create_default_slot_8(ctx) {
     	let span;
 
@@ -16213,7 +16775,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Пол не указан";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$6, 503, 12, 13912);
+    			add_location(span, file$6, 537, 12, 14958);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -16228,14 +16790,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8.name,
     		type: "slot",
-    		source: "(491:10) <Checkbox              on:change={changeGender}              checked={noneGender}              name=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 28px;                margin-right: 11px;              \\\"            >",
+    		source: "(525:10) <Checkbox              on:change={changeGender}              checked={noneGender}              name=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 28px;                margin-right: 11px;              \\\"            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (543:10) <Checkbox              on:change={changeAge}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 28px;                margin-right: 11px;              "            >
+    // (577:10) <Checkbox              on:change={changeAge}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 28px;                margin-right: 11px;              "            >
     function create_default_slot_7(ctx) {
     	let span;
 
@@ -16244,7 +16806,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Возраст не указан";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$6, 555, 12, 15482);
+    			add_location(span, file$6, 589, 12, 16528);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -16259,14 +16821,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(543:10) <Checkbox              on:change={changeAge}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 28px;                margin-right: 11px;              \\\"            >",
+    		source: "(577:10) <Checkbox              on:change={changeAge}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 28px;                margin-right: 11px;              \\\"            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (577:10) <Checkbox              checked={rass}              on:change={changeRass}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 22px;                margin-right: 11px;              "            >
+    // (611:10) <Checkbox              checked={rass}              on:change={changeRass}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 22px;                margin-right: 11px;              "            >
     function create_default_slot_6(ctx) {
     	let span;
 
@@ -16275,7 +16837,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Рассудительно";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$6, 590, 12, 16549);
+    			add_location(span, file$6, 624, 12, 17595);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -16290,14 +16852,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(577:10) <Checkbox              checked={rass}              on:change={changeRass}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 22px;                margin-right: 11px;              \\\"            >",
+    		source: "(611:10) <Checkbox              checked={rass}              on:change={changeRass}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 22px;                margin-right: 11px;              \\\"            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (593:10) <Checkbox              checked={emo}              on:change={changeEmo}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              "            >
+    // (627:10) <Checkbox              checked={emo}              on:change={changeEmo}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              "            >
     function create_default_slot_5(ctx) {
     	let span;
 
@@ -16306,7 +16868,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Эмоционально";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$6, 606, 12, 17029);
+    			add_location(span, file$6, 640, 12, 18075);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -16321,14 +16883,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(593:10) <Checkbox              checked={emo}              on:change={changeEmo}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              \\\"            >",
+    		source: "(627:10) <Checkbox              checked={emo}              on:change={changeEmo}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              \\\"            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (609:10) <Checkbox              checked={radi}              on:change={changeRadi}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              "            >
+    // (643:10) <Checkbox              checked={radi}              on:change={changeRadi}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              "            >
     function create_default_slot_4(ctx) {
     	let span;
 
@@ -16337,7 +16899,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Радикально";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$6, 622, 12, 17510);
+    			add_location(span, file$6, 656, 12, 18556);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -16352,14 +16914,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(609:10) <Checkbox              checked={radi}              on:change={changeRadi}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              \\\"            >",
+    		source: "(643:10) <Checkbox              checked={radi}              on:change={changeRadi}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              \\\"            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (625:10) <Checkbox              checked={sder}              on:change={changeSder}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              "            >
+    // (659:10) <Checkbox              checked={sder}              on:change={changeSder}              name="male"              value="male"              title="select male"              selectorStyle="                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              "            >
     function create_default_slot_3(ctx) {
     	let span;
 
@@ -16368,7 +16930,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Сдержанно";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$6, 638, 12, 17989);
+    			add_location(span, file$6, 672, 12, 19035);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -16383,14 +16945,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(625:10) <Checkbox              checked={sder}              on:change={changeSder}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              \\\"            >",
+    		source: "(659:10) <Checkbox              checked={sder}              on:change={changeSder}              name=\\\"male\\\"              value=\\\"male\\\"              title=\\\"select male\\\"              selectorStyle=\\\"                border: 2px solid #4300B0;                width: 19px;                height: 19px;                margin-left: 20px;                margin-right: 11px;              \\\"            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (653:10) { :else }
+    // (687:10) { :else }
     function create_else_block(ctx) {
     	let button;
     	let current;
@@ -16440,14 +17002,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(653:10) { :else }",
+    		source: "(687:10) { :else }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (643:10) { #if isLoading === false }
+    // (677:10) { #if isLoading === false }
     function create_if_block$5(ctx) {
     	let button;
     	let current;
@@ -16462,7 +17024,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", /*validate*/ ctx[21]);
+    	button.$on("click", /*validate*/ ctx[22]);
 
     	const block = {
     		c: function create() {
@@ -16499,14 +17061,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(643:10) { #if isLoading === false }",
+    		source: "(677:10) { #if isLoading === false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (654:12) <Button                 filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                  margin-top: 46px;                  background-color: #FDFCF9;                "              >
+    // (688:12) <Button                 filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                  margin-top: 46px;                  background-color: #FDFCF9;                "              >
     function create_default_slot_2(ctx) {
     	let t;
 
@@ -16526,14 +17088,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(654:12) <Button                 filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                  margin-top: 46px;                  background-color: #FDFCF9;                \\\"              >",
+    		source: "(688:12) <Button                 filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                  margin-top: 46px;                  background-color: #FDFCF9;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (644:12) <Button                 on:click={validate}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                  margin-top: 46px;                "              >
+    // (678:12) <Button                 on:click={validate}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                  margin-top: 46px;                "              >
     function create_default_slot_1(ctx) {
     	let t;
 
@@ -16553,14 +17115,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(644:12) <Button                 on:click={validate}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                  margin-top: 46px;                \\\"              >",
+    		source: "(678:12) <Button                 on:click={validate}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                  margin-top: 46px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (664:10) <Button               filled              disabled              style="                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 46px;                margin-left: 16px;              "            >
+    // (698:10) <Button               filled              disabled              style="                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 46px;                margin-left: 16px;              "            >
     function create_default_slot(ctx) {
     	let t;
 
@@ -16580,7 +17142,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(664:10) <Button               filled              disabled              style=\\\"                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 46px;                margin-left: 16px;              \\\"            >",
+    		source: "(698:10) <Button               filled              disabled              style=\\\"                font-size: 15px;                padding: 13px 22px 16px;                margin-top: 46px;                margin-left: 16px;              \\\"            >",
     		ctx
     	});
 
@@ -16588,7 +17150,7 @@ var app = (function () {
     }
 
     function create_fragment$7(ctx) {
-    	let div11;
+    	let div12;
     	let div3;
     	let t0;
     	let t1;
@@ -16605,59 +17167,70 @@ var app = (function () {
     	let div2;
     	let span3;
     	let t10;
-    	let div10;
+    	let div11;
     	let modal;
     	let updating_open;
     	let t11;
+    	let div10;
     	let div9;
-    	let div8;
     	let h3;
     	let t12;
     	let t13;
     	let t14;
-    	let span4;
-    	let t16;
     	let div4;
+    	let starrating;
+    	let t15;
+    	let span4;
+
+    	let t16_value = (/*userRate*/ ctx[13]
+    	? /*userRate*/ ctx[13].toFixed(2)
+    	: 5) + "";
+
+    	let t16;
+    	let t17;
+    	let span5;
+    	let t19;
+    	let div5;
     	let svg0;
     	let if_block4_anchor;
     	let if_block5_anchor;
     	let path0;
-    	let t17;
-    	let span5;
-    	let t19;
+    	let t20;
+    	let span6;
+    	let t22;
     	let svg1;
     	let if_block7_anchor;
     	let if_block8_anchor;
     	let path1;
-    	let t20;
+    	let t23;
     	let checkbox0;
-    	let t21;
-    	let hr0;
-    	let t22;
-    	let div5;
-    	let span6;
     	let t24;
-    	let input;
+    	let hr0;
     	let t25;
-    	let checkbox1;
-    	let t26;
-    	let hr1;
-    	let t27;
     	let div6;
     	let span7;
+    	let t27;
+    	let input;
+    	let t28;
+    	let checkbox1;
     	let t29;
-    	let checkbox2;
+    	let hr1;
     	let t30;
-    	let checkbox3;
-    	let t31;
-    	let checkbox4;
-    	let t32;
-    	let checkbox5;
-    	let t33;
     	let div7;
+    	let span8;
+    	let t32;
+    	let checkbox2;
+    	let t33;
+    	let checkbox3;
+    	let t34;
+    	let checkbox4;
+    	let t35;
+    	let checkbox5;
+    	let t36;
+    	let div8;
     	let current_block_type_index;
     	let if_block10;
-    	let t34;
+    	let t37;
     	let button;
     	let current;
     	let mounted;
@@ -16682,22 +17255,34 @@ var app = (function () {
     		$$scope: { ctx }
     	};
 
-    	if (/*showModal*/ ctx[4] !== void 0) {
-    		modal_props.open = /*showModal*/ ctx[4];
+    	if (/*showModal*/ ctx[3] !== void 0) {
+    		modal_props.open = /*showModal*/ ctx[3];
     	}
 
     	modal = new Modal$1({ props: modal_props, $$inline: true });
     	binding_callbacks.push(() => bind(modal, 'open', modal_open_binding));
-    	let if_block4 = /*sex*/ ctx[5] == 'male' && create_if_block_6$1(ctx);
-    	let if_block5 = /*sex*/ ctx[5] == 'female' && create_if_block_5$1(ctx);
-    	let if_block6 = /*sex*/ ctx[5] == 'none' && create_if_block_4$5(ctx);
-    	let if_block7 = /*sex*/ ctx[5] == 'male' && create_if_block_3$5(ctx);
-    	let if_block8 = /*sex*/ ctx[5] == 'female' && create_if_block_2$5(ctx);
-    	let if_block9 = /*sex*/ ctx[5] == 'none' && create_if_block_1$5(ctx);
+
+    	starrating = new StarRating({
+    			props: {
+    				style: "margin: 0;",
+    				name: "default",
+    				value: /*userRate*/ ctx[13]
+    				? Math.floor(/*userRate*/ ctx[13])
+    				: 5
+    			},
+    			$$inline: true
+    		});
+
+    	let if_block4 = /*sex*/ ctx[4] == 'male' && create_if_block_6$1(ctx);
+    	let if_block5 = /*sex*/ ctx[4] == 'female' && create_if_block_5$1(ctx);
+    	let if_block6 = /*sex*/ ctx[4] == 'none' && create_if_block_4$5(ctx);
+    	let if_block7 = /*sex*/ ctx[4] == 'male' && create_if_block_3$5(ctx);
+    	let if_block8 = /*sex*/ ctx[4] == 'female' && create_if_block_2$5(ctx);
+    	let if_block9 = /*sex*/ ctx[4] == 'none' && create_if_block_1$5(ctx);
 
     	checkbox0 = new Checkbox$1({
     			props: {
-    				checked: /*noneGender*/ ctx[6],
+    				checked: /*noneGender*/ ctx[5],
     				name: "male",
     				title: "select male",
     				selectorStyle: "\r\n              border: 2px solid #4300B0;\r\n              width: 19px;\r\n              height: 19px;\r\n              margin-left: 28px;\r\n              margin-right: 11px;\r\n            ",
@@ -16707,7 +17292,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	checkbox0.$on("change", /*changeGender*/ ctx[19]);
+    	checkbox0.$on("change", /*changeGender*/ ctx[20]);
 
     	checkbox1 = new Checkbox$1({
     			props: {
@@ -16721,11 +17306,11 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	checkbox1.$on("change", /*changeAge*/ ctx[20]);
+    	checkbox1.$on("change", /*changeAge*/ ctx[21]);
 
     	checkbox2 = new Checkbox$1({
     			props: {
-    				checked: /*rass*/ ctx[9],
+    				checked: /*rass*/ ctx[8],
     				name: "male",
     				value: "male",
     				title: "select male",
@@ -16736,11 +17321,11 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	checkbox2.$on("change", /*changeRass*/ ctx[15]);
+    	checkbox2.$on("change", /*changeRass*/ ctx[16]);
 
     	checkbox3 = new Checkbox$1({
     			props: {
-    				checked: /*emo*/ ctx[10],
+    				checked: /*emo*/ ctx[9],
     				name: "male",
     				value: "male",
     				title: "select male",
@@ -16751,11 +17336,11 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	checkbox3.$on("change", /*changeEmo*/ ctx[16]);
+    	checkbox3.$on("change", /*changeEmo*/ ctx[17]);
 
     	checkbox4 = new Checkbox$1({
     			props: {
-    				checked: /*radi*/ ctx[11],
+    				checked: /*radi*/ ctx[10],
     				name: "male",
     				value: "male",
     				title: "select male",
@@ -16766,11 +17351,11 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	checkbox4.$on("change", /*changeRadi*/ ctx[17]);
+    	checkbox4.$on("change", /*changeRadi*/ ctx[18]);
 
     	checkbox5 = new Checkbox$1({
     			props: {
-    				checked: /*sder*/ ctx[12],
+    				checked: /*sder*/ ctx[11],
     				name: "male",
     				value: "male",
     				title: "select male",
@@ -16781,7 +17366,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	checkbox5.$on("change", /*changeSder*/ ctx[18]);
+    	checkbox5.$on("change", /*changeSder*/ ctx[19]);
     	const if_block_creators = [create_if_block$5, create_else_block];
     	const if_blocks = [];
 
@@ -16806,7 +17391,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div11 = element("div");
+    			div12 = element("div");
     			div3 = element("div");
     			if (if_block0) if_block0.c();
     			t0 = space();
@@ -16830,19 +17415,25 @@ var app = (function () {
     			span3 = element("span");
     			span3.textContent = "служба качества";
     			t10 = space();
-    			div10 = element("div");
+    			div11 = element("div");
     			create_component(modal.$$.fragment);
     			t11 = space();
+    			div10 = element("div");
     			div9 = element("div");
-    			div8 = element("div");
     			h3 = element("h3");
     			t12 = text("Личный кабинет | ");
-    			t13 = text(/*userMail*/ ctx[13]);
+    			t13 = text(/*userMail*/ ctx[12]);
     			t14 = space();
-    			span4 = element("span");
-    			span4.textContent = "Сервис hint - максимально обезличенный, поэтому вам не удастся настроить ваше имя, ник или аватар в виде вашей фотки. Однако сервис позволяет настроить вам ваши характеристики, как одного из представителей глобальной аудитории hint. Вам будут показываться те вопросы, таргетинг которых соответствует вашему портрету. Надеемся, что вам понравится в hint";
-    			t16 = space();
     			div4 = element("div");
+    			create_component(starrating.$$.fragment);
+    			t15 = space();
+    			span4 = element("span");
+    			t16 = text(t16_value);
+    			t17 = space();
+    			span5 = element("span");
+    			span5.textContent = "Сервис hint - максимально обезличенный, поэтому вам не удастся настроить ваше имя, ник или аватар в виде вашей фотки. Однако сервис позволяет настроить вам ваши характеристики, как одного из представителей глобальной аудитории hint. Вам будут показываться те вопросы, таргетинг которых соответствует вашему портрету. Надеемся, что вам понравится в hint";
+    			t19 = space();
+    			div5 = element("div");
     			svg0 = svg_element("svg");
     			if (if_block4) if_block4.c();
     			if_block4_anchor = empty();
@@ -16850,10 +17441,10 @@ var app = (function () {
     			if_block5_anchor = empty();
     			if (if_block6) if_block6.c();
     			path0 = svg_element("path");
-    			t17 = space();
-    			span5 = element("span");
-    			span5.textContent = "выберите ваш пол";
-    			t19 = space();
+    			t20 = space();
+    			span6 = element("span");
+    			span6.textContent = "выберите ваш пол";
+    			t22 = space();
     			svg1 = svg_element("svg");
     			if (if_block7) if_block7.c();
     			if_block7_anchor = empty();
@@ -16861,36 +17452,36 @@ var app = (function () {
     			if_block8_anchor = empty();
     			if (if_block9) if_block9.c();
     			path1 = svg_element("path");
-    			t20 = space();
+    			t23 = space();
     			create_component(checkbox0.$$.fragment);
-    			t21 = space();
-    			hr0 = element("hr");
-    			t22 = space();
-    			div5 = element("div");
-    			span6 = element("span");
-    			span6.textContent = "Укажите ваш возраст";
     			t24 = space();
-    			input = element("input");
+    			hr0 = element("hr");
     			t25 = space();
-    			create_component(checkbox1.$$.fragment);
-    			t26 = space();
-    			hr1 = element("hr");
-    			t27 = space();
     			div6 = element("div");
     			span7 = element("span");
-    			span7.textContent = "Выберите ваш характер";
+    			span7.textContent = "Укажите ваш возраст";
+    			t27 = space();
+    			input = element("input");
+    			t28 = space();
+    			create_component(checkbox1.$$.fragment);
     			t29 = space();
-    			create_component(checkbox2.$$.fragment);
+    			hr1 = element("hr");
     			t30 = space();
-    			create_component(checkbox3.$$.fragment);
-    			t31 = space();
-    			create_component(checkbox4.$$.fragment);
-    			t32 = space();
-    			create_component(checkbox5.$$.fragment);
-    			t33 = space();
     			div7 = element("div");
-    			if_block10.c();
+    			span8 = element("span");
+    			span8.textContent = "Выберите ваш характер";
+    			t32 = space();
+    			create_component(checkbox2.$$.fragment);
+    			t33 = space();
+    			create_component(checkbox3.$$.fragment);
     			t34 = space();
+    			create_component(checkbox4.$$.fragment);
+    			t35 = space();
+    			create_component(checkbox5.$$.fragment);
+    			t36 = space();
+    			div8 = element("div");
+    			if_block10.c();
+    			t37 = space();
     			create_component(button.$$.fragment);
     			set_style(span0, "display", "block");
     			set_style(span0, "position", "relative");
@@ -16900,61 +17491,74 @@ var app = (function () {
     			set_style(span0, "opacity", "0.4");
     			set_style(span0, "border-radius", "1px");
     			set_style(span0, "margin-top", "20px");
-    			add_location(span0, file$6, 339, 4, 7911);
+    			add_location(span0, file$6, 356, 4, 8358);
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-aolj48");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$6, 352, 6, 8232);
+    			add_location(span1, file$6, 369, 6, 8679);
     			set_style(div0, "margin-top", "18px");
     			toggle_class(div0, "mainViewMenuItem", true);
-    			add_location(div0, file$6, 351, 4, 8163);
+    			add_location(div0, file$6, 368, 4, 8610);
     			set_style(span2, "cursor", "pointer");
     			attr_dev(span2, "class", "svelte-aolj48");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$6, 363, 6, 8518);
+    			add_location(span2, file$6, 380, 6, 8965);
     			set_style(div1, "margin-top", "11px");
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$6, 362, 4, 8449);
+    			add_location(div1, file$6, 379, 4, 8896);
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-aolj48");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$6, 374, 6, 8814);
+    			add_location(span3, file$6, 391, 6, 9261);
     			set_style(div2, "margin-top", "11px");
     			toggle_class(div2, "mainViewMenuItem", true);
-    			add_location(div2, file$6, 373, 4, 8745);
+    			add_location(div2, file$6, 390, 4, 9192);
     			set_style(div3, "width", "20%");
     			set_style(div3, "padding-top", "30px");
     			toggle_class(div3, "mainViewMenu", true);
-    			add_location(div3, file$6, 213, 2, 4410);
+    			add_location(div3, file$6, 230, 2, 4848);
+    			set_style(span4, "margin-top", "7.5px");
+    			set_style(span4, "margin-left", "10px");
+    			set_style(span4, "font-size", "24px");
+    			add_location(span4, file$6, 474, 12, 11578);
+    			set_style(div4, "display", "flex");
+    			set_style(div4, "flex-direction", "row");
+    			set_style(div4, "items-align", "center");
+    			set_style(div4, "position", "absolute");
+    			set_style(div4, "top", "0");
+    			set_style(div4, "left", "100%");
+    			set_style(div4, "margin-top", "20px");
+    			set_style(div4, "margin-left", "-300px");
+    			add_location(div4, file$6, 461, 10, 11146);
     			attr_dev(h3, "class", "svelte-aolj48");
     			toggle_class(h3, "mainViewContentTitle", true);
-    			add_location(h3, file$6, 442, 8, 10607);
-    			set_style(span4, "line-height", "24px");
-    			set_style(span4, "margin-top", "20px");
-    			set_style(span4, "display", "block");
-    			add_location(span4, file$6, 443, 8, 10689);
+    			add_location(h3, file$6, 459, 8, 11055);
+    			set_style(span5, "line-height", "24px");
+    			set_style(span5, "margin-top", "20px");
+    			set_style(span5, "display", "block");
+    			add_location(span5, file$6, 477, 8, 11735);
     			attr_dev(path0, "d", "M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z");
-    			add_location(path0, file$6, 466, 12, 11920);
+    			add_location(path0, file$6, 500, 12, 12966);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "height", "70px");
     			attr_dev(svg0, "viewBox", "0 0 320 512");
     			toggle_class(svg0, "svgMale", true);
-    			add_location(svg0, file$6, 447, 10, 11247);
-    			set_style(span5, "margin-left", "26px");
-    			set_style(span5, "margin-right", "28px");
-    			add_location(span5, file$6, 468, 10, 12301);
+    			add_location(svg0, file$6, 481, 10, 12293);
+    			set_style(span6, "margin-left", "26px");
+    			set_style(span6, "margin-right", "28px");
+    			add_location(span6, file$6, 502, 10, 13347);
     			attr_dev(path1, "d", "M160 0a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM88 384H70.2c-10.9 0-18.6-10.7-15.2-21.1L93.3 248.1 59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l53.6-89.2c20.3-33.7 56.7-54.3 96-54.3h11.6c39.3 0 75.7 20.6 96 54.3l53.6 89.2c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9l-33.9-56.3L265 362.9c3.5 10.4-4.3 21.1-15.2 21.1H232v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V384H152v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V384z");
-    			add_location(path1, file$6, 488, 12, 13072);
+    			add_location(path1, file$6, 522, 12, 14118);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "height", "70px");
     			attr_dev(svg1, "viewBox", "0 0 320 512");
     			toggle_class(svg1, "svgfemale", true);
-    			add_location(svg1, file$6, 469, 10, 12389);
-    			set_style(div4, "margin-top", "30px");
-    			set_style(div4, "display", "flex");
-    			set_style(div4, "flex-direction", "row");
-    			set_style(div4, "align-items", "center");
-    			add_location(div4, file$6, 446, 8, 11147);
+    			add_location(svg1, file$6, 503, 10, 13435);
+    			set_style(div5, "margin-top", "30px");
+    			set_style(div5, "display", "flex");
+    			set_style(div5, "flex-direction", "row");
+    			set_style(div5, "align-items", "center");
+    			add_location(div5, file$6, 480, 8, 12193);
     			set_style(hr0, "display", "block");
     			set_style(hr0, "position", "relative");
     			set_style(hr0, "border", "none");
@@ -16965,9 +17569,9 @@ var app = (function () {
     			set_style(hr0, "border-radius", "1px");
     			set_style(hr0, "margin-top", "38px");
     			set_style(hr0, "margin-bottom", "38px");
-    			add_location(hr0, file$6, 506, 8, 14012);
-    			add_location(span6, file$6, 521, 10, 14483);
-    			input.disabled = /*noneAge*/ ctx[8];
+    			add_location(hr0, file$6, 540, 8, 15058);
+    			add_location(span7, file$6, 555, 10, 15529);
+    			input.disabled = /*noneAge*/ ctx[7];
     			attr_dev(input, "type", "text");
     			attr_dev(input, "maxlength", "2");
     			attr_dev(input, "placeholder", "30");
@@ -16982,12 +17586,12 @@ var app = (function () {
     			set_style(input, "border-radius", "6px");
     			set_style(input, "background-color", "#FDFCF9");
     			set_style(input, "margin-left", "28px");
-    			add_location(input, file$6, 522, 10, 14527);
-    			set_style(div5, "margin-top", "0px");
-    			set_style(div5, "display", "flex");
-    			set_style(div5, "flex-direction", "row");
-    			set_style(div5, "align-items", "center");
-    			add_location(div5, file$6, 520, 8, 14384);
+    			add_location(input, file$6, 556, 10, 15573);
+    			set_style(div6, "margin-top", "0px");
+    			set_style(div6, "display", "flex");
+    			set_style(div6, "flex-direction", "row");
+    			set_style(div6, "align-items", "center");
+    			add_location(div6, file$6, 554, 8, 15430);
     			set_style(hr1, "display", "block");
     			set_style(hr1, "position", "relative");
     			set_style(hr1, "border", "none");
@@ -16998,41 +17602,41 @@ var app = (function () {
     			set_style(hr1, "border-radius", "1px");
     			set_style(hr1, "margin-top", "38px");
     			set_style(hr1, "margin-bottom", "38px");
-    			add_location(hr1, file$6, 558, 8, 15586);
-    			set_style(span7, "display", "block");
-    			add_location(span7, file$6, 573, 10, 16057);
-    			set_style(div6, "display", "flex");
-    			set_style(div6, "flex-direction", "row");
-    			set_style(div6, "align-items", "center");
-    			set_style(div6, "margin-top", "0px");
-    			add_location(div6, file$6, 572, 8, 15958);
+    			add_location(hr1, file$6, 592, 8, 16632);
+    			set_style(span8, "display", "block");
+    			add_location(span8, file$6, 607, 10, 17103);
     			set_style(div7, "display", "flex");
     			set_style(div7, "flex-direction", "row");
     			set_style(div7, "align-items", "center");
-    			add_location(div7, file$6, 641, 8, 18085);
-    			set_style(div8, "width", "calc(100% + 30px)");
-    			set_style(div8, "overflow-y", "scroll");
-    			set_style(div8, "padding-right", "30px");
-    			set_style(div8, "box-sizing", "border-box");
-    			set_style(div8, "height", "100%");
-    			add_location(div8, file$6, 415, 6, 10005);
-    			set_style(div9, "width", "100%");
+    			set_style(div7, "margin-top", "0px");
+    			add_location(div7, file$6, 606, 8, 17004);
+    			set_style(div8, "display", "flex");
+    			set_style(div8, "flex-direction", "row");
+    			set_style(div8, "align-items", "center");
+    			add_location(div8, file$6, 675, 8, 19131);
+    			set_style(div9, "width", "calc(100% + 30px)");
+    			set_style(div9, "overflow-y", "scroll");
+    			set_style(div9, "padding-right", "30px");
+    			set_style(div9, "box-sizing", "border-box");
     			set_style(div9, "height", "100%");
-    			set_style(div9, "overflow", "hidden");
-    			add_location(div9, file$6, 414, 4, 9939);
-    			attr_dev(div10, "class", "svelte-aolj48");
-    			toggle_class(div10, "mainViewContent", true);
-    			add_location(div10, file$6, 385, 2, 9047);
+    			add_location(div9, file$6, 432, 6, 10453);
+    			set_style(div10, "width", "100%");
+    			set_style(div10, "height", "100%");
+    			set_style(div10, "overflow", "hidden");
+    			add_location(div10, file$6, 431, 4, 10387);
     			attr_dev(div11, "class", "svelte-aolj48");
-    			toggle_class(div11, "mainView", true);
-    			add_location(div11, file$6, 212, 0, 4379);
+    			toggle_class(div11, "mainViewContent", true);
+    			add_location(div11, file$6, 402, 2, 9494);
+    			attr_dev(div12, "class", "svelte-aolj48");
+    			toggle_class(div12, "mainView", true);
+    			add_location(div12, file$6, 229, 0, 4817);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div11, anchor);
-    			append_dev(div11, div3);
+    			insert_dev(target, div12, anchor);
+    			append_dev(div12, div3);
     			if (if_block0) if_block0.m(div3, null);
     			append_dev(div3, t0);
     			if (if_block1) if_block1.m(div3, null);
@@ -17051,77 +17655,83 @@ var app = (function () {
     			append_dev(div3, t8);
     			append_dev(div3, div2);
     			append_dev(div2, span3);
-    			append_dev(div11, t10);
+    			append_dev(div12, t10);
+    			append_dev(div12, div11);
+    			mount_component(modal, div11, null);
+    			append_dev(div11, t11);
     			append_dev(div11, div10);
-    			mount_component(modal, div10, null);
-    			append_dev(div10, t11);
     			append_dev(div10, div9);
-    			append_dev(div9, div8);
-    			append_dev(div8, h3);
+    			append_dev(div9, h3);
     			append_dev(h3, t12);
     			append_dev(h3, t13);
-    			append_dev(div8, t14);
-    			append_dev(div8, span4);
-    			append_dev(div8, t16);
-    			append_dev(div8, div4);
-    			append_dev(div4, svg0);
+    			append_dev(h3, t14);
+    			append_dev(h3, div4);
+    			mount_component(starrating, div4, null);
+    			append_dev(div4, t15);
+    			append_dev(div4, span4);
+    			append_dev(span4, t16);
+    			append_dev(div9, t17);
+    			append_dev(div9, span5);
+    			append_dev(div9, t19);
+    			append_dev(div9, div5);
+    			append_dev(div5, svg0);
     			if (if_block4) if_block4.m(svg0, null);
     			append_dev(svg0, if_block4_anchor);
     			if (if_block5) if_block5.m(svg0, null);
     			append_dev(svg0, if_block5_anchor);
     			if (if_block6) if_block6.m(svg0, null);
     			append_dev(svg0, path0);
-    			append_dev(div4, t17);
-    			append_dev(div4, span5);
-    			append_dev(div4, t19);
-    			append_dev(div4, svg1);
+    			append_dev(div5, t20);
+    			append_dev(div5, span6);
+    			append_dev(div5, t22);
+    			append_dev(div5, svg1);
     			if (if_block7) if_block7.m(svg1, null);
     			append_dev(svg1, if_block7_anchor);
     			if (if_block8) if_block8.m(svg1, null);
     			append_dev(svg1, if_block8_anchor);
     			if (if_block9) if_block9.m(svg1, null);
     			append_dev(svg1, path1);
-    			append_dev(div4, t20);
-    			mount_component(checkbox0, div4, null);
-    			append_dev(div8, t21);
-    			append_dev(div8, hr0);
-    			append_dev(div8, t22);
-    			append_dev(div8, div5);
-    			append_dev(div5, span6);
-    			append_dev(div5, t24);
-    			append_dev(div5, input);
-    			set_input_value(input, /*ageNumber*/ ctx[7]);
-    			append_dev(div5, t25);
-    			mount_component(checkbox1, div5, null);
-    			append_dev(div8, t26);
-    			append_dev(div8, hr1);
-    			append_dev(div8, t27);
-    			append_dev(div8, div6);
+    			append_dev(div5, t23);
+    			mount_component(checkbox0, div5, null);
+    			append_dev(div9, t24);
+    			append_dev(div9, hr0);
+    			append_dev(div9, t25);
+    			append_dev(div9, div6);
     			append_dev(div6, span7);
-    			append_dev(div6, t29);
-    			mount_component(checkbox2, div6, null);
-    			append_dev(div6, t30);
-    			mount_component(checkbox3, div6, null);
-    			append_dev(div6, t31);
-    			mount_component(checkbox4, div6, null);
-    			append_dev(div6, t32);
-    			mount_component(checkbox5, div6, null);
-    			append_dev(div8, t33);
-    			append_dev(div8, div7);
-    			if_blocks[current_block_type_index].m(div7, null);
+    			append_dev(div6, t27);
+    			append_dev(div6, input);
+    			set_input_value(input, /*ageNumber*/ ctx[6]);
+    			append_dev(div6, t28);
+    			mount_component(checkbox1, div6, null);
+    			append_dev(div9, t29);
+    			append_dev(div9, hr1);
+    			append_dev(div9, t30);
+    			append_dev(div9, div7);
+    			append_dev(div7, span8);
+    			append_dev(div7, t32);
+    			mount_component(checkbox2, div7, null);
+    			append_dev(div7, t33);
+    			mount_component(checkbox3, div7, null);
     			append_dev(div7, t34);
-    			mount_component(button, div7, null);
+    			mount_component(checkbox4, div7, null);
+    			append_dev(div7, t35);
+    			mount_component(checkbox5, div7, null);
+    			append_dev(div9, t36);
+    			append_dev(div9, div8);
+    			if_blocks[current_block_type_index].m(div8, null);
+    			append_dev(div8, t37);
+    			mount_component(button, div8, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span1, "click", /*click_handler_7*/ ctx[29], false, false, false),
-    					listen_dev(span2, "click", /*click_handler_8*/ ctx[30], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_9*/ ctx[31], false, false, false),
+    					listen_dev(span1, "click", /*click_handler_7*/ ctx[30], false, false, false),
+    					listen_dev(span2, "click", /*click_handler_8*/ ctx[31], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_9*/ ctx[32], false, false, false),
     					listen_dev(svg0, "click", /*click_handler_10*/ ctx[34], false, false, false),
     					listen_dev(svg1, "click", /*click_handler_11*/ ctx[35], false, false, false),
     					listen_dev(input, "input", /*input_input_handler*/ ctx[36]),
-    					listen_dev(div8, "mousewheel", /*mousewheel_handler*/ ctx[37], false, false, false)
+    					listen_dev(div9, "mousewheel", /*mousewheel_handler*/ ctx[37], false, false, false)
     				];
 
     				mounted = true;
@@ -17182,20 +17792,31 @@ var app = (function () {
 
     			const modal_changes = {};
 
-    			if (dirty[0] & /*hintRate*/ 8 | dirty[1] & /*$$scope, closeCallback*/ 1536) {
+    			if (dirty[1] & /*$$scope, closeCallback*/ 1536) {
     				modal_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_open && dirty[0] & /*showModal*/ 16) {
+    			if (!updating_open && dirty[0] & /*showModal*/ 8) {
     				updating_open = true;
-    				modal_changes.open = /*showModal*/ ctx[4];
+    				modal_changes.open = /*showModal*/ ctx[3];
     				add_flush_callback(() => updating_open = false);
     			}
 
     			modal.$set(modal_changes);
-    			if (!current || dirty[0] & /*userMail*/ 8192) set_data_dev(t13, /*userMail*/ ctx[13]);
+    			if (!current || dirty[0] & /*userMail*/ 4096) set_data_dev(t13, /*userMail*/ ctx[12]);
+    			const starrating_changes = {};
 
-    			if (/*sex*/ ctx[5] == 'male') {
+    			if (dirty[0] & /*userRate*/ 8192) starrating_changes.value = /*userRate*/ ctx[13]
+    			? Math.floor(/*userRate*/ ctx[13])
+    			: 5;
+
+    			starrating.$set(starrating_changes);
+
+    			if ((!current || dirty[0] & /*userRate*/ 8192) && t16_value !== (t16_value = (/*userRate*/ ctx[13]
+    			? /*userRate*/ ctx[13].toFixed(2)
+    			: 5) + "")) set_data_dev(t16, t16_value);
+
+    			if (/*sex*/ ctx[4] == 'male') {
     				if (if_block4) ; else {
     					if_block4 = create_if_block_6$1(ctx);
     					if_block4.c();
@@ -17206,7 +17827,7 @@ var app = (function () {
     				if_block4 = null;
     			}
 
-    			if (/*sex*/ ctx[5] == 'female') {
+    			if (/*sex*/ ctx[4] == 'female') {
     				if (if_block5) ; else {
     					if_block5 = create_if_block_5$1(ctx);
     					if_block5.c();
@@ -17217,7 +17838,7 @@ var app = (function () {
     				if_block5 = null;
     			}
 
-    			if (/*sex*/ ctx[5] == 'none') {
+    			if (/*sex*/ ctx[4] == 'none') {
     				if (if_block6) ; else {
     					if_block6 = create_if_block_4$5(ctx);
     					if_block6.c();
@@ -17228,7 +17849,7 @@ var app = (function () {
     				if_block6 = null;
     			}
 
-    			if (/*sex*/ ctx[5] == 'male') {
+    			if (/*sex*/ ctx[4] == 'male') {
     				if (if_block7) ; else {
     					if_block7 = create_if_block_3$5(ctx);
     					if_block7.c();
@@ -17239,7 +17860,7 @@ var app = (function () {
     				if_block7 = null;
     			}
 
-    			if (/*sex*/ ctx[5] == 'female') {
+    			if (/*sex*/ ctx[4] == 'female') {
     				if (if_block8) ; else {
     					if_block8 = create_if_block_2$5(ctx);
     					if_block8.c();
@@ -17250,7 +17871,7 @@ var app = (function () {
     				if_block8 = null;
     			}
 
-    			if (/*sex*/ ctx[5] == 'none') {
+    			if (/*sex*/ ctx[4] == 'none') {
     				if (if_block9) ; else {
     					if_block9 = create_if_block_1$5(ctx);
     					if_block9.c();
@@ -17262,7 +17883,7 @@ var app = (function () {
     			}
 
     			const checkbox0_changes = {};
-    			if (dirty[0] & /*noneGender*/ 64) checkbox0_changes.checked = /*noneGender*/ ctx[6];
+    			if (dirty[0] & /*noneGender*/ 32) checkbox0_changes.checked = /*noneGender*/ ctx[5];
 
     			if (dirty[1] & /*$$scope*/ 1024) {
     				checkbox0_changes.$$scope = { dirty, ctx };
@@ -17270,12 +17891,12 @@ var app = (function () {
 
     			checkbox0.$set(checkbox0_changes);
 
-    			if (!current || dirty[0] & /*noneAge*/ 256) {
-    				prop_dev(input, "disabled", /*noneAge*/ ctx[8]);
+    			if (!current || dirty[0] & /*noneAge*/ 128) {
+    				prop_dev(input, "disabled", /*noneAge*/ ctx[7]);
     			}
 
-    			if (dirty[0] & /*ageNumber*/ 128 && input.value !== /*ageNumber*/ ctx[7]) {
-    				set_input_value(input, /*ageNumber*/ ctx[7]);
+    			if (dirty[0] & /*ageNumber*/ 64 && input.value !== /*ageNumber*/ ctx[6]) {
+    				set_input_value(input, /*ageNumber*/ ctx[6]);
     			}
 
     			const checkbox1_changes = {};
@@ -17286,7 +17907,7 @@ var app = (function () {
 
     			checkbox1.$set(checkbox1_changes);
     			const checkbox2_changes = {};
-    			if (dirty[0] & /*rass*/ 512) checkbox2_changes.checked = /*rass*/ ctx[9];
+    			if (dirty[0] & /*rass*/ 256) checkbox2_changes.checked = /*rass*/ ctx[8];
 
     			if (dirty[1] & /*$$scope*/ 1024) {
     				checkbox2_changes.$$scope = { dirty, ctx };
@@ -17294,7 +17915,7 @@ var app = (function () {
 
     			checkbox2.$set(checkbox2_changes);
     			const checkbox3_changes = {};
-    			if (dirty[0] & /*emo*/ 1024) checkbox3_changes.checked = /*emo*/ ctx[10];
+    			if (dirty[0] & /*emo*/ 512) checkbox3_changes.checked = /*emo*/ ctx[9];
 
     			if (dirty[1] & /*$$scope*/ 1024) {
     				checkbox3_changes.$$scope = { dirty, ctx };
@@ -17302,7 +17923,7 @@ var app = (function () {
 
     			checkbox3.$set(checkbox3_changes);
     			const checkbox4_changes = {};
-    			if (dirty[0] & /*radi*/ 2048) checkbox4_changes.checked = /*radi*/ ctx[11];
+    			if (dirty[0] & /*radi*/ 1024) checkbox4_changes.checked = /*radi*/ ctx[10];
 
     			if (dirty[1] & /*$$scope*/ 1024) {
     				checkbox4_changes.$$scope = { dirty, ctx };
@@ -17310,7 +17931,7 @@ var app = (function () {
 
     			checkbox4.$set(checkbox4_changes);
     			const checkbox5_changes = {};
-    			if (dirty[0] & /*sder*/ 4096) checkbox5_changes.checked = /*sder*/ ctx[12];
+    			if (dirty[0] & /*sder*/ 2048) checkbox5_changes.checked = /*sder*/ ctx[11];
 
     			if (dirty[1] & /*$$scope*/ 1024) {
     				checkbox5_changes.$$scope = { dirty, ctx };
@@ -17340,7 +17961,7 @@ var app = (function () {
     				}
 
     				transition_in(if_block10, 1);
-    				if_block10.m(div7, t34);
+    				if_block10.m(div8, t37);
     			}
 
     			const button_changes = {};
@@ -17354,6 +17975,7 @@ var app = (function () {
     		i: function intro(local) {
     			if (current) return;
     			transition_in(modal.$$.fragment, local);
+    			transition_in(starrating.$$.fragment, local);
     			transition_in(checkbox0.$$.fragment, local);
     			transition_in(checkbox1.$$.fragment, local);
     			transition_in(checkbox2.$$.fragment, local);
@@ -17366,6 +17988,7 @@ var app = (function () {
     		},
     		o: function outro(local) {
     			transition_out(modal.$$.fragment, local);
+    			transition_out(starrating.$$.fragment, local);
     			transition_out(checkbox0.$$.fragment, local);
     			transition_out(checkbox1.$$.fragment, local);
     			transition_out(checkbox2.$$.fragment, local);
@@ -17377,12 +18000,13 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div11);
+    			if (detaching) detach_dev(div12);
     			if (if_block0) if_block0.d();
     			if (if_block1) if_block1.d();
     			if (if_block2) if_block2.d();
     			if (if_block3) if_block3.d();
     			destroy_component(modal);
+    			destroy_component(starrating);
     			if (if_block4) if_block4.d();
     			if (if_block5) if_block5.d();
     			if (if_block6) if_block6.d();
@@ -17417,7 +18041,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('MyCabinet', slots, []);
     	let isLoading = false;
-    	let hintRate = 1;
+    	let hintRate = 5;
     	let showModal = false;
     	let sex = 'male';
     	let noneGender = false;
@@ -17431,22 +18055,23 @@ var app = (function () {
     	let AUTH = false;
     	let userMail;
     	let userId;
+    	let userRate;
     	let { questionsData } = $$props;
     	let questionsIndex = 0;
-    	const changeRass = event => $$invalidate(9, rass = event.detail.checked);
-    	const changeEmo = event => $$invalidate(10, emo = event.detail.checked);
-    	const changeRadi = event => $$invalidate(11, radi = event.detail.checked);
-    	const changeSder = event => $$invalidate(12, sder = event.detail.checked);
+    	const changeRass = event => $$invalidate(8, rass = event.detail.checked);
+    	const changeEmo = event => $$invalidate(9, emo = event.detail.checked);
+    	const changeRadi = event => $$invalidate(10, radi = event.detail.checked);
+    	const changeSder = event => $$invalidate(11, sder = event.detail.checked);
 
     	const changeGender = event => {
     		console.log(event.detail.checked);
 
     		if (event.detail.checked == true) {
-    			$$invalidate(5, sex = 'none');
-    			$$invalidate(6, noneGender = true);
+    			$$invalidate(4, sex = 'none');
+    			$$invalidate(5, noneGender = true);
     		} else {
-    			$$invalidate(5, sex = 'male');
-    			$$invalidate(6, noneGender = false);
+    			$$invalidate(4, sex = 'male');
+    			$$invalidate(5, noneGender = false);
     		}
     	};
 
@@ -17454,11 +18079,11 @@ var app = (function () {
     		console.log(event.detail.checked);
 
     		if (event.detail.checked == true) {
-    			$$invalidate(7, ageNumber = '');
-    			$$invalidate(8, noneAge = true);
+    			$$invalidate(6, ageNumber = '');
+    			$$invalidate(7, noneAge = true);
     		} else {
-    			$$invalidate(7, ageNumber = '30');
-    			$$invalidate(8, noneAge = false);
+    			$$invalidate(6, ageNumber = '30');
+    			$$invalidate(7, noneAge = false);
     		}
     	};
 
@@ -17483,7 +18108,14 @@ var app = (function () {
     				style: [{ rass }, { emo }, { radi }, { sder }]
     			})
     		}).then(res => res.json()).then(data => {
-    			console.log(data);
+    			authCheck.update(data => {
+    				return {
+    					...data,
+    					age: ageNumber,
+    					gender: sex,
+    					style: [{ rass }, { emo }, { radi }, { sder }]
+    				};
+    			});
 
     			setTimeout(
     				() => {
@@ -17495,19 +18127,20 @@ var app = (function () {
     						body: JSON.stringify({ uid: userId })
     					}).then(res => res.json()).then(data => {
     						console.log(data);
-    						$$invalidate(5, sex = data.body.gender);
-    						$$invalidate(7, ageNumber = data.body.age);
+    						$$invalidate(4, sex = data.body.gender);
+    						$$invalidate(6, ageNumber = data.body.age);
     						defaultAgeNumber = data.body.age;
+    						$$invalidate(13, userRate = data.rate.reduce((a, b) => a + b) / data.rate.length);
 
     						if (sex == 'none') {
-    							$$invalidate(6, noneGender = true);
+    							$$invalidate(5, noneGender = true);
     						}
 
     						if (data.body.style) {
-    							$$invalidate(9, rass = data.body.style[0].rass);
-    							$$invalidate(10, emo = data.body.style[1].emo);
-    							$$invalidate(11, radi = data.body.style[2].radi);
-    							$$invalidate(12, sder = data.body.style[3].sder);
+    							$$invalidate(8, rass = data.body.style[0].rass);
+    							$$invalidate(9, emo = data.body.style[1].emo);
+    							$$invalidate(10, radi = data.body.style[2].radi);
+    							$$invalidate(11, sder = data.body.style[3].sder);
     						}
 
     						$$invalidate(2, isLoading = false);
@@ -17527,19 +18160,21 @@ var app = (function () {
     			body: JSON.stringify({ uid: userId })
     		}).then(res => res.json()).then(data => {
     			console.log(data);
-    			$$invalidate(5, sex = data.body.gender);
-    			$$invalidate(7, ageNumber = data.body.age);
+    			$$invalidate(4, sex = data.body.gender);
+    			$$invalidate(6, ageNumber = data.body.age);
     			defaultAgeNumber = data.body.age;
+    			$$invalidate(13, userRate = data.rate.reduce((a, b) => a.rate + b.rate) / data.rate.length);
+    			console.log(userRate);
 
     			if (sex == 'none') {
-    				$$invalidate(6, noneGender = true);
+    				$$invalidate(5, noneGender = true);
     			}
 
     			if (data.body.style) {
-    				$$invalidate(9, rass = data.body.style[0].rass);
-    				$$invalidate(10, emo = data.body.style[1].emo);
-    				$$invalidate(11, radi = data.body.style[2].radi);
-    				$$invalidate(12, sder = data.body.style[3].sder);
+    				$$invalidate(8, rass = data.body.style[0].rass);
+    				$$invalidate(9, emo = data.body.style[1].emo);
+    				$$invalidate(10, radi = data.body.style[2].radi);
+    				$$invalidate(11, sder = data.body.style[3].sder);
     			}
     		});
     	});
@@ -17590,29 +18225,24 @@ var app = (function () {
     		pageRoute.set('support');
     	};
 
-    	function starrating_value_binding(value) {
-    		hintRate = value;
-    		$$invalidate(3, hintRate);
-    	}
-
     	function modal_open_binding(value) {
     		showModal = value;
-    		$$invalidate(4, showModal);
+    		$$invalidate(3, showModal);
     	}
 
     	const click_handler_10 = () => {
-    		$$invalidate(5, sex = 'male');
-    		$$invalidate(6, noneGender = false);
+    		$$invalidate(4, sex = 'male');
+    		$$invalidate(5, noneGender = false);
     	};
 
     	const click_handler_11 = () => {
-    		$$invalidate(5, sex = 'female');
-    		$$invalidate(6, noneGender = false);
+    		$$invalidate(4, sex = 'female');
+    		$$invalidate(5, noneGender = false);
     	};
 
     	function input_input_handler() {
     		ageNumber = this.value;
-    		$$invalidate(7, ageNumber);
+    		$$invalidate(6, ageNumber);
     	}
 
     	const mousewheel_handler = event => {
@@ -17655,6 +18285,7 @@ var app = (function () {
     		AUTH,
     		userMail,
     		userId,
+    		userRate,
     		questionsData,
     		questionsIndex,
     		changeRass,
@@ -17668,20 +18299,21 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ('isLoading' in $$props) $$invalidate(2, isLoading = $$props.isLoading);
-    		if ('hintRate' in $$props) $$invalidate(3, hintRate = $$props.hintRate);
-    		if ('showModal' in $$props) $$invalidate(4, showModal = $$props.showModal);
-    		if ('sex' in $$props) $$invalidate(5, sex = $$props.sex);
-    		if ('noneGender' in $$props) $$invalidate(6, noneGender = $$props.noneGender);
+    		if ('hintRate' in $$props) $$invalidate(15, hintRate = $$props.hintRate);
+    		if ('showModal' in $$props) $$invalidate(3, showModal = $$props.showModal);
+    		if ('sex' in $$props) $$invalidate(4, sex = $$props.sex);
+    		if ('noneGender' in $$props) $$invalidate(5, noneGender = $$props.noneGender);
     		if ('defaultAgeNumber' in $$props) defaultAgeNumber = $$props.defaultAgeNumber;
-    		if ('ageNumber' in $$props) $$invalidate(7, ageNumber = $$props.ageNumber);
-    		if ('noneAge' in $$props) $$invalidate(8, noneAge = $$props.noneAge);
-    		if ('rass' in $$props) $$invalidate(9, rass = $$props.rass);
-    		if ('emo' in $$props) $$invalidate(10, emo = $$props.emo);
-    		if ('radi' in $$props) $$invalidate(11, radi = $$props.radi);
-    		if ('sder' in $$props) $$invalidate(12, sder = $$props.sder);
+    		if ('ageNumber' in $$props) $$invalidate(6, ageNumber = $$props.ageNumber);
+    		if ('noneAge' in $$props) $$invalidate(7, noneAge = $$props.noneAge);
+    		if ('rass' in $$props) $$invalidate(8, rass = $$props.rass);
+    		if ('emo' in $$props) $$invalidate(9, emo = $$props.emo);
+    		if ('radi' in $$props) $$invalidate(10, radi = $$props.radi);
+    		if ('sder' in $$props) $$invalidate(11, sder = $$props.sder);
     		if ('AUTH' in $$props) $$invalidate(1, AUTH = $$props.AUTH);
-    		if ('userMail' in $$props) $$invalidate(13, userMail = $$props.userMail);
+    		if ('userMail' in $$props) $$invalidate(12, userMail = $$props.userMail);
     		if ('userId' in $$props) userId = $$props.userId;
+    		if ('userRate' in $$props) $$invalidate(13, userRate = $$props.userRate);
     		if ('questionsData' in $$props) $$invalidate(0, questionsData = $$props.questionsData);
     		if ('questionsIndex' in $$props) $$invalidate(14, questionsIndex = $$props.questionsIndex);
     	};
@@ -17695,7 +18327,7 @@ var app = (function () {
     			{
     				authCheck.subscribe(value => {
     					$$invalidate(1, AUTH = value.auth);
-    					$$invalidate(13, userMail = value.userMail);
+    					$$invalidate(12, userMail = value.userMail);
     					userId = value.userID;
     				});
 
@@ -17708,7 +18340,6 @@ var app = (function () {
     		questionsData,
     		AUTH,
     		isLoading,
-    		hintRate,
     		showModal,
     		sex,
     		noneGender,
@@ -17719,7 +18350,9 @@ var app = (function () {
     		radi,
     		sder,
     		userMail,
+    		userRate,
     		questionsIndex,
+    		hintRate,
     		changeRass,
     		changeEmo,
     		changeRadi,
@@ -17737,7 +18370,6 @@ var app = (function () {
     		click_handler_7,
     		click_handler_8,
     		click_handler_9,
-    		starrating_value_binding,
     		modal_open_binding,
     		click_handler_10,
     		click_handler_11,
@@ -17780,7 +18412,7 @@ var app = (function () {
     const { console: console_1$4 } = globals;
     const file$5 = "src\\bricks\\views\\Unauth.svelte";
 
-    // (27:2) { #if helloDownload === true }
+    // (30:2) { #if helloDownload === true }
     function create_if_block_4$4(ctx) {
     	let div;
     	let svg;
@@ -17801,14 +18433,14 @@ var app = (function () {
     			path = svg_element("path");
     			t1 = space();
     			create_component(loading.$$.fragment);
-    			add_location(style, file$5, 45, 8, 817);
+    			add_location(style, file$5, 48, 8, 907);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$5, 50, 8, 928);
+    			add_location(path, file$5, 53, 8, 1018);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "60px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "helloLogo", true);
-    			add_location(svg, file$5, 39, 6, 661);
+    			add_location(svg, file$5, 42, 6, 751);
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
@@ -17816,7 +18448,7 @@ var app = (function () {
     			set_style(div, "position", "relative");
     			set_style(div, "width", "100%");
     			set_style(div, "margin-top", "100px");
-    			add_location(div, file$5, 28, 4, 413);
+    			add_location(div, file$5, 31, 4, 503);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -17847,14 +18479,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$4.name,
     		type: "if",
-    		source: "(27:2) { #if helloDownload === true }",
+    		source: "(30:2) { #if helloDownload === true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:2) { #if helloDownload === false }
+    // (63:2) { #if helloDownload === false }
     function create_if_block_1$4(ctx) {
     	let div4;
     	let t0;
@@ -17914,14 +18546,14 @@ var app = (function () {
     			set_style(span0, "margin-top", "-10px");
     			set_style(span0, "margin-left", "-10px");
     			set_style(span0, "border-radius", "2px");
-    			add_location(span0, file$5, 152, 10, 4296);
+    			add_location(span0, file$5, 155, 10, 4395);
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-16inkut");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$5, 144, 8, 4078);
+    			add_location(span1, file$5, 147, 8, 4177);
     			set_style(div0, "margin-top", "6px");
     			toggle_class(div0, "mainViewMenuItem", true);
-    			add_location(div0, file$5, 143, 6, 4008);
+    			add_location(div0, file$5, 146, 6, 4107);
     			set_style(span2, "display", "block");
     			set_style(span2, "position", "relative");
     			set_style(span2, "width", "80%");
@@ -17930,31 +18562,31 @@ var app = (function () {
     			set_style(span2, "opacity", "0.4");
     			set_style(span2, "border-radius", "1px");
     			set_style(span2, "margin-top", "20px");
-    			add_location(span2, file$5, 168, 6, 4707);
+    			add_location(span2, file$5, 171, 6, 4806);
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-16inkut");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$5, 181, 8, 5054);
+    			add_location(span3, file$5, 184, 8, 5153);
     			set_style(div1, "margin-top", "18px");
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$5, 180, 6, 4983);
+    			add_location(div1, file$5, 183, 6, 5082);
     			set_style(span4, "cursor", "pointer");
     			attr_dev(span4, "class", "svelte-16inkut");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$5, 192, 8, 5362);
+    			add_location(span4, file$5, 195, 8, 5461);
     			set_style(div2, "margin-top", "11px");
     			toggle_class(div2, "mainViewMenuItem", true);
-    			add_location(div2, file$5, 191, 6, 5291);
+    			add_location(div2, file$5, 194, 6, 5390);
     			set_style(span5, "cursor", "pointer");
     			attr_dev(span5, "class", "svelte-16inkut");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$5, 203, 8, 5680);
+    			add_location(span5, file$5, 206, 8, 5779);
     			set_style(div3, "margin-top", "11px");
     			toggle_class(div3, "mainViewMenuItem", true);
-    			add_location(div3, file$5, 202, 6, 5609);
+    			add_location(div3, file$5, 205, 6, 5708);
     			set_style(div4, "width", "20%");
     			toggle_class(div4, "mainViewMenu", true);
-    			add_location(div4, file$5, 61, 4, 1498);
+    			add_location(div4, file$5, 64, 4, 1588);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div4, anchor);
@@ -17980,10 +18612,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span1, "click", /*click_handler_5*/ ctx[7], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_6*/ ctx[8], false, false, false),
-    					listen_dev(span4, "click", /*click_handler_7*/ ctx[9], false, false, false),
-    					listen_dev(span5, "click", /*click_handler_8*/ ctx[10], false, false, false)
+    					listen_dev(span1, "click", /*click_handler_5*/ ctx[9], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_6*/ ctx[10], false, false, false),
+    					listen_dev(span4, "click", /*click_handler_7*/ ctx[11], false, false, false),
+    					listen_dev(span5, "click", /*click_handler_8*/ ctx[12], false, false, false)
     				];
 
     				mounted = true;
@@ -18029,14 +18661,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(60:2) { #if helloDownload === false }",
+    		source: "(63:2) { #if helloDownload === false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:6) { #if AUTH == true }
+    // (67:6) { #if AUTH == true }
     function create_if_block_3$4(ctx) {
     	let div1;
     	let span0;
@@ -18062,7 +18694,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			span0 = element("span");
-    			span0.textContent = "все хинты";
+    			span0.textContent = "основное меню hint";
     			t1 = space();
     			div0 = element("div");
     			span1 = element("span");
@@ -18087,55 +18719,55 @@ var app = (function () {
     			span7.textContent = "список вопросов";
     			attr_dev(span0, "class", "svelte-16inkut");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$5, 66, 10, 1638);
+    			add_location(span0, file$5, 69, 10, 1728);
     			set_style(span1, "margin-top", "11px");
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-16inkut");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$5, 68, 12, 1803);
+    			add_location(span1, file$5, 71, 12, 1902);
     			set_style(span2, "margin-top", "12px");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "color", "#4300b0");
     			set_style(span2, "margin-left", "30px");
     			attr_dev(span2, "class", "svelte-16inkut");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$5, 77, 12, 2091);
+    			add_location(span2, file$5, 80, 12, 2190);
     			set_style(span3, "margin-top", "6px");
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-16inkut");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$5, 83, 12, 2306);
+    			add_location(span3, file$5, 86, 12, 2405);
     			set_style(span4, "margin-top", "12px");
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "color", "#4300b0");
     			set_style(span4, "margin-left", "30px");
     			attr_dev(span4, "class", "svelte-16inkut");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$5, 92, 12, 2587);
+    			add_location(span4, file$5, 95, 12, 2686);
     			set_style(span5, "margin-top", "6px");
     			set_style(span5, "cursor", "pointer");
     			attr_dev(span5, "class", "svelte-16inkut");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$5, 98, 12, 2802);
+    			add_location(span5, file$5, 101, 12, 2901);
     			set_style(span6, "margin-top", "12px");
     			set_style(span6, "cursor", "pointer");
     			set_style(span6, "color", "#4300b0");
     			set_style(span6, "margin-left", "30px");
     			attr_dev(span6, "class", "svelte-16inkut");
     			toggle_class(span6, "mainViewMenuItemLine", true);
-    			add_location(span6, file$5, 107, 12, 3082);
+    			add_location(span6, file$5, 110, 12, 3181);
     			set_style(span7, "margin-top", "6px");
     			set_style(span7, "cursor", "pointer");
     			attr_dev(span7, "class", "svelte-16inkut");
     			toggle_class(span7, "mainViewMenuItemLine", true);
-    			add_location(span7, file$5, 113, 12, 3297);
+    			add_location(span7, file$5, 116, 12, 3396);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
     			attr_dev(div0, "class", "svelte-16inkut");
     			toggle_class(div0, "mainViewMenuItemSub", true);
-    			add_location(div0, file$5, 67, 10, 1706);
+    			add_location(div0, file$5, 70, 10, 1805);
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$5, 65, 8, 1591);
+    			add_location(div1, file$5, 68, 8, 1681);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -18158,10 +18790,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span1, "click", /*click_handler*/ ctx[2], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_1*/ ctx[3], false, false, false),
-    					listen_dev(span5, "click", /*click_handler_2*/ ctx[4], false, false, false),
-    					listen_dev(span7, "click", /*click_handler_3*/ ctx[5], false, false, false)
+    					listen_dev(span1, "click", /*click_handler*/ ctx[4], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_1*/ ctx[5], false, false, false),
+    					listen_dev(span5, "click", /*click_handler_2*/ ctx[6], false, false, false),
+    					listen_dev(span7, "click", /*click_handler_3*/ ctx[7], false, false, false)
     				];
 
     				mounted = true;
@@ -18179,14 +18811,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$4.name,
     		type: "if",
-    		source: "(64:6) { #if AUTH == true }",
+    		source: "(67:6) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:6) { #if AUTH == true }
+    // (131:6) { #if AUTH == true }
     function create_if_block_2$4(ctx) {
     	let div;
     	let span;
@@ -18201,17 +18833,17 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-16inkut");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$5, 130, 8, 3738);
+    			add_location(span, file$5, 133, 8, 3837);
     			set_style(div, "margin-top", "11px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$5, 129, 6, 3667);
+    			add_location(div, file$5, 132, 6, 3766);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[6], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[8], false, false, false);
     				mounted = true;
     			}
     		},
@@ -18227,57 +18859,116 @@ var app = (function () {
     		block,
     		id: create_if_block_2$4.name,
     		type: "if",
-    		source: "(128:6) { #if AUTH == true }",
+    		source: "(131:6) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (218:2) { #if helloDownload === false }
+    // (221:2) { #if helloDownload === false }
     function create_if_block$4(ctx) {
-    	let div;
+    	let div1;
     	let h3;
     	let i;
     	let t1;
     	let t2;
+    	let div0;
+    	let img0;
+    	let img0_src_value;
+    	let t3;
+    	let img1;
+    	let img1_src_value;
+    	let t4;
+    	let img2;
+    	let img2_src_value;
+    	let t5;
     	let span;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div1 = element("div");
     			h3 = element("h3");
     			i = element("i");
     			i.textContent = "HINT";
     			t1 = text(" - советы онлайн по вашим вопросам");
     			t2 = space();
+    			div0 = element("div");
+    			img0 = element("img");
+    			t3 = space();
+    			img1 = element("img");
+    			t4 = space();
+    			img2 = element("img");
+    			t5 = space();
     			span = element("span");
-    			span.textContent = "приветственное сообщение для новых пользователей";
+    			span.textContent = "Получайте анонимные советы и мнения на вашу проблему - от живых пользователей, совершенно бесплатно. Настраивайте аудиторию, от которой хотите получить совет, оценивайте ответы и давайте советы сами";
     			set_style(i, "font-style", "normal");
     			set_style(i, "letter-spacing", "2px");
-    			add_location(i, file$5, 222, 8, 6085);
+    			add_location(i, file$5, 225, 8, 6184);
     			attr_dev(h3, "class", "svelte-16inkut");
     			toggle_class(h3, "mainViewContentTitle", true);
-    			add_location(h3, file$5, 221, 6, 6037);
-    			set_style(span, "color", "gray");
-    			set_style(span, "opacity", "0.8");
-    			set_style(span, "margin-top", "26px");
+    			add_location(h3, file$5, 224, 6, 6136);
+    			attr_dev(img0, "alt", "");
+    			if (!src_url_equal(img0.src, img0_src_value = /*titleImage1*/ ctx[2])) attr_dev(img0, "src", img0_src_value);
+    			set_style(img0, "display", "block");
+    			set_style(img0, "width", "300px");
+    			set_style(img0, "margin", "0 auto");
+    			set_style(img0, "margin-top", "34px");
+    			set_style(img0, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img0, "border-radius", "8px");
+    			add_location(img0, file$5, 234, 8, 6425);
+    			attr_dev(img1, "alt", "");
+    			if (!src_url_equal(img1.src, img1_src_value = /*titleImage2*/ ctx[3])) attr_dev(img1, "src", img1_src_value);
+    			set_style(img1, "display", "block");
+    			set_style(img1, "width", "300px");
+    			set_style(img1, "margin", "0 auto");
+    			set_style(img1, "margin-top", "34px");
+    			set_style(img1, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img1, "border-radius", "8px");
+    			add_location(img1, file$5, 246, 8, 6767);
+    			attr_dev(img2, "alt", "");
+    			if (!src_url_equal(img2.src, img2_src_value = /*titleImage1*/ ctx[2])) attr_dev(img2, "src", img2_src_value);
+    			set_style(img2, "display", "block");
+    			set_style(img2, "width", "300px");
+    			set_style(img2, "margin", "0 auto");
+    			set_style(img2, "margin-top", "34px");
+    			set_style(img2, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img2, "border-radius", "8px");
+    			add_location(img2, file$5, 258, 8, 7109);
+    			set_style(div0, "display", "flex");
+    			set_style(div0, "flex-flow", "row");
+    			set_style(div0, "gap", "22px");
+    			add_location(div0, file$5, 227, 6, 6299);
+    			set_style(span, "text-align", "center");
+    			set_style(span, "color", "#323835");
+    			set_style(span, "opacity", "0.99");
+    			set_style(span, "margin", "0 auto");
+    			set_style(span, "margin-top", "30px");
+    			set_style(span, "line-height", "23px");
     			set_style(span, "display", "block");
-    			add_location(span, file$5, 224, 6, 6200);
-    			attr_dev(div, "class", "svelte-16inkut");
-    			toggle_class(div, "mainViewContent", true);
-    			add_location(div, file$5, 219, 4, 5987);
+    			add_location(span, file$5, 271, 6, 7463);
+    			attr_dev(div1, "class", "svelte-16inkut");
+    			toggle_class(div1, "mainViewContent", true);
+    			add_location(div1, file$5, 222, 4, 6086);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, h3);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h3);
     			append_dev(h3, i);
     			append_dev(h3, t1);
-    			append_dev(div, t2);
-    			append_dev(div, span);
+    			append_dev(div1, t2);
+    			append_dev(div1, div0);
+    			append_dev(div0, img0);
+    			append_dev(div0, t3);
+    			append_dev(div0, img1);
+    			append_dev(div0, t4);
+    			append_dev(div0, img2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span);
     		},
+    		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div1);
     		}
     	};
 
@@ -18285,7 +18976,7 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(218:2) { #if helloDownload === false }",
+    		source: "(221:2) { #if helloDownload === false }",
     		ctx
     	});
 
@@ -18311,7 +19002,7 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "svelte-16inkut");
     			toggle_class(div, "mainView", true);
-    			add_location(div, file$5, 24, 0, 342);
+    			add_location(div, file$5, 27, 0, 432);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -18361,7 +19052,9 @@ var app = (function () {
     			}
 
     			if (/*helloDownload*/ ctx[1] === false) {
-    				if (if_block2) ; else {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+    				} else {
     					if_block2 = create_if_block$4(ctx);
     					if_block2.c();
     					if_block2.m(div, null);
@@ -18403,6 +19096,8 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Unauth', slots, []);
     	let AUTH = false;
+    	let titleImage1 = 'image/hintTitle1.png';
+    	let titleImage2 = 'image/hintTitle2.png';
     	let helloDownload = true;
 
     	setTimeout(
@@ -18459,11 +19154,15 @@ var app = (function () {
     		authCheck,
     		Loading: Loading$1,
     		AUTH,
+    		titleImage1,
+    		titleImage2,
     		helloDownload
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('AUTH' in $$props) $$invalidate(0, AUTH = $$props.AUTH);
+    		if ('titleImage1' in $$props) $$invalidate(2, titleImage1 = $$props.titleImage1);
+    		if ('titleImage2' in $$props) $$invalidate(3, titleImage2 = $$props.titleImage2);
     		if ('helloDownload' in $$props) $$invalidate(1, helloDownload = $$props.helloDownload);
     	};
 
@@ -18483,6 +19182,8 @@ var app = (function () {
     	return [
     		AUTH,
     		helloDownload,
+    		titleImage1,
+    		titleImage2,
     		click_handler,
     		click_handler_1,
     		click_handler_2,
@@ -18514,7 +19215,7 @@ var app = (function () {
     const { console: console_1$3 } = globals;
     const file$4 = "src\\bricks\\views\\About.svelte";
 
-    // (27:2) { #if helloDownload === true }
+    // (29:2) { #if helloDownload === true }
     function create_if_block_4$3(ctx) {
     	let div;
     	let svg;
@@ -18535,14 +19236,14 @@ var app = (function () {
     			path = svg_element("path");
     			t1 = space();
     			create_component(loading.$$.fragment);
-    			add_location(style, file$4, 45, 8, 817);
+    			add_location(style, file$4, 47, 8, 905);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$4, 50, 8, 928);
+    			add_location(path, file$4, 52, 8, 1016);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "60px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "helloLogo", true);
-    			add_location(svg, file$4, 39, 6, 661);
+    			add_location(svg, file$4, 41, 6, 749);
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
@@ -18550,7 +19251,7 @@ var app = (function () {
     			set_style(div, "position", "relative");
     			set_style(div, "width", "100%");
     			set_style(div, "margin-top", "100px");
-    			add_location(div, file$4, 28, 4, 413);
+    			add_location(div, file$4, 30, 4, 501);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -18581,14 +19282,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$3.name,
     		type: "if",
-    		source: "(27:2) { #if helloDownload === true }",
+    		source: "(29:2) { #if helloDownload === true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:2) { #if helloDownload === false }
+    // (62:2) { #if helloDownload === false }
     function create_if_block_1$3(ctx) {
     	let div4;
     	let t0;
@@ -18641,10 +19342,10 @@ var app = (function () {
     			set_style(span0, "cursor", "pointer");
     			attr_dev(span0, "class", "svelte-16inkut");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$4, 144, 8, 4100);
+    			add_location(span0, file$4, 146, 8, 4197);
     			set_style(div0, "margin-top", "6px");
     			toggle_class(div0, "mainViewMenuItem", true);
-    			add_location(div0, file$4, 143, 6, 4030);
+    			add_location(div0, file$4, 145, 6, 4127);
     			set_style(span1, "display", "block");
     			set_style(span1, "position", "relative");
     			set_style(span1, "width", "80%");
@@ -18653,7 +19354,7 @@ var app = (function () {
     			set_style(span1, "opacity", "0.4");
     			set_style(span1, "border-radius", "1px");
     			set_style(span1, "margin-top", "20px");
-    			add_location(span1, file$4, 154, 6, 4345);
+    			add_location(span1, file$4, 156, 6, 4442);
     			set_style(span2, "display", "block");
     			set_style(span2, "position", "absolute");
     			set_style(span2, "width", "3px");
@@ -18664,31 +19365,31 @@ var app = (function () {
     			set_style(span2, "margin-top", "-10px");
     			set_style(span2, "margin-left", "-10px");
     			set_style(span2, "border-radius", "2px");
-    			add_location(span2, file$4, 175, 10, 4902);
+    			add_location(span2, file$4, 177, 10, 4999);
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-16inkut");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$4, 167, 8, 4692);
+    			add_location(span3, file$4, 169, 8, 4789);
     			set_style(div1, "margin-top", "18px");
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$4, 166, 6, 4621);
+    			add_location(div1, file$4, 168, 6, 4718);
     			set_style(span4, "cursor", "pointer");
     			attr_dev(span4, "class", "svelte-16inkut");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$4, 192, 8, 5384);
+    			add_location(span4, file$4, 194, 8, 5481);
     			set_style(div2, "margin-top", "11px");
     			toggle_class(div2, "mainViewMenuItem", true);
-    			add_location(div2, file$4, 191, 6, 5313);
+    			add_location(div2, file$4, 193, 6, 5410);
     			set_style(span5, "cursor", "pointer");
     			attr_dev(span5, "class", "svelte-16inkut");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$4, 203, 8, 5702);
+    			add_location(span5, file$4, 205, 8, 5799);
     			set_style(div3, "margin-top", "11px");
     			toggle_class(div3, "mainViewMenuItem", true);
-    			add_location(div3, file$4, 202, 6, 5631);
+    			add_location(div3, file$4, 204, 6, 5728);
     			set_style(div4, "width", "20%");
     			toggle_class(div4, "mainViewMenu", true);
-    			add_location(div4, file$4, 61, 4, 1498);
+    			add_location(div4, file$4, 63, 4, 1586);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div4, anchor);
@@ -18714,10 +19415,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span0, "click", /*click_handler_5*/ ctx[7], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_6*/ ctx[8], false, false, false),
-    					listen_dev(span4, "click", /*click_handler_7*/ ctx[9], false, false, false),
-    					listen_dev(span5, "click", /*click_handler_8*/ ctx[10], false, false, false)
+    					listen_dev(span0, "click", /*click_handler_5*/ ctx[9], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_6*/ ctx[10], false, false, false),
+    					listen_dev(span4, "click", /*click_handler_7*/ ctx[11], false, false, false),
+    					listen_dev(span5, "click", /*click_handler_8*/ ctx[12], false, false, false)
     				];
 
     				mounted = true;
@@ -18763,14 +19464,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(60:2) { #if helloDownload === false }",
+    		source: "(62:2) { #if helloDownload === false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:6) { #if AUTH == true }
+    // (66:6) { #if AUTH == true }
     function create_if_block_3$3(ctx) {
     	let div1;
     	let span0;
@@ -18796,7 +19497,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			span0 = element("span");
-    			span0.textContent = "все хинты";
+    			span0.textContent = "основное меню hint";
     			t1 = space();
     			div0 = element("div");
     			span1 = element("span");
@@ -18821,55 +19522,55 @@ var app = (function () {
     			span7.textContent = "список вопросов";
     			attr_dev(span0, "class", "svelte-16inkut");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$4, 66, 10, 1638);
+    			add_location(span0, file$4, 68, 10, 1726);
     			set_style(span1, "margin-top", "11px");
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-16inkut");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$4, 68, 12, 1803);
+    			add_location(span1, file$4, 70, 12, 1900);
     			set_style(span2, "margin-top", "12px");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "color", "#4300b0");
     			set_style(span2, "margin-left", "30px");
     			attr_dev(span2, "class", "svelte-16inkut");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$4, 77, 12, 2091);
+    			add_location(span2, file$4, 79, 12, 2188);
     			set_style(span3, "margin-top", "6px");
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-16inkut");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$4, 83, 12, 2306);
+    			add_location(span3, file$4, 85, 12, 2403);
     			set_style(span4, "margin-top", "12px");
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "color", "#4300b0");
     			set_style(span4, "margin-left", "30px");
     			attr_dev(span4, "class", "svelte-16inkut");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$4, 92, 12, 2587);
+    			add_location(span4, file$4, 94, 12, 2684);
     			set_style(span5, "margin-top", "6px");
     			set_style(span5, "cursor", "pointer");
     			attr_dev(span5, "class", "svelte-16inkut");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$4, 98, 12, 2802);
+    			add_location(span5, file$4, 100, 12, 2899);
     			set_style(span6, "margin-top", "12px");
     			set_style(span6, "cursor", "pointer");
     			set_style(span6, "color", "#4300b0");
     			set_style(span6, "margin-left", "30px");
     			attr_dev(span6, "class", "svelte-16inkut");
     			toggle_class(span6, "mainViewMenuItemLine", true);
-    			add_location(span6, file$4, 107, 12, 3082);
+    			add_location(span6, file$4, 109, 12, 3179);
     			set_style(span7, "margin-top", "6px");
     			set_style(span7, "cursor", "pointer");
     			attr_dev(span7, "class", "svelte-16inkut");
     			toggle_class(span7, "mainViewMenuItemLine", true);
-    			add_location(span7, file$4, 113, 12, 3297);
+    			add_location(span7, file$4, 115, 12, 3394);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
     			attr_dev(div0, "class", "svelte-16inkut");
     			toggle_class(div0, "mainViewMenuItemSub", true);
-    			add_location(div0, file$4, 67, 10, 1706);
+    			add_location(div0, file$4, 69, 10, 1803);
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$4, 65, 8, 1591);
+    			add_location(div1, file$4, 67, 8, 1679);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -18892,10 +19593,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span1, "click", /*click_handler*/ ctx[2], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_1*/ ctx[3], false, false, false),
-    					listen_dev(span5, "click", /*click_handler_2*/ ctx[4], false, false, false),
-    					listen_dev(span7, "click", /*click_handler_3*/ ctx[5], false, false, false)
+    					listen_dev(span1, "click", /*click_handler*/ ctx[4], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_1*/ ctx[5], false, false, false),
+    					listen_dev(span5, "click", /*click_handler_2*/ ctx[6], false, false, false),
+    					listen_dev(span7, "click", /*click_handler_3*/ ctx[7], false, false, false)
     				];
 
     				mounted = true;
@@ -18913,14 +19614,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$3.name,
     		type: "if",
-    		source: "(64:6) { #if AUTH == true }",
+    		source: "(66:6) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:6) { #if AUTH == true }
+    // (130:6) { #if AUTH == true }
     function create_if_block_2$3(ctx) {
     	let div;
     	let span;
@@ -18935,17 +19636,17 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-16inkut");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$4, 130, 10, 3742);
+    			add_location(span, file$4, 132, 10, 3839);
     			set_style(div, "margin-top", "11px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$4, 129, 8, 3669);
+    			add_location(div, file$4, 131, 8, 3766);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[6], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[8], false, false, false);
     				mounted = true;
     			}
     		},
@@ -18961,57 +19662,116 @@ var app = (function () {
     		block,
     		id: create_if_block_2$3.name,
     		type: "if",
-    		source: "(128:6) { #if AUTH == true }",
+    		source: "(130:6) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (218:2) { #if helloDownload === false }
+    // (220:2) { #if helloDownload === false }
     function create_if_block$3(ctx) {
-    	let div;
+    	let div1;
     	let h3;
     	let i;
     	let t1;
     	let t2;
+    	let div0;
+    	let img0;
+    	let img0_src_value;
+    	let t3;
+    	let img1;
+    	let img1_src_value;
+    	let t4;
+    	let img2;
+    	let img2_src_value;
+    	let t5;
     	let span;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div1 = element("div");
     			h3 = element("h3");
     			i = element("i");
     			i.textContent = "HINT";
     			t1 = text(" - для чего нужен наш сервис?");
     			t2 = space();
+    			div0 = element("div");
+    			img0 = element("img");
+    			t3 = space();
+    			img1 = element("img");
+    			t4 = space();
+    			img2 = element("img");
+    			t5 = space();
     			span = element("span");
-    			span.textContent = "приветственное сообщение для новых пользователей";
+    			span.textContent = "Получайте анонимные советы и мнения на вашу проблему - от живых пользователей, совершенно бесплатно. Настраивайте аудиторию, от которой хотите получить совет, оценивайте ответы и давайте советы сами";
     			set_style(i, "font-style", "normal");
     			set_style(i, "letter-spacing", "2px");
-    			add_location(i, file$4, 222, 8, 6107);
+    			add_location(i, file$4, 224, 8, 6204);
     			attr_dev(h3, "class", "svelte-16inkut");
     			toggle_class(h3, "mainViewContentTitle", true);
-    			add_location(h3, file$4, 221, 6, 6059);
-    			set_style(span, "color", "gray");
-    			set_style(span, "opacity", "0.8");
-    			set_style(span, "margin-top", "26px");
+    			add_location(h3, file$4, 223, 6, 6156);
+    			attr_dev(img0, "alt", "");
+    			if (!src_url_equal(img0.src, img0_src_value = /*titleImage1*/ ctx[2])) attr_dev(img0, "src", img0_src_value);
+    			set_style(img0, "display", "block");
+    			set_style(img0, "width", "300px");
+    			set_style(img0, "margin", "0 auto");
+    			set_style(img0, "margin-top", "34px");
+    			set_style(img0, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img0, "border-radius", "8px");
+    			add_location(img0, file$4, 233, 8, 6440);
+    			attr_dev(img1, "alt", "");
+    			if (!src_url_equal(img1.src, img1_src_value = /*titleImage2*/ ctx[3])) attr_dev(img1, "src", img1_src_value);
+    			set_style(img1, "display", "block");
+    			set_style(img1, "width", "300px");
+    			set_style(img1, "margin", "0 auto");
+    			set_style(img1, "margin-top", "34px");
+    			set_style(img1, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img1, "border-radius", "8px");
+    			add_location(img1, file$4, 245, 8, 6782);
+    			attr_dev(img2, "alt", "");
+    			if (!src_url_equal(img2.src, img2_src_value = /*titleImage1*/ ctx[2])) attr_dev(img2, "src", img2_src_value);
+    			set_style(img2, "display", "block");
+    			set_style(img2, "width", "300px");
+    			set_style(img2, "margin", "0 auto");
+    			set_style(img2, "margin-top", "34px");
+    			set_style(img2, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img2, "border-radius", "8px");
+    			add_location(img2, file$4, 257, 8, 7124);
+    			set_style(div0, "display", "flex");
+    			set_style(div0, "flex-flow", "row");
+    			set_style(div0, "gap", "22px");
+    			add_location(div0, file$4, 226, 6, 6314);
+    			set_style(span, "text-align", "center");
+    			set_style(span, "color", "#323835");
+    			set_style(span, "opacity", "0.99");
+    			set_style(span, "margin", "0 auto");
+    			set_style(span, "margin-top", "30px");
+    			set_style(span, "line-height", "23px");
     			set_style(span, "display", "block");
-    			add_location(span, file$4, 224, 6, 6217);
-    			attr_dev(div, "class", "svelte-16inkut");
-    			toggle_class(div, "mainViewContent", true);
-    			add_location(div, file$4, 219, 4, 6009);
+    			add_location(span, file$4, 270, 6, 7478);
+    			attr_dev(div1, "class", "svelte-16inkut");
+    			toggle_class(div1, "mainViewContent", true);
+    			add_location(div1, file$4, 221, 4, 6106);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, h3);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h3);
     			append_dev(h3, i);
     			append_dev(h3, t1);
-    			append_dev(div, t2);
-    			append_dev(div, span);
+    			append_dev(div1, t2);
+    			append_dev(div1, div0);
+    			append_dev(div0, img0);
+    			append_dev(div0, t3);
+    			append_dev(div0, img1);
+    			append_dev(div0, t4);
+    			append_dev(div0, img2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span);
     		},
+    		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div1);
     		}
     	};
 
@@ -19019,7 +19779,7 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(218:2) { #if helloDownload === false }",
+    		source: "(220:2) { #if helloDownload === false }",
     		ctx
     	});
 
@@ -19045,7 +19805,7 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "svelte-16inkut");
     			toggle_class(div, "mainView", true);
-    			add_location(div, file$4, 24, 0, 342);
+    			add_location(div, file$4, 26, 0, 430);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -19095,7 +19855,9 @@ var app = (function () {
     			}
 
     			if (/*helloDownload*/ ctx[1] === false) {
-    				if (if_block2) ; else {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+    				} else {
     					if_block2 = create_if_block$3(ctx);
     					if_block2.c();
     					if_block2.m(div, null);
@@ -19137,6 +19899,8 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('About', slots, []);
     	let AUTH = false;
+    	let titleImage1 = 'image/hintTitle1.png';
+    	let titleImage2 = 'image/hintTitle2.png';
     	let helloDownload = true;
 
     	setTimeout(
@@ -19193,11 +19957,15 @@ var app = (function () {
     		authCheck,
     		Loading: Loading$1,
     		AUTH,
+    		titleImage1,
+    		titleImage2,
     		helloDownload
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('AUTH' in $$props) $$invalidate(0, AUTH = $$props.AUTH);
+    		if ('titleImage1' in $$props) $$invalidate(2, titleImage1 = $$props.titleImage1);
+    		if ('titleImage2' in $$props) $$invalidate(3, titleImage2 = $$props.titleImage2);
     		if ('helloDownload' in $$props) $$invalidate(1, helloDownload = $$props.helloDownload);
     	};
 
@@ -19217,6 +19985,8 @@ var app = (function () {
     	return [
     		AUTH,
     		helloDownload,
+    		titleImage1,
+    		titleImage2,
     		click_handler,
     		click_handler_1,
     		click_handler_2,
@@ -19248,7 +20018,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\bricks\\views\\Polici.svelte";
 
-    // (27:2) { #if helloDownload === true }
+    // (30:2) { #if helloDownload === true }
     function create_if_block_4$2(ctx) {
     	let div;
     	let svg;
@@ -19269,14 +20039,14 @@ var app = (function () {
     			path = svg_element("path");
     			t1 = space();
     			create_component(loading.$$.fragment);
-    			add_location(style, file$3, 45, 8, 817);
+    			add_location(style, file$3, 48, 8, 907);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$3, 50, 8, 928);
+    			add_location(path, file$3, 53, 8, 1018);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "60px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "helloLogo", true);
-    			add_location(svg, file$3, 39, 6, 661);
+    			add_location(svg, file$3, 42, 6, 751);
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
@@ -19284,7 +20054,7 @@ var app = (function () {
     			set_style(div, "position", "relative");
     			set_style(div, "width", "100%");
     			set_style(div, "margin-top", "100px");
-    			add_location(div, file$3, 28, 4, 413);
+    			add_location(div, file$3, 31, 4, 503);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19315,14 +20085,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$2.name,
     		type: "if",
-    		source: "(27:2) { #if helloDownload === true }",
+    		source: "(30:2) { #if helloDownload === true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:2) { #if helloDownload === false }
+    // (63:2) { #if helloDownload === false }
     function create_if_block_1$2(ctx) {
     	let div4;
     	let t0;
@@ -19375,10 +20145,10 @@ var app = (function () {
     			set_style(span0, "cursor", "pointer");
     			attr_dev(span0, "class", "svelte-16inkut");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$3, 144, 8, 4100);
+    			add_location(span0, file$3, 147, 8, 4199);
     			set_style(div0, "margin-top", "6px");
     			toggle_class(div0, "mainViewMenuItem", true);
-    			add_location(div0, file$3, 143, 6, 4030);
+    			add_location(div0, file$3, 146, 6, 4129);
     			set_style(span1, "display", "block");
     			set_style(span1, "position", "relative");
     			set_style(span1, "width", "80%");
@@ -19387,14 +20157,14 @@ var app = (function () {
     			set_style(span1, "opacity", "0.4");
     			set_style(span1, "border-radius", "1px");
     			set_style(span1, "margin-top", "20px");
-    			add_location(span1, file$3, 154, 6, 4345);
+    			add_location(span1, file$3, 157, 6, 4444);
     			set_style(span2, "cursor", "pointer");
     			attr_dev(span2, "class", "svelte-16inkut");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$3, 167, 8, 4692);
+    			add_location(span2, file$3, 170, 8, 4791);
     			set_style(div1, "margin-top", "18px");
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$3, 166, 6, 4621);
+    			add_location(div1, file$3, 169, 6, 4720);
     			set_style(span3, "display", "block");
     			set_style(span3, "position", "absolute");
     			set_style(span3, "width", "3px");
@@ -19405,24 +20175,24 @@ var app = (function () {
     			set_style(span3, "margin-top", "-10px");
     			set_style(span3, "margin-left", "-10px");
     			set_style(span3, "border-radius", "2px");
-    			add_location(span3, file$3, 186, 10, 5220);
+    			add_location(span3, file$3, 189, 10, 5319);
     			set_style(span4, "cursor", "pointer");
     			attr_dev(span4, "class", "svelte-16inkut");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$3, 178, 8, 5000);
+    			add_location(span4, file$3, 181, 8, 5099);
     			set_style(div2, "margin-top", "11px");
     			toggle_class(div2, "mainViewMenuItem", true);
-    			add_location(div2, file$3, 177, 6, 4929);
+    			add_location(div2, file$3, 180, 6, 5028);
     			set_style(span5, "cursor", "pointer");
     			attr_dev(span5, "class", "svelte-16inkut");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$3, 203, 8, 5702);
+    			add_location(span5, file$3, 206, 8, 5801);
     			set_style(div3, "margin-top", "11px");
     			toggle_class(div3, "mainViewMenuItem", true);
-    			add_location(div3, file$3, 202, 6, 5631);
+    			add_location(div3, file$3, 205, 6, 5730);
     			set_style(div4, "width", "20%");
     			toggle_class(div4, "mainViewMenu", true);
-    			add_location(div4, file$3, 61, 4, 1498);
+    			add_location(div4, file$3, 64, 4, 1588);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div4, anchor);
@@ -19448,10 +20218,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span0, "click", /*click_handler_5*/ ctx[7], false, false, false),
-    					listen_dev(span2, "click", /*click_handler_6*/ ctx[8], false, false, false),
-    					listen_dev(span4, "click", /*click_handler_7*/ ctx[9], false, false, false),
-    					listen_dev(span5, "click", /*click_handler_8*/ ctx[10], false, false, false)
+    					listen_dev(span0, "click", /*click_handler_5*/ ctx[9], false, false, false),
+    					listen_dev(span2, "click", /*click_handler_6*/ ctx[10], false, false, false),
+    					listen_dev(span4, "click", /*click_handler_7*/ ctx[11], false, false, false),
+    					listen_dev(span5, "click", /*click_handler_8*/ ctx[12], false, false, false)
     				];
 
     				mounted = true;
@@ -19497,14 +20267,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(60:2) { #if helloDownload === false }",
+    		source: "(63:2) { #if helloDownload === false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:6) { #if AUTH == true }
+    // (67:6) { #if AUTH == true }
     function create_if_block_3$2(ctx) {
     	let div1;
     	let span0;
@@ -19530,7 +20300,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			span0 = element("span");
-    			span0.textContent = "все хинты";
+    			span0.textContent = "основное меню hint";
     			t1 = space();
     			div0 = element("div");
     			span1 = element("span");
@@ -19555,55 +20325,55 @@ var app = (function () {
     			span7.textContent = "список вопросов";
     			attr_dev(span0, "class", "svelte-16inkut");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$3, 66, 10, 1638);
+    			add_location(span0, file$3, 69, 10, 1728);
     			set_style(span1, "margin-top", "11px");
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-16inkut");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$3, 68, 12, 1803);
+    			add_location(span1, file$3, 71, 12, 1902);
     			set_style(span2, "margin-top", "12px");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "color", "#4300b0");
     			set_style(span2, "margin-left", "30px");
     			attr_dev(span2, "class", "svelte-16inkut");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$3, 77, 12, 2091);
+    			add_location(span2, file$3, 80, 12, 2190);
     			set_style(span3, "margin-top", "6px");
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-16inkut");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$3, 83, 12, 2306);
+    			add_location(span3, file$3, 86, 12, 2405);
     			set_style(span4, "margin-top", "12px");
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "color", "#4300b0");
     			set_style(span4, "margin-left", "30px");
     			attr_dev(span4, "class", "svelte-16inkut");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$3, 92, 12, 2587);
+    			add_location(span4, file$3, 95, 12, 2686);
     			set_style(span5, "margin-top", "6px");
     			set_style(span5, "cursor", "pointer");
     			attr_dev(span5, "class", "svelte-16inkut");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$3, 98, 12, 2802);
+    			add_location(span5, file$3, 101, 12, 2901);
     			set_style(span6, "margin-top", "12px");
     			set_style(span6, "cursor", "pointer");
     			set_style(span6, "color", "#4300b0");
     			set_style(span6, "margin-left", "30px");
     			attr_dev(span6, "class", "svelte-16inkut");
     			toggle_class(span6, "mainViewMenuItemLine", true);
-    			add_location(span6, file$3, 107, 12, 3082);
+    			add_location(span6, file$3, 110, 12, 3181);
     			set_style(span7, "margin-top", "6px");
     			set_style(span7, "cursor", "pointer");
     			attr_dev(span7, "class", "svelte-16inkut");
     			toggle_class(span7, "mainViewMenuItemLine", true);
-    			add_location(span7, file$3, 113, 12, 3297);
+    			add_location(span7, file$3, 116, 12, 3396);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
     			attr_dev(div0, "class", "svelte-16inkut");
     			toggle_class(div0, "mainViewMenuItemSub", true);
-    			add_location(div0, file$3, 67, 10, 1706);
+    			add_location(div0, file$3, 70, 10, 1805);
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$3, 65, 8, 1591);
+    			add_location(div1, file$3, 68, 8, 1681);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -19626,10 +20396,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span1, "click", /*click_handler*/ ctx[2], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_1*/ ctx[3], false, false, false),
-    					listen_dev(span5, "click", /*click_handler_2*/ ctx[4], false, false, false),
-    					listen_dev(span7, "click", /*click_handler_3*/ ctx[5], false, false, false)
+    					listen_dev(span1, "click", /*click_handler*/ ctx[4], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_1*/ ctx[5], false, false, false),
+    					listen_dev(span5, "click", /*click_handler_2*/ ctx[6], false, false, false),
+    					listen_dev(span7, "click", /*click_handler_3*/ ctx[7], false, false, false)
     				];
 
     				mounted = true;
@@ -19647,14 +20417,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$2.name,
     		type: "if",
-    		source: "(64:6) { #if AUTH == true }",
+    		source: "(67:6) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:6) { #if AUTH == true }
+    // (131:6) { #if AUTH == true }
     function create_if_block_2$2(ctx) {
     	let div;
     	let span;
@@ -19669,17 +20439,17 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-16inkut");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$3, 130, 10, 3742);
+    			add_location(span, file$3, 133, 10, 3841);
     			set_style(div, "margin-top", "11px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$3, 129, 8, 3669);
+    			add_location(div, file$3, 132, 8, 3768);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[6], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[8], false, false, false);
     				mounted = true;
     			}
     		},
@@ -19695,57 +20465,116 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(128:6) { #if AUTH == true }",
+    		source: "(131:6) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (218:2) { #if helloDownload === false }
+    // (221:2) { #if helloDownload === false }
     function create_if_block$2(ctx) {
-    	let div;
+    	let div1;
     	let h3;
     	let i;
     	let t1;
     	let t2;
+    	let div0;
+    	let img0;
+    	let img0_src_value;
+    	let t3;
+    	let img1;
+    	let img1_src_value;
+    	let t4;
+    	let img2;
+    	let img2_src_value;
+    	let t5;
     	let span;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div1 = element("div");
     			h3 = element("h3");
     			i = element("i");
     			i.textContent = "HINT";
     			t1 = text(" - политика анонимности пользователей");
     			t2 = space();
+    			div0 = element("div");
+    			img0 = element("img");
+    			t3 = space();
+    			img1 = element("img");
+    			t4 = space();
+    			img2 = element("img");
+    			t5 = space();
     			span = element("span");
-    			span.textContent = "приветственное сообщение для новых пользователей";
+    			span.textContent = "Получайте анонимные советы и мнения на вашу проблему - от живых пользователей, совершенно бесплатно. Настраивайте аудиторию, от которой хотите получить совет, оценивайте ответы и давайте советы сами";
     			set_style(i, "font-style", "normal");
     			set_style(i, "letter-spacing", "2px");
-    			add_location(i, file$3, 222, 8, 6107);
+    			add_location(i, file$3, 225, 8, 6206);
     			attr_dev(h3, "class", "svelte-16inkut");
     			toggle_class(h3, "mainViewContentTitle", true);
-    			add_location(h3, file$3, 221, 6, 6059);
-    			set_style(span, "color", "gray");
-    			set_style(span, "opacity", "0.8");
-    			set_style(span, "margin-top", "26px");
+    			add_location(h3, file$3, 224, 6, 6158);
+    			attr_dev(img0, "alt", "");
+    			if (!src_url_equal(img0.src, img0_src_value = /*titleImage1*/ ctx[2])) attr_dev(img0, "src", img0_src_value);
+    			set_style(img0, "display", "block");
+    			set_style(img0, "width", "300px");
+    			set_style(img0, "margin", "0 auto");
+    			set_style(img0, "margin-top", "34px");
+    			set_style(img0, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img0, "border-radius", "8px");
+    			add_location(img0, file$3, 234, 8, 6450);
+    			attr_dev(img1, "alt", "");
+    			if (!src_url_equal(img1.src, img1_src_value = /*titleImage2*/ ctx[3])) attr_dev(img1, "src", img1_src_value);
+    			set_style(img1, "display", "block");
+    			set_style(img1, "width", "300px");
+    			set_style(img1, "margin", "0 auto");
+    			set_style(img1, "margin-top", "34px");
+    			set_style(img1, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img1, "border-radius", "8px");
+    			add_location(img1, file$3, 246, 8, 6792);
+    			attr_dev(img2, "alt", "");
+    			if (!src_url_equal(img2.src, img2_src_value = /*titleImage1*/ ctx[2])) attr_dev(img2, "src", img2_src_value);
+    			set_style(img2, "display", "block");
+    			set_style(img2, "width", "300px");
+    			set_style(img2, "margin", "0 auto");
+    			set_style(img2, "margin-top", "34px");
+    			set_style(img2, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img2, "border-radius", "8px");
+    			add_location(img2, file$3, 258, 8, 7134);
+    			set_style(div0, "display", "flex");
+    			set_style(div0, "flex-flow", "row");
+    			set_style(div0, "gap", "22px");
+    			add_location(div0, file$3, 227, 6, 6324);
+    			set_style(span, "text-align", "center");
+    			set_style(span, "color", "#323835");
+    			set_style(span, "opacity", "0.99");
+    			set_style(span, "margin", "0 auto");
+    			set_style(span, "margin-top", "30px");
+    			set_style(span, "line-height", "23px");
     			set_style(span, "display", "block");
-    			add_location(span, file$3, 224, 6, 6225);
-    			attr_dev(div, "class", "svelte-16inkut");
-    			toggle_class(div, "mainViewContent", true);
-    			add_location(div, file$3, 219, 4, 6009);
+    			add_location(span, file$3, 271, 6, 7488);
+    			attr_dev(div1, "class", "svelte-16inkut");
+    			toggle_class(div1, "mainViewContent", true);
+    			add_location(div1, file$3, 222, 4, 6108);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, h3);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h3);
     			append_dev(h3, i);
     			append_dev(h3, t1);
-    			append_dev(div, t2);
-    			append_dev(div, span);
+    			append_dev(div1, t2);
+    			append_dev(div1, div0);
+    			append_dev(div0, img0);
+    			append_dev(div0, t3);
+    			append_dev(div0, img1);
+    			append_dev(div0, t4);
+    			append_dev(div0, img2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span);
     		},
+    		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div1);
     		}
     	};
 
@@ -19753,7 +20582,7 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(218:2) { #if helloDownload === false }",
+    		source: "(221:2) { #if helloDownload === false }",
     		ctx
     	});
 
@@ -19779,7 +20608,7 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "svelte-16inkut");
     			toggle_class(div, "mainView", true);
-    			add_location(div, file$3, 24, 0, 342);
+    			add_location(div, file$3, 27, 0, 432);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -19829,7 +20658,9 @@ var app = (function () {
     			}
 
     			if (/*helloDownload*/ ctx[1] === false) {
-    				if (if_block2) ; else {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+    				} else {
     					if_block2 = create_if_block$2(ctx);
     					if_block2.c();
     					if_block2.m(div, null);
@@ -19871,6 +20702,8 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Polici', slots, []);
     	let AUTH = false;
+    	let titleImage1 = 'image/hintTitle1.png';
+    	let titleImage2 = 'image/hintTitle2.png';
     	let helloDownload = true;
 
     	setTimeout(
@@ -19927,11 +20760,15 @@ var app = (function () {
     		authCheck,
     		Loading: Loading$1,
     		AUTH,
+    		titleImage1,
+    		titleImage2,
     		helloDownload
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('AUTH' in $$props) $$invalidate(0, AUTH = $$props.AUTH);
+    		if ('titleImage1' in $$props) $$invalidate(2, titleImage1 = $$props.titleImage1);
+    		if ('titleImage2' in $$props) $$invalidate(3, titleImage2 = $$props.titleImage2);
     		if ('helloDownload' in $$props) $$invalidate(1, helloDownload = $$props.helloDownload);
     	};
 
@@ -19951,6 +20788,8 @@ var app = (function () {
     	return [
     		AUTH,
     		helloDownload,
+    		titleImage1,
+    		titleImage2,
     		click_handler,
     		click_handler_1,
     		click_handler_2,
@@ -19982,7 +20821,7 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$2 = "src\\bricks\\views\\Support.svelte";
 
-    // (27:2) { #if helloDownload === true }
+    // (30:2) { #if helloDownload === true }
     function create_if_block_4$1(ctx) {
     	let div;
     	let svg;
@@ -20003,14 +20842,14 @@ var app = (function () {
     			path = svg_element("path");
     			t1 = space();
     			create_component(loading.$$.fragment);
-    			add_location(style, file$2, 45, 8, 817);
+    			add_location(style, file$2, 48, 8, 907);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$2, 50, 8, 928);
+    			add_location(path, file$2, 53, 8, 1018);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "60px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
     			toggle_class(svg, "helloLogo", true);
-    			add_location(svg, file$2, 39, 6, 661);
+    			add_location(svg, file$2, 42, 6, 751);
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
@@ -20018,7 +20857,7 @@ var app = (function () {
     			set_style(div, "position", "relative");
     			set_style(div, "width", "100%");
     			set_style(div, "margin-top", "100px");
-    			add_location(div, file$2, 28, 4, 413);
+    			add_location(div, file$2, 31, 4, 503);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20049,14 +20888,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$1.name,
     		type: "if",
-    		source: "(27:2) { #if helloDownload === true }",
+    		source: "(30:2) { #if helloDownload === true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:2) { #if helloDownload === false }
+    // (63:2) { #if helloDownload === false }
     function create_if_block_1$1(ctx) {
     	let div4;
     	let t0;
@@ -20109,10 +20948,10 @@ var app = (function () {
     			set_style(span0, "cursor", "pointer");
     			attr_dev(span0, "class", "svelte-16inkut");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$2, 144, 8, 4100);
+    			add_location(span0, file$2, 147, 8, 4199);
     			set_style(div0, "margin-top", "6px");
     			toggle_class(div0, "mainViewMenuItem", true);
-    			add_location(div0, file$2, 143, 6, 4030);
+    			add_location(div0, file$2, 146, 6, 4129);
     			set_style(span1, "display", "block");
     			set_style(span1, "position", "relative");
     			set_style(span1, "width", "80%");
@@ -20121,21 +20960,21 @@ var app = (function () {
     			set_style(span1, "opacity", "0.4");
     			set_style(span1, "border-radius", "1px");
     			set_style(span1, "margin-top", "20px");
-    			add_location(span1, file$2, 154, 6, 4345);
+    			add_location(span1, file$2, 157, 6, 4444);
     			set_style(span2, "cursor", "pointer");
     			attr_dev(span2, "class", "svelte-16inkut");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$2, 167, 8, 4692);
+    			add_location(span2, file$2, 170, 8, 4791);
     			set_style(div1, "margin-top", "18px");
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$2, 166, 6, 4621);
+    			add_location(div1, file$2, 169, 6, 4720);
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-16inkut");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$2, 178, 8, 5000);
+    			add_location(span3, file$2, 181, 8, 5099);
     			set_style(div2, "margin-top", "11px");
     			toggle_class(div2, "mainViewMenuItem", true);
-    			add_location(div2, file$2, 177, 6, 4929);
+    			add_location(div2, file$2, 180, 6, 5028);
     			set_style(span4, "display", "block");
     			set_style(span4, "position", "absolute");
     			set_style(span4, "width", "3px");
@@ -20146,17 +20985,17 @@ var app = (function () {
     			set_style(span4, "margin-top", "-10px");
     			set_style(span4, "margin-left", "-10px");
     			set_style(span4, "border-radius", "2px");
-    			add_location(span4, file$2, 197, 10, 5536);
+    			add_location(span4, file$2, 200, 10, 5635);
     			set_style(span5, "cursor", "pointer");
     			attr_dev(span5, "class", "svelte-16inkut");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$2, 189, 8, 5318);
+    			add_location(span5, file$2, 192, 8, 5417);
     			set_style(div3, "margin-top", "11px");
     			toggle_class(div3, "mainViewMenuItem", true);
-    			add_location(div3, file$2, 188, 6, 5247);
+    			add_location(div3, file$2, 191, 6, 5346);
     			set_style(div4, "width", "20%");
     			toggle_class(div4, "mainViewMenu", true);
-    			add_location(div4, file$2, 61, 4, 1498);
+    			add_location(div4, file$2, 64, 4, 1588);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div4, anchor);
@@ -20182,10 +21021,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span0, "click", /*click_handler_5*/ ctx[7], false, false, false),
-    					listen_dev(span2, "click", /*click_handler_6*/ ctx[8], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_7*/ ctx[9], false, false, false),
-    					listen_dev(span5, "click", /*click_handler_8*/ ctx[10], false, false, false)
+    					listen_dev(span0, "click", /*click_handler_5*/ ctx[9], false, false, false),
+    					listen_dev(span2, "click", /*click_handler_6*/ ctx[10], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_7*/ ctx[11], false, false, false),
+    					listen_dev(span5, "click", /*click_handler_8*/ ctx[12], false, false, false)
     				];
 
     				mounted = true;
@@ -20231,14 +21070,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(60:2) { #if helloDownload === false }",
+    		source: "(63:2) { #if helloDownload === false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:6) { #if AUTH == true }
+    // (67:6) { #if AUTH == true }
     function create_if_block_3$1(ctx) {
     	let div1;
     	let span0;
@@ -20264,7 +21103,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			span0 = element("span");
-    			span0.textContent = "все хинты";
+    			span0.textContent = "основное меню hint";
     			t1 = space();
     			div0 = element("div");
     			span1 = element("span");
@@ -20289,55 +21128,55 @@ var app = (function () {
     			span7.textContent = "список вопросов";
     			attr_dev(span0, "class", "svelte-16inkut");
     			toggle_class(span0, "mainViewMenuItemLine", true);
-    			add_location(span0, file$2, 66, 10, 1638);
+    			add_location(span0, file$2, 69, 10, 1728);
     			set_style(span1, "margin-top", "11px");
     			set_style(span1, "cursor", "pointer");
     			attr_dev(span1, "class", "svelte-16inkut");
     			toggle_class(span1, "mainViewMenuItemLine", true);
-    			add_location(span1, file$2, 68, 12, 1803);
+    			add_location(span1, file$2, 71, 12, 1902);
     			set_style(span2, "margin-top", "12px");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "color", "#4300b0");
     			set_style(span2, "margin-left", "30px");
     			attr_dev(span2, "class", "svelte-16inkut");
     			toggle_class(span2, "mainViewMenuItemLine", true);
-    			add_location(span2, file$2, 77, 12, 2091);
+    			add_location(span2, file$2, 80, 12, 2190);
     			set_style(span3, "margin-top", "6px");
     			set_style(span3, "cursor", "pointer");
     			attr_dev(span3, "class", "svelte-16inkut");
     			toggle_class(span3, "mainViewMenuItemLine", true);
-    			add_location(span3, file$2, 83, 12, 2306);
+    			add_location(span3, file$2, 86, 12, 2405);
     			set_style(span4, "margin-top", "12px");
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "color", "#4300b0");
     			set_style(span4, "margin-left", "30px");
     			attr_dev(span4, "class", "svelte-16inkut");
     			toggle_class(span4, "mainViewMenuItemLine", true);
-    			add_location(span4, file$2, 92, 12, 2587);
+    			add_location(span4, file$2, 95, 12, 2686);
     			set_style(span5, "margin-top", "6px");
     			set_style(span5, "cursor", "pointer");
     			attr_dev(span5, "class", "svelte-16inkut");
     			toggle_class(span5, "mainViewMenuItemLine", true);
-    			add_location(span5, file$2, 98, 12, 2802);
+    			add_location(span5, file$2, 101, 12, 2901);
     			set_style(span6, "margin-top", "12px");
     			set_style(span6, "cursor", "pointer");
     			set_style(span6, "color", "#4300b0");
     			set_style(span6, "margin-left", "30px");
     			attr_dev(span6, "class", "svelte-16inkut");
     			toggle_class(span6, "mainViewMenuItemLine", true);
-    			add_location(span6, file$2, 107, 12, 3082);
+    			add_location(span6, file$2, 110, 12, 3181);
     			set_style(span7, "margin-top", "6px");
     			set_style(span7, "cursor", "pointer");
     			attr_dev(span7, "class", "svelte-16inkut");
     			toggle_class(span7, "mainViewMenuItemLine", true);
-    			add_location(span7, file$2, 113, 12, 3297);
+    			add_location(span7, file$2, 116, 12, 3396);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
     			attr_dev(div0, "class", "svelte-16inkut");
     			toggle_class(div0, "mainViewMenuItemSub", true);
-    			add_location(div0, file$2, 67, 10, 1706);
+    			add_location(div0, file$2, 70, 10, 1805);
     			toggle_class(div1, "mainViewMenuItem", true);
-    			add_location(div1, file$2, 65, 8, 1591);
+    			add_location(div1, file$2, 68, 8, 1681);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -20360,10 +21199,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(span1, "click", /*click_handler*/ ctx[2], false, false, false),
-    					listen_dev(span3, "click", /*click_handler_1*/ ctx[3], false, false, false),
-    					listen_dev(span5, "click", /*click_handler_2*/ ctx[4], false, false, false),
-    					listen_dev(span7, "click", /*click_handler_3*/ ctx[5], false, false, false)
+    					listen_dev(span1, "click", /*click_handler*/ ctx[4], false, false, false),
+    					listen_dev(span3, "click", /*click_handler_1*/ ctx[5], false, false, false),
+    					listen_dev(span5, "click", /*click_handler_2*/ ctx[6], false, false, false),
+    					listen_dev(span7, "click", /*click_handler_3*/ ctx[7], false, false, false)
     				];
 
     				mounted = true;
@@ -20381,14 +21220,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(64:6) { #if AUTH == true }",
+    		source: "(67:6) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:6) { #if AUTH == true }
+    // (131:6) { #if AUTH == true }
     function create_if_block_2$1(ctx) {
     	let div;
     	let span;
@@ -20403,17 +21242,17 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			attr_dev(span, "class", "svelte-16inkut");
     			toggle_class(span, "mainViewMenuItemLine", true);
-    			add_location(span, file$2, 130, 10, 3742);
+    			add_location(span, file$2, 133, 10, 3841);
     			set_style(div, "margin-top", "11px");
     			toggle_class(div, "mainViewMenuItem", true);
-    			add_location(div, file$2, 129, 8, 3669);
+    			add_location(div, file$2, 132, 8, 3768);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[6], false, false, false);
+    				dispose = listen_dev(span, "click", /*click_handler_4*/ ctx[8], false, false, false);
     				mounted = true;
     			}
     		},
@@ -20429,57 +21268,116 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(128:6) { #if AUTH == true }",
+    		source: "(131:6) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (218:2) { #if helloDownload === false }
+    // (221:2) { #if helloDownload === false }
     function create_if_block$1(ctx) {
-    	let div;
+    	let div1;
     	let h3;
     	let i;
     	let t1;
     	let t2;
+    	let div0;
+    	let img0;
+    	let img0_src_value;
+    	let t3;
+    	let img1;
+    	let img1_src_value;
+    	let t4;
+    	let img2;
+    	let img2_src_value;
+    	let t5;
     	let span;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div1 = element("div");
     			h3 = element("h3");
     			i = element("i");
     			i.textContent = "HINT";
     			t1 = text(" - вопросы в нашу службу поддержки");
     			t2 = space();
+    			div0 = element("div");
+    			img0 = element("img");
+    			t3 = space();
+    			img1 = element("img");
+    			t4 = space();
+    			img2 = element("img");
+    			t5 = space();
     			span = element("span");
-    			span.textContent = "приветственное сообщение для новых пользователей";
+    			span.textContent = "Получайте анонимные советы и мнения на вашу проблему - от живых пользователей, совершенно бесплатно. Настраивайте аудиторию, от которой хотите получить совет, оценивайте ответы и давайте советы сами";
     			set_style(i, "font-style", "normal");
     			set_style(i, "letter-spacing", "2px");
-    			add_location(i, file$2, 222, 8, 6107);
+    			add_location(i, file$2, 225, 8, 6206);
     			attr_dev(h3, "class", "svelte-16inkut");
     			toggle_class(h3, "mainViewContentTitle", true);
-    			add_location(h3, file$2, 221, 6, 6059);
-    			set_style(span, "color", "gray");
-    			set_style(span, "opacity", "0.8");
-    			set_style(span, "margin-top", "26px");
+    			add_location(h3, file$2, 224, 6, 6158);
+    			attr_dev(img0, "alt", "");
+    			if (!src_url_equal(img0.src, img0_src_value = /*titleImage1*/ ctx[2])) attr_dev(img0, "src", img0_src_value);
+    			set_style(img0, "display", "block");
+    			set_style(img0, "width", "300px");
+    			set_style(img0, "margin", "0 auto");
+    			set_style(img0, "margin-top", "34px");
+    			set_style(img0, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img0, "border-radius", "8px");
+    			add_location(img0, file$2, 234, 8, 6447);
+    			attr_dev(img1, "alt", "");
+    			if (!src_url_equal(img1.src, img1_src_value = /*titleImage2*/ ctx[3])) attr_dev(img1, "src", img1_src_value);
+    			set_style(img1, "display", "block");
+    			set_style(img1, "width", "300px");
+    			set_style(img1, "margin", "0 auto");
+    			set_style(img1, "margin-top", "34px");
+    			set_style(img1, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img1, "border-radius", "8px");
+    			add_location(img1, file$2, 246, 8, 6789);
+    			attr_dev(img2, "alt", "");
+    			if (!src_url_equal(img2.src, img2_src_value = /*titleImage1*/ ctx[2])) attr_dev(img2, "src", img2_src_value);
+    			set_style(img2, "display", "block");
+    			set_style(img2, "width", "300px");
+    			set_style(img2, "margin", "0 auto");
+    			set_style(img2, "margin-top", "34px");
+    			set_style(img2, "box-shadow", "2px 2px 7px rgb(183, 183, 183), inset -5px -5px 12px white");
+    			set_style(img2, "border-radius", "8px");
+    			add_location(img2, file$2, 258, 8, 7131);
+    			set_style(div0, "display", "flex");
+    			set_style(div0, "flex-flow", "row");
+    			set_style(div0, "gap", "22px");
+    			add_location(div0, file$2, 227, 6, 6321);
+    			set_style(span, "text-align", "center");
+    			set_style(span, "color", "#323835");
+    			set_style(span, "opacity", "0.99");
+    			set_style(span, "margin", "0 auto");
+    			set_style(span, "margin-top", "30px");
+    			set_style(span, "line-height", "23px");
     			set_style(span, "display", "block");
-    			add_location(span, file$2, 224, 6, 6222);
-    			attr_dev(div, "class", "svelte-16inkut");
-    			toggle_class(div, "mainViewContent", true);
-    			add_location(div, file$2, 219, 4, 6009);
+    			add_location(span, file$2, 271, 6, 7485);
+    			attr_dev(div1, "class", "svelte-16inkut");
+    			toggle_class(div1, "mainViewContent", true);
+    			add_location(div1, file$2, 222, 4, 6108);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, h3);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h3);
     			append_dev(h3, i);
     			append_dev(h3, t1);
-    			append_dev(div, t2);
-    			append_dev(div, span);
+    			append_dev(div1, t2);
+    			append_dev(div1, div0);
+    			append_dev(div0, img0);
+    			append_dev(div0, t3);
+    			append_dev(div0, img1);
+    			append_dev(div0, t4);
+    			append_dev(div0, img2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span);
     		},
+    		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div1);
     		}
     	};
 
@@ -20487,7 +21385,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(218:2) { #if helloDownload === false }",
+    		source: "(221:2) { #if helloDownload === false }",
     		ctx
     	});
 
@@ -20513,7 +21411,7 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "svelte-16inkut");
     			toggle_class(div, "mainView", true);
-    			add_location(div, file$2, 24, 0, 342);
+    			add_location(div, file$2, 27, 0, 432);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -20563,7 +21461,9 @@ var app = (function () {
     			}
 
     			if (/*helloDownload*/ ctx[1] === false) {
-    				if (if_block2) ; else {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+    				} else {
     					if_block2 = create_if_block$1(ctx);
     					if_block2.c();
     					if_block2.m(div, null);
@@ -20605,6 +21505,8 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Support', slots, []);
     	let AUTH = false;
+    	let titleImage1 = 'image/hintTitle1.png';
+    	let titleImage2 = 'image/hintTitle2.png';
     	let helloDownload = true;
 
     	setTimeout(
@@ -20661,11 +21563,15 @@ var app = (function () {
     		authCheck,
     		Loading: Loading$1,
     		AUTH,
+    		titleImage1,
+    		titleImage2,
     		helloDownload
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('AUTH' in $$props) $$invalidate(0, AUTH = $$props.AUTH);
+    		if ('titleImage1' in $$props) $$invalidate(2, titleImage1 = $$props.titleImage1);
+    		if ('titleImage2' in $$props) $$invalidate(3, titleImage2 = $$props.titleImage2);
     		if ('helloDownload' in $$props) $$invalidate(1, helloDownload = $$props.helloDownload);
     	};
 
@@ -20685,6 +21591,8 @@ var app = (function () {
     	return [
     		AUTH,
     		helloDownload,
+    		titleImage1,
+    		titleImage2,
     		click_handler,
     		click_handler_1,
     		click_handler_2,
