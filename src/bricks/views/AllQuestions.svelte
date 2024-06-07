@@ -636,6 +636,11 @@
 
         { /if }
 
+        { #if questionsDataFilter.length === 0 }
+
+          <span style="color: gray; opacity: 0.8; margin-top: 26px; display: block;">вопросов в данной категории не обнаружено</span>
+
+        { /if }
         { #if questionsData.length === 0 }
 
           <span style="color: gray; opacity: 0.8; margin-top: 26px; display: block;">вопросы не обнаружены в системе</span>
@@ -722,17 +727,11 @@
   }
 
   @keyframes sendData {
-    from {
-      transform: rotate(0deg);
-    }
+    from { transform: rotate(0deg); }
 
-    50% {
-      transform: rotate(180deg);
-    }
+    50% { transform: rotate(180deg); }
 
-    to {
-      transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg);}
   }
 
 </style>

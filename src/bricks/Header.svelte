@@ -38,6 +38,10 @@
 
   }
 
+  const saveAuth = (param) => {
+    localStorage.setItem("auth", param)
+  }
+
   const autorization = () => {
 
     let sendData = { login: MASTER_PASS }
@@ -63,6 +67,8 @@
           gender: data.params.gender,
           style: data.params.style
         })
+
+        saveAuth(MASTER_PASS)
 
         modalMessage = 'Вы успешно авторизовались'
         showModal = true
@@ -131,6 +137,7 @@
           `
           showModal = true
           contentOpacity.set(1)
+          unauth = false
 
         } else {
 
@@ -267,6 +274,7 @@
 
       <span 
         on:click={() => {
+          regActive = false
 
           if ( !authCheck.auth ) {
             contentOpacity.set(0)

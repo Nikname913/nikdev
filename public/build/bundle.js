@@ -7103,7 +7103,7 @@ var app = (function () {
     const { console: console_1$a } = globals;
     const file$b = "src\\bricks\\Header.svelte";
 
-    // (204:8) { #if unauth === false }
+    // (211:8) { #if unauth === false }
     function create_if_block_17(ctx) {
     	let button;
     	let current;
@@ -7131,7 +7131,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7155,14 +7155,14 @@ var app = (function () {
     		block,
     		id: create_if_block_17.name,
     		type: "if",
-    		source: "(204:8) { #if unauth === false }",
+    		source: "(211:8) { #if unauth === false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (206:10) <Button               filled              style="                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              "              on:click={() => showModal = false}            >
+    // (213:10) <Button               filled              style="                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              "              on:click={() => showModal = false}            >
     function create_default_slot_9$1(ctx) {
     	let t;
 
@@ -7182,14 +7182,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$1.name,
     		type: "slot",
-    		source: "(206:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              \\\"              on:click={() => showModal = false}            >",
+    		source: "(213:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              \\\"              on:click={() => showModal = false}            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (218:8) { #if unauth === true }
+    // (225:8) { #if unauth === true }
     function create_if_block_16(ctx) {
     	let button;
     	let current;
@@ -7217,7 +7217,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7241,14 +7241,14 @@ var app = (function () {
     		block,
     		id: create_if_block_16.name,
     		type: "if",
-    		source: "(218:8) { #if unauth === true }",
+    		source: "(225:8) { #if unauth === true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (220:10) <Button               filled              style="                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              "              on:click={() => {                                 showModal = false                authCheck.set({                  auth: false,                  passID: 'none',                  userID: 'none'                })                              }}            >
+    // (227:10) <Button               filled              style="                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              "              on:click={() => {                                 showModal = false                authCheck.set({                  auth: false,                  passID: 'none',                  userID: 'none'                })                              }}            >
     function create_default_slot_8$2(ctx) {
     	let t;
 
@@ -7268,14 +7268,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$2.name,
     		type: "slot",
-    		source: "(220:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              \\\"              on:click={() => {                                 showModal = false                authCheck.set({                  auth: false,                  passID: 'none',                  userID: 'none'                })                              }}            >",
+    		source: "(227:10) <Button               filled              style=\\\"                font-size: 15px;                padding: 13px 42px 16px;                margin-top: 13px;                margin-bottom: 20px;              \\\"              on:click={() => {                                 showModal = false                authCheck.set({                  auth: false,                  passID: 'none',                  userID: 'none'                })                              }}            >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (177:4) <Dialog title="" {closeCallback}>
+    // (184:4) <Dialog title="" {closeCallback}>
     function create_default_slot_7$2(ctx) {
     	let div;
     	let h3;
@@ -7312,27 +7312,27 @@ var app = (function () {
     			span.textContent = "Помощь в использовании";
     			set_style(h3, "margin-top", "28px");
     			set_style(h3, "margin-bottom", "20px");
-    			add_location(h3, file$b, 187, 8, 4188);
-    			add_location(style, file$b, 194, 10, 4437);
+    			add_location(h3, file$b, 194, 8, 4328);
+    			add_location(style, file$b, 201, 10, 4577);
     			attr_dev(path, "d", "M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z");
-    			add_location(path, file$b, 200, 10, 4582);
+    			add_location(path, file$b, 207, 10, 4722);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "33px");
     			attr_dev(svg, "viewBox", "0 0 448 512");
     			toggle_class(svg, "bellIcon", true);
-    			add_location(svg, file$b, 188, 8, 4270);
+    			add_location(svg, file$b, 195, 8, 4410);
     			set_style(span, "color", "gray");
     			set_style(span, "opacity", "0.6");
     			set_style(span, "margin-bottom", "28px");
     			set_style(span, "cursor", "pointer");
-    			add_location(span, file$b, 241, 8, 5939);
+    			add_location(span, file$b, 248, 8, 6079);
     			set_style(div, "width", "100%");
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "column");
     			set_style(div, "align-items", "center");
     			set_style(div, "justify-content", "flex-start");
     			set_style(div, "margin-top", "14px");
-    			add_location(div, file$b, 177, 6, 3949);
+    			add_location(div, file$b, 184, 6, 4089);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7422,14 +7422,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(177:4) <Dialog title=\\\"\\\" {closeCallback}>",
+    		source: "(184:4) <Dialog title=\\\"\\\" {closeCallback}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (176:2) <Modal bind:open={showModal} let:closeCallback>
+    // (183:2) <Modal bind:open={showModal} let:closeCallback>
     function create_default_slot_6$2(ctx) {
     	let dialog;
     	let current;
@@ -7437,7 +7437,7 @@ var app = (function () {
     	dialog = new Dialog$1({
     			props: {
     				title: "",
-    				closeCallback: /*closeCallback*/ ctx[37],
+    				closeCallback: /*closeCallback*/ ctx[38],
     				$$slots: { default: [create_default_slot_7$2] },
     				$$scope: { ctx }
     			},
@@ -7454,9 +7454,9 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const dialog_changes = {};
-    			if (dirty[1] & /*closeCallback*/ 64) dialog_changes.closeCallback = /*closeCallback*/ ctx[37];
+    			if (dirty[1] & /*closeCallback*/ 128) dialog_changes.closeCallback = /*closeCallback*/ ctx[38];
 
-    			if (dirty[0] & /*showModal, unauth, modalMessage*/ 138 | dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[0] & /*showModal, unauth, modalMessage*/ 138 | dirty[1] & /*$$scope*/ 256) {
     				dialog_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7480,14 +7480,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(176:2) <Modal bind:open={showModal} let:closeCallback>",
+    		source: "(183:2) <Modal bind:open={showModal} let:closeCallback>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (266:4) { #if AUTH == false }
+    // (273:4) { #if AUTH == false }
     function create_if_block_15(ctx) {
     	let span;
     	let mounted;
@@ -7505,7 +7505,7 @@ var app = (function () {
     			set_style(span, "left", "100%");
     			set_style(span, "margin-left", "-400px");
     			set_style(span, "margin-top", "-5px");
-    			add_location(span, file$b, 267, 6, 6399);
+    			add_location(span, file$b, 274, 6, 6539);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -7527,14 +7527,14 @@ var app = (function () {
     		block,
     		id: create_if_block_15.name,
     		type: "if",
-    		source: "(266:4) { #if AUTH == false }",
+    		source: "(273:4) { #if AUTH == false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (291:4) { #if AUTH == true }
+    // (299:4) { #if AUTH == true }
     function create_if_block_14(ctx) {
     	let span1;
     	let t0;
@@ -7566,15 +7566,15 @@ var app = (function () {
     			set_style(span0, "opacity", "0.8");
     			set_style(span0, "font-size", "14px");
     			set_style(span0, "margin-top", "3px");
-    			add_location(span0, file$b, 312, 8, 7344);
-    			add_location(style, file$b, 329, 10, 7759);
+    			add_location(span0, file$b, 320, 8, 7513);
+    			add_location(style, file$b, 337, 10, 7928);
     			attr_dev(path, "d", "M370.7 96.1C346.1 39.5 289.7 0 224 0S101.9 39.5 77.3 96.1C60.9 97.5 48 111.2 48 128v64c0 16.8 12.9 30.5 29.3 31.9C101.9 280.5 158.3 320 224 320s122.1-39.5 146.7-96.1c16.4-1.4 29.3-15.1 29.3-31.9V128c0-16.8-12.9-30.5-29.3-31.9zM336 144v16c0 53-43 96-96 96H208c-53 0-96-43-96-96V144c0-26.5 21.5-48 48-48H288c26.5 0 48 21.5 48 48zM189.3 162.7l-6-21.2c-.9-3.3-3.9-5.5-7.3-5.5s-6.4 2.2-7.3 5.5l-6 21.2-21.2 6c-3.3 .9-5.5 3.9-5.5 7.3s2.2 6.4 5.5 7.3l21.2 6 6 21.2c.9 3.3 3.9 5.5 7.3 5.5s6.4-2.2 7.3-5.5l6-21.2 21.2-6c3.3-.9 5.5-3.9 5.5-7.3s-2.2-6.4-5.5-7.3l-21.2-6zM112.7 316.5C46.7 342.6 0 407 0 482.3C0 498.7 13.3 512 29.7 512H128V448c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64l98.3 0c16.4 0 29.7-13.3 29.7-29.7c0-75.3-46.7-139.7-112.7-165.8C303.9 338.8 265.5 352 224 352s-79.9-13.2-111.3-35.5zM176 448c-8.8 0-16 7.2-16 16v48h32V464c0-8.8-7.2-16-16-16zm96 32a16 16 0 1 0 0-32 16 16 0 1 0 0 32z");
-    			add_location(path, file$b, 340, 10, 8051);
+    			add_location(path, file$b, 348, 10, 8220);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "36px");
     			attr_dev(svg, "viewBox", "0 0 448 512");
     			toggle_class(svg, "userIcon", true);
-    			add_location(svg, file$b, 323, 8, 7592);
+    			add_location(svg, file$b, 331, 8, 7761);
     			set_style(span1, "color", "#FDFCF9");
     			set_style(span1, "letter-spacing", "1px");
     			set_style(span1, "cursor", "pointer");
@@ -7583,7 +7583,7 @@ var app = (function () {
     			set_style(span1, "left", "100%");
     			set_style(span1, "margin-left", "-400px");
     			set_style(span1, "margin-top", "-20px");
-    			add_location(span1, file$b, 292, 6, 6891);
+    			add_location(span1, file$b, 300, 6, 7060);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span1, anchor);
@@ -7617,14 +7617,14 @@ var app = (function () {
     		block,
     		id: create_if_block_14.name,
     		type: "if",
-    		source: "(291:4) { #if AUTH == true }",
+    		source: "(299:4) { #if AUTH == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (348:2) { #if opacity == 0 }
+    // (356:2) { #if opacity == 0 }
     function create_if_block_1$a(ctx) {
     	let div1;
     	let t0;
@@ -7680,22 +7680,22 @@ var app = (function () {
     			set_style(span, "display", "block");
     			set_style(span, "margin-left", "20px");
     			set_style(span, "margin-right", "13px");
-    			add_location(span, file$b, 538, 8, 14225);
-    			add_location(style, file$b, 559, 10, 14770);
+    			add_location(span, file$b, 546, 8, 14394);
+    			add_location(style, file$b, 567, 10, 14939);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$b, 564, 10, 14873);
+    			add_location(path, file$b, 572, 10, 15042);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "22px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
-    			add_location(svg, file$b, 554, 8, 14636);
+    			add_location(svg, file$b, 562, 8, 14805);
     			set_style(div0, "display", "flex");
     			set_style(div0, "flex-direction", "row");
     			set_style(div0, "align-items", "center");
     			set_style(div0, "margin-top", "0px");
-    			add_location(div0, file$b, 519, 6, 13772);
+    			add_location(div0, file$b, 527, 6, 13941);
     			attr_dev(div1, "class", "svelte-1pjyu2a");
     			toggle_class(div1, "authForm", true);
-    			add_location(div1, file$b, 349, 4, 9049);
+    			add_location(div1, file$b, 357, 4, 9218);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7746,7 +7746,7 @@ var app = (function () {
     			const button_changes = {};
     			if (dirty[0] & /*regActive*/ 64) button_changes.disabled = /*regActive*/ ctx[6];
 
-    			if (dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7802,14 +7802,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$a.name,
     		type: "if",
-    		source: "(348:2) { #if opacity == 0 }",
+    		source: "(356:2) { #if opacity == 0 }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (352:6) { #if regActive === false }
+    // (360:6) { #if regActive === false }
     function create_if_block_7$3(ctx) {
     	let t0;
     	let t1;
@@ -7828,7 +7828,7 @@ var app = (function () {
     	let if_block0 = /*isRestore*/ ctx[8] == false && create_if_block_13(ctx);
     	let if_block1 = /*isRestore*/ ctx[8] == true && create_if_block_12(ctx);
     	let if_block2 = /*isRestore*/ ctx[8] == false && create_if_block_11(ctx);
-    	let if_block3 = /*isRestore*/ ctx[8] == true && create_if_block_10$1(ctx);
+    	let if_block3 = /*isRestore*/ ctx[8] == true && create_if_block_10$2(ctx);
     	let if_block4 = /*isRestore*/ ctx[8] == false && create_if_block_9$2(ctx);
     	let if_block5 = /*isRestore*/ ctx[8] == true && create_if_block_8$3(ctx);
 
@@ -7854,25 +7854,25 @@ var app = (function () {
     			t7 = space();
     			span = element("span");
     			span.textContent = "Чтобы зарегистрироваться в системе, нажмите на кнопку ниже";
-    			add_location(style, file$b, 494, 12, 12798);
+    			add_location(style, file$b, 502, 12, 12967);
     			attr_dev(path, "d", "M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z");
-    			add_location(path, file$b, 499, 12, 12909);
+    			add_location(path, file$b, 507, 12, 13078);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "height", "22px");
     			attr_dev(svg, "viewBox", "0 0 512 512");
-    			add_location(svg, file$b, 489, 10, 12654);
+    			add_location(svg, file$b, 497, 10, 12823);
     			set_style(div, "display", "flex");
     			set_style(div, "flex-direction", "row");
     			set_style(div, "align-items", "center");
     			set_style(div, "margin-top", "30px");
-    			add_location(div, file$b, 403, 8, 10574);
+    			add_location(div, file$b, 411, 8, 10743);
     			set_style(span, "color", "gray");
     			set_style(span, "opacity", "0.8");
     			set_style(span, "cursor", "pointer");
     			set_style(span, "display", "block");
     			set_style(span, "margin-top", "25px");
     			set_style(span, "margin-bottom", "31.1px");
-    			add_location(span, file$b, 504, 8, 13428);
+    			add_location(span, file$b, 512, 8, 13597);
     		},
     		m: function mount(target, anchor) {
     			if (if_block0) if_block0.m(target, anchor);
@@ -7952,7 +7952,7 @@ var app = (function () {
     						transition_in(if_block3, 1);
     					}
     				} else {
-    					if_block3 = create_if_block_10$1(ctx);
+    					if_block3 = create_if_block_10$2(ctx);
     					if_block3.c();
     					transition_in(if_block3, 1);
     					if_block3.m(div, t3);
@@ -8023,14 +8023,14 @@ var app = (function () {
     		block,
     		id: create_if_block_7$3.name,
     		type: "if",
-    		source: "(352:6) { #if regActive === false }",
+    		source: "(360:6) { #if regActive === false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (354:8) { #if isRestore == false }
+    // (362:8) { #if isRestore == false }
     function create_if_block_13(ctx) {
     	let input;
     	let mounted;
@@ -8054,7 +8054,7 @@ var app = (function () {
     			set_style(input, "background-color", "transparent");
     			set_style(input, "letter-spacing", "0.8px");
     			set_style(input, "border-bottom", "2px solid rgb(67, 0, 176)");
-    			add_location(input, file$b, 355, 10, 9171);
+    			add_location(input, file$b, 363, 10, 9340);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, input, anchor);
@@ -8081,14 +8081,14 @@ var app = (function () {
     		block,
     		id: create_if_block_13.name,
     		type: "if",
-    		source: "(354:8) { #if isRestore == false }",
+    		source: "(362:8) { #if isRestore == false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (379:8) { #if isRestore == true }
+    // (387:8) { #if isRestore == true }
     function create_if_block_12(ctx) {
     	let input;
     	let mounted;
@@ -8112,7 +8112,7 @@ var app = (function () {
     			set_style(input, "background-color", "transparent");
     			set_style(input, "letter-spacing", "0.8px");
     			set_style(input, "border-bottom", "2px solid rgb(67, 0, 176)");
-    			add_location(input, file$b, 380, 10, 9886);
+    			add_location(input, file$b, 388, 10, 10055);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, input, anchor);
@@ -8139,14 +8139,14 @@ var app = (function () {
     		block,
     		id: create_if_block_12.name,
     		type: "if",
-    		source: "(379:8) { #if isRestore == true }",
+    		source: "(387:8) { #if isRestore == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (413:10) { #if isRestore == false }
+    // (421:10) { #if isRestore == false }
     function create_if_block_11(ctx) {
     	let button;
     	let current;
@@ -8176,7 +8176,7 @@ var app = (function () {
     			const button_changes = {};
     			if (dirty[0] & /*regActive*/ 64) button_changes.disabled = /*regActive*/ ctx[6];
 
-    			if (dirty[0] & /*passValue*/ 16384 | dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[0] & /*passValue*/ 16384 | dirty[1] & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8200,14 +8200,14 @@ var app = (function () {
     		block,
     		id: create_if_block_11.name,
     		type: "if",
-    		source: "(413:10) { #if isRestore == false }",
+    		source: "(421:10) { #if isRestore == false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (415:12) <Button                 on:click={() => {                    if ( MASTER_PASS.length < 10 ) {                      passValue = 'Введите пароль'                    setTimeout(() => {                      passValue = 'Авторизоваться'                    }, 2000)                    } else {                      autorization()                    }                  }}                disabled={regActive}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
+    // (423:12) <Button                 on:click={() => {                    if ( MASTER_PASS.length < 10 ) {                      passValue = 'Введите пароль'                    setTimeout(() => {                      passValue = 'Авторизоваться'                    }, 2000)                    } else {                      autorization()                    }                  }}                disabled={regActive}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
     function create_default_slot_5$2(ctx) {
     	let t;
 
@@ -8230,15 +8230,15 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$2.name,
     		type: "slot",
-    		source: "(415:12) <Button                 on:click={() => {                    if ( MASTER_PASS.length < 10 ) {                      passValue = 'Введите пароль'                    setTimeout(() => {                      passValue = 'Авторизоваться'                    }, 2000)                    } else {                      autorization()                    }                  }}                disabled={regActive}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
+    		source: "(423:12) <Button                 on:click={() => {                    if ( MASTER_PASS.length < 10 ) {                      passValue = 'Введите пароль'                    setTimeout(() => {                      passValue = 'Авторизоваться'                    }, 2000)                    } else {                      autorization()                    }                  }}                disabled={regActive}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (441:10) { #if isRestore == true }
-    function create_if_block_10$1(ctx) {
+    // (449:10) { #if isRestore == true }
+    function create_if_block_10$2(ctx) {
     	let button;
     	let current;
 
@@ -8279,16 +8279,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_10$1.name,
+    		id: create_if_block_10$2.name,
     		type: "if",
-    		source: "(441:10) { #if isRestore == true }",
+    		source: "(449:10) { #if isRestore == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (443:12) <Button                 on:click={() => {}}                disabled={true}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
+    // (451:12) <Button                 on:click={() => {}}                disabled={true}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
     function create_default_slot_4$2(ctx) {
     	let t_value = "Восстановить пароль" + "";
     	let t;
@@ -8310,14 +8310,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(443:12) <Button                 on:click={() => {}}                disabled={true}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
+    		source: "(451:12) <Button                 on:click={() => {}}                disabled={true}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (455:10) { #if isRestore == false }
+    // (463:10) { #if isRestore == false }
     function create_if_block_9$2(ctx) {
     	let span;
     	let mounted;
@@ -8333,7 +8333,7 @@ var app = (function () {
     			set_style(span, "display", "block");
     			set_style(span, "margin-left", "20px");
     			set_style(span, "margin-right", "13px");
-    			add_location(span, file$b, 456, 12, 11790);
+    			add_location(span, file$b, 464, 12, 11959);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -8355,14 +8355,14 @@ var app = (function () {
     		block,
     		id: create_if_block_9$2.name,
     		type: "if",
-    		source: "(455:10) { #if isRestore == false }",
+    		source: "(463:10) { #if isRestore == false }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (472:10) { #if isRestore == true }
+    // (480:10) { #if isRestore == true }
     function create_if_block_8$3(ctx) {
     	let span;
     	let mounted;
@@ -8378,7 +8378,7 @@ var app = (function () {
     			set_style(span, "display", "block");
     			set_style(span, "margin-left", "20px");
     			set_style(span, "margin-right", "13px");
-    			add_location(span, file$b, 473, 12, 12239);
+    			add_location(span, file$b, 481, 12, 12408);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -8400,14 +8400,14 @@ var app = (function () {
     		block,
     		id: create_if_block_8$3.name,
     		type: "if",
-    		source: "(472:10) { #if isRestore == true }",
+    		source: "(480:10) { #if isRestore == true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (528:8) <Button             on:click={() => {              regActive = true            }}            disabled={regActive}            filled            style="              font-size: 15px;              padding: 13px 22px 16px;            "          >
+    // (536:8) <Button             on:click={() => {              regActive = true            }}            disabled={regActive}            filled            style="              font-size: 15px;              padding: 13px 22px 16px;            "          >
     function create_default_slot_3$2(ctx) {
     	let t_value = "Зарегистрироваться" + "";
     	let t;
@@ -8429,14 +8429,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(528:8) <Button             on:click={() => {              regActive = true            }}            disabled={regActive}            filled            style=\\\"              font-size: 15px;              padding: 13px 22px 16px;            \\\"          >",
+    		source: "(536:8) <Button             on:click={() => {              regActive = true            }}            disabled={regActive}            filled            style=\\\"              font-size: 15px;              padding: 13px 22px 16px;            \\\"          >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (571:6) { #if regActive === true }
+    // (579:6) { #if regActive === true }
     function create_if_block_2$a(ctx) {
     	let div3;
     	let input0;
@@ -8563,30 +8563,30 @@ var app = (function () {
     			set_style(input0, "letter-spacing", "0.8px");
     			set_style(input0, "margin-top", "24px");
     			set_style(input0, "border-bottom", "2px solid rgb(67, 0, 176)");
-    			add_location(input0, file$b, 573, 10, 15439);
+    			add_location(input0, file$b, 581, 10, 15608);
     			attr_dev(path0, "d", "M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z");
-    			add_location(path0, file$b, 608, 14, 16741);
+    			add_location(path0, file$b, 616, 14, 16910);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "height", "70px");
     			attr_dev(svg0, "viewBox", "0 0 320 512");
     			toggle_class(svg0, "svgMale", true);
-    			add_location(svg0, file$b, 595, 12, 16236);
+    			add_location(svg0, file$b, 603, 12, 16405);
     			set_style(span0, "margin-left", "26px");
     			set_style(span0, "margin-right", "28px");
-    			add_location(span0, file$b, 610, 12, 17126);
+    			add_location(span0, file$b, 618, 12, 17295);
     			attr_dev(path1, "d", "M160 0a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM88 384H70.2c-10.9 0-18.6-10.7-15.2-21.1L93.3 248.1 59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l53.6-89.2c20.3-33.7 56.7-54.3 96-54.3h11.6c39.3 0 75.7 20.6 96 54.3l53.6 89.2c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9l-33.9-56.3L265 362.9c3.5 10.4-4.3 21.1-15.2 21.1H232v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V384H152v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V384z");
-    			add_location(path1, file$b, 624, 14, 17729);
+    			add_location(path1, file$b, 632, 14, 17898);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "height", "70px");
     			attr_dev(svg1, "viewBox", "0 0 320 512");
     			toggle_class(svg1, "svgfemale", true);
-    			add_location(svg1, file$b, 611, 12, 17216);
+    			add_location(svg1, file$b, 619, 12, 17385);
     			set_style(div0, "margin-top", "30px");
     			set_style(div0, "display", "flex");
     			set_style(div0, "flex-direction", "row");
     			set_style(div0, "align-items", "center");
-    			add_location(div0, file$b, 594, 10, 16134);
-    			add_location(span1, file$b, 643, 12, 18783);
+    			add_location(div0, file$b, 602, 10, 16303);
+    			add_location(span1, file$b, 651, 12, 18952);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "maxlength", "2");
     			attr_dev(input1, "placeholder", "30");
@@ -8601,25 +8601,25 @@ var app = (function () {
     			set_style(input1, "border-radius", "6px");
     			set_style(input1, "background-color", "#FDFCF9");
     			set_style(input1, "margin-left", "28px");
-    			add_location(input1, file$b, 644, 12, 18829);
+    			add_location(input1, file$b, 652, 12, 18998);
     			set_style(div1, "margin-top", "36px");
     			set_style(div1, "display", "flex");
     			set_style(div1, "flex-direction", "row");
     			set_style(div1, "align-items", "center");
-    			add_location(div1, file$b, 642, 10, 18681);
+    			add_location(div1, file$b, 650, 10, 18850);
     			set_style(span2, "color", "gray");
     			set_style(span2, "opacity", "0.8");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "display", "block");
     			set_style(span2, "margin-left", "20px");
     			set_style(span2, "margin-right", "13px");
-    			add_location(span2, file$b, 695, 12, 20344);
+    			add_location(span2, file$b, 703, 12, 20513);
     			set_style(div2, "display", "flex");
     			set_style(div2, "flex-direction", "row");
     			set_style(div2, "align-items", "center");
     			set_style(div2, "margin-top", "30px");
-    			add_location(div2, file$b, 679, 10, 19907);
-    			add_location(div3, file$b, 572, 8, 15422);
+    			add_location(div2, file$b, 687, 10, 20076);
+    			add_location(div3, file$b, 580, 8, 15591);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -8720,7 +8720,7 @@ var app = (function () {
 
     			const checkbox0_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				checkbox0_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8732,14 +8732,14 @@ var app = (function () {
 
     			const checkbox1_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[1] & /*$$scope*/ 256) {
     				checkbox1_changes.$$scope = { dirty, ctx };
     			}
 
     			checkbox1.$set(checkbox1_changes);
     			const button_changes = {};
 
-    			if (dirty[0] & /*regValue*/ 32768 | dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[0] & /*regValue*/ 32768 | dirty[1] & /*$$scope*/ 256) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8776,14 +8776,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$a.name,
     		type: "if",
-    		source: "(571:6) { #if regActive === true }",
+    		source: "(579:6) { #if regActive === true }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (603:14) { #if sex == 'male' }
+    // (611:14) { #if sex == 'male' }
     function create_if_block_6$4(ctx) {
     	let style;
     	let t;
@@ -8792,7 +8792,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgMale{fill:#4300b0;cursor:pointer;}");
-    			add_location(style, file$b, 603, 16, 16510);
+    			add_location(style, file$b, 611, 16, 16679);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -8807,14 +8807,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$4.name,
     		type: "if",
-    		source: "(603:14) { #if sex == 'male' }",
+    		source: "(611:14) { #if sex == 'male' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (606:14) { #if sex == 'female' }
+    // (614:14) { #if sex == 'female' }
     function create_if_block_5$6(ctx) {
     	let style;
     	let t;
@@ -8823,7 +8823,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgMale{fill:#323835;cursor:pointer;}");
-    			add_location(style, file$b, 606, 16, 16646);
+    			add_location(style, file$b, 614, 16, 16815);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -8838,14 +8838,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$6.name,
     		type: "if",
-    		source: "(606:14) { #if sex == 'female' }",
+    		source: "(614:14) { #if sex == 'female' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (619:14) { #if sex == 'male' }
+    // (627:14) { #if sex == 'male' }
     function create_if_block_4$a(ctx) {
     	let style;
     	let t;
@@ -8854,7 +8854,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgfemale{fill:#323835;cursor:pointer;}");
-    			add_location(style, file$b, 619, 16, 17494);
+    			add_location(style, file$b, 627, 16, 17663);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -8869,14 +8869,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$a.name,
     		type: "if",
-    		source: "(619:14) { #if sex == 'male' }",
+    		source: "(627:14) { #if sex == 'male' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (622:14) { #if sex == 'female' }
+    // (630:14) { #if sex == 'female' }
     function create_if_block_3$a(ctx) {
     	let style;
     	let t;
@@ -8885,7 +8885,7 @@ var app = (function () {
     		c: function create() {
     			style = svg_element("style");
     			t = text("svg.svgfemale{fill:#4300b0;cursor:pointer;}");
-    			add_location(style, file$b, 622, 16, 17632);
+    			add_location(style, file$b, 630, 16, 17801);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, style, anchor);
@@ -8900,14 +8900,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$a.name,
     		type: "if",
-    		source: "(622:14) { #if sex == 'female' }",
+    		source: "(630:14) { #if sex == 'female' }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (627:12) <Checkbox                disabled                name="male"                value="male"                title="select male"                selectorStyle="                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                "              >
+    // (635:12) <Checkbox                disabled                name="male"                value="male"                title="select male"                selectorStyle="                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                "              >
     function create_default_slot_2$5(ctx) {
     	let span;
 
@@ -8916,7 +8916,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Пол не указан";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$b, 639, 14, 18575);
+    			add_location(span, file$b, 647, 14, 18744);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -8931,14 +8931,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$5.name,
     		type: "slot",
-    		source: "(627:12) <Checkbox                disabled                name=\\\"male\\\"                value=\\\"male\\\"                title=\\\"select male\\\"                selectorStyle=\\\"                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                \\\"              >",
+    		source: "(635:12) <Checkbox                disabled                name=\\\"male\\\"                value=\\\"male\\\"                title=\\\"select male\\\"                selectorStyle=\\\"                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (664:12) <Checkbox                disabled                name="male"                value="male"                title="select male"                selectorStyle="                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                "              >
+    // (672:12) <Checkbox                disabled                name="male"                value="male"                title="select male"                selectorStyle="                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                "              >
     function create_default_slot_1$5(ctx) {
     	let span;
 
@@ -8947,7 +8947,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Возраст не указан";
     			set_style(span, "font-size", "14px");
-    			add_location(span, file$b, 676, 14, 19797);
+    			add_location(span, file$b, 684, 14, 19966);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -8962,14 +8962,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$5.name,
     		type: "slot",
-    		source: "(664:12) <Checkbox                disabled                name=\\\"male\\\"                value=\\\"male\\\"                title=\\\"select male\\\"                selectorStyle=\\\"                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                \\\"              >",
+    		source: "(672:12) <Checkbox                disabled                name=\\\"male\\\"                value=\\\"male\\\"                title=\\\"select male\\\"                selectorStyle=\\\"                  border: 2px solid #4300B0;                  width: 19px;                  height: 19px;                  margin-left: 28px;                  margin-right: 11px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (688:12) <Button                 on:click={registration}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
+    // (696:12) <Button                 on:click={registration}                filled                style="                  font-size: 15px;                  padding: 13px 22px 16px;                "              >
     function create_default_slot$5(ctx) {
     	let t;
 
@@ -8992,14 +8992,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(688:12) <Button                 on:click={registration}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
+    		source: "(696:12) <Button                 on:click={registration}                filled                style=\\\"                  font-size: 15px;                  padding: 13px 22px 16px;                \\\"              >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (719:2) { #if opacity == 0 }
+    // (727:2) { #if opacity == 0 }
     function create_if_block$a(ctx) {
     	let span;
     	let mounted;
@@ -9021,7 +9021,7 @@ var app = (function () {
     			set_style(span, "cursor", "pointer");
     			set_style(span, "top", "100%");
     			set_style(span, "margin-top", "-44px");
-    			add_location(span, file$b, 719, 4, 20861);
+    			add_location(span, file$b, 727, 4, 21030);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9043,7 +9043,7 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(719:2) { #if opacity == 0 }",
+    		source: "(727:2) { #if opacity == 0 }",
     		ctx
     	});
 
@@ -9072,8 +9072,8 @@ var app = (function () {
     		$$slots: {
     			default: [
     				create_default_slot_6$2,
-    				({ closeCallback }) => ({ 37: closeCallback }),
-    				({ closeCallback }) => [0, closeCallback ? 64 : 0]
+    				({ closeCallback }) => ({ 38: closeCallback }),
+    				({ closeCallback }) => [0, closeCallback ? 128 : 0]
     			]
     		},
     		$$scope: { ctx }
@@ -9109,14 +9109,14 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*logo*/ ctx[16])) attr_dev(img, "src", img_src_value);
     			set_style(img, "width", "160px");
     			set_style(img, "margin-left", "-22px");
-    			add_location(img, file$b, 256, 4, 6240);
+    			add_location(img, file$b, 263, 4, 6380);
     			attr_dev(div, "class", "svelte-1pjyu2a");
     			toggle_class(div, "headerLogo", true);
-    			add_location(div, file$b, 255, 2, 6205);
+    			add_location(div, file$b, 262, 2, 6345);
     			set_style(section, "height", (/*opacity*/ ctx[5] == 1 ? 80 : 600) + "px");
     			attr_dev(section, "class", "svelte-1pjyu2a");
     			toggle_class(section, "header", true);
-    			add_location(section, file$b, 173, 0, 3773);
+    			add_location(section, file$b, 180, 0, 3913);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9140,7 +9140,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const modal_changes = {};
 
-    			if (dirty[0] & /*showModal, unauth, modalMessage*/ 138 | dirty[1] & /*$$scope, closeCallback*/ 192) {
+    			if (dirty[0] & /*showModal, unauth, modalMessage*/ 138 | dirty[1] & /*$$scope, closeCallback*/ 384) {
     				modal_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9279,6 +9279,10 @@ var app = (function () {
     	let regValue = 'Создать новый аккаунт';
     	let logo = 'image/default.svg';
 
+    	const saveAuth = param => {
+    		localStorage.setItem("auth", param);
+    	};
+
     	const autorization = () => {
     		let sendData = { login: MASTER_PASS };
 
@@ -9300,6 +9304,7 @@ var app = (function () {
     					style: data.params.style
     				});
 
+    				saveAuth(MASTER_PASS);
     				$$invalidate(1, modalMessage = 'Вы успешно авторизовались');
     				$$invalidate(7, showModal = true);
     				contentOpacity.set(1);
@@ -9348,6 +9353,7 @@ var app = (function () {
 
     					$$invalidate(7, showModal = true);
     					contentOpacity.set(1);
+    					$$invalidate(3, unauth = false);
     				} else {
     					$$invalidate(11, login = 'почта уже используется в системе');
     				}
@@ -9388,6 +9394,8 @@ var app = (function () {
     	}
 
     	const click_handler_2 = () => {
+    		$$invalidate(6, regActive = false);
+
     		if (!authCheck.auth) {
     			contentOpacity.set(0);
     		}
@@ -9480,6 +9488,7 @@ var app = (function () {
     		passValue,
     		regValue,
     		logo,
+    		saveAuth,
     		autorization,
     		registration
     	});
@@ -11338,7 +11347,7 @@ var app = (function () {
     const file$9 = "src\\bricks\\views\\AllQuestions.svelte";
 
     // (156:4) { #if AUTH == true }
-    function create_if_block_9$1(ctx) {
+    function create_if_block_10$1(ctx) {
     	let div1;
     	let span0;
     	let t1;
@@ -11389,43 +11398,43 @@ var app = (function () {
     			span8 = element("span");
     			t14 = text("список вопросов\r\n            ");
     			span7 = element("span");
-    			attr_dev(span0, "class", "svelte-1ol0f7j");
+    			attr_dev(span0, "class", "svelte-10ufo0x");
     			toggle_class(span0, "mainViewMenuItemLine", true);
     			add_location(span0, file$9, 158, 8, 3777);
     			set_style(span1, "margin-top", "11px");
     			set_style(span1, "cursor", "pointer");
-    			attr_dev(span1, "class", "svelte-1ol0f7j");
+    			attr_dev(span1, "class", "svelte-10ufo0x");
     			toggle_class(span1, "mainViewMenuItemLine", true);
     			add_location(span1, file$9, 160, 10, 3947);
     			set_style(span2, "margin-top", "12px");
     			set_style(span2, "cursor", "pointer");
     			set_style(span2, "color", "#4300b0");
     			set_style(span2, "margin-left", "30px");
-    			attr_dev(span2, "class", "svelte-1ol0f7j");
+    			attr_dev(span2, "class", "svelte-10ufo0x");
     			toggle_class(span2, "mainViewMenuItemLine", true);
     			add_location(span2, file$9, 169, 10, 4217);
     			set_style(span3, "margin-top", "6px");
     			set_style(span3, "cursor", "pointer");
-    			attr_dev(span3, "class", "svelte-1ol0f7j");
+    			attr_dev(span3, "class", "svelte-10ufo0x");
     			toggle_class(span3, "mainViewMenuItemLine", true);
     			add_location(span3, file$9, 175, 10, 4420);
     			set_style(span4, "margin-top", "12px");
     			set_style(span4, "cursor", "pointer");
     			set_style(span4, "color", "#4300b0");
     			set_style(span4, "margin-left", "30px");
-    			attr_dev(span4, "class", "svelte-1ol0f7j");
+    			attr_dev(span4, "class", "svelte-10ufo0x");
     			toggle_class(span4, "mainViewMenuItemLine", true);
     			add_location(span4, file$9, 184, 10, 4683);
     			set_style(span5, "margin-top", "6px");
     			set_style(span5, "cursor", "pointer");
-    			attr_dev(span5, "class", "svelte-1ol0f7j");
+    			attr_dev(span5, "class", "svelte-10ufo0x");
     			toggle_class(span5, "mainViewMenuItemLine", true);
     			add_location(span5, file$9, 190, 10, 4886);
     			set_style(span6, "margin-top", "12px");
     			set_style(span6, "cursor", "pointer");
     			set_style(span6, "color", "#4300b0");
     			set_style(span6, "margin-left", "30px");
-    			attr_dev(span6, "class", "svelte-1ol0f7j");
+    			attr_dev(span6, "class", "svelte-10ufo0x");
     			toggle_class(span6, "mainViewMenuItemLine", true);
     			add_location(span6, file$9, 199, 10, 5148);
     			set_style(span7, "display", "block");
@@ -11441,12 +11450,12 @@ var app = (function () {
     			add_location(span7, file$9, 213, 12, 5609);
     			set_style(span8, "margin-top", "6px");
     			set_style(span8, "cursor", "pointer");
-    			attr_dev(span8, "class", "svelte-1ol0f7j");
+    			attr_dev(span8, "class", "svelte-10ufo0x");
     			toggle_class(span8, "mainViewMenuItemLine", true);
     			add_location(span8, file$9, 205, 10, 5351);
     			set_style(div0, "margin-top", "0px");
     			set_style(div0, "margin-bottom", "0px");
-    			attr_dev(div0, "class", "svelte-1ol0f7j");
+    			attr_dev(div0, "class", "svelte-10ufo0x");
     			toggle_class(div0, "mainViewMenuItemSub", true);
     			add_location(div0, file$9, 159, 8, 3852);
     			toggle_class(div1, "mainViewMenuItem", true);
@@ -11494,7 +11503,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_9$1.name,
+    		id: create_if_block_10$1.name,
     		type: "if",
     		source: "(156:4) { #if AUTH == true }",
     		ctx
@@ -11504,7 +11513,7 @@ var app = (function () {
     }
 
     // (234:4) { #if AUTH == true }
-    function create_if_block_8$2(ctx) {
+    function create_if_block_9$1(ctx) {
     	let div;
     	let span;
     	let mounted;
@@ -11516,7 +11525,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "мои характеристики";
     			set_style(span, "cursor", "pointer");
-    			attr_dev(span, "class", "svelte-1ol0f7j");
+    			attr_dev(span, "class", "svelte-10ufo0x");
     			toggle_class(span, "mainViewMenuItemLine", true);
     			add_location(span, file$9, 236, 8, 6180);
     			set_style(div, "margin-top", "11px");
@@ -11542,7 +11551,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_8$2.name,
+    		id: create_if_block_9$1.name,
     		type: "if",
     		source: "(234:4) { #if AUTH == true }",
     		ctx
@@ -11552,7 +11561,7 @@ var app = (function () {
     }
 
     // (250:4) { #if AUTH == true }
-    function create_if_block_7$2(ctx) {
+    function create_if_block_8$2(ctx) {
     	let div;
     	let span;
     	let mounted;
@@ -11564,7 +11573,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "главная страница";
     			set_style(span, "cursor", "pointer");
-    			attr_dev(span, "class", "svelte-1ol0f7j");
+    			attr_dev(span, "class", "svelte-10ufo0x");
     			toggle_class(span, "mainViewMenuItemLine", true);
     			add_location(span, file$9, 252, 8, 6546);
     			set_style(div, "margin-top", "6px");
@@ -11590,7 +11599,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_7$2.name,
+    		id: create_if_block_8$2.name,
     		type: "if",
     		source: "(250:4) { #if AUTH == true }",
     		ctx
@@ -11600,7 +11609,7 @@ var app = (function () {
     }
 
     // (265:4) { #if AUTH == false }
-    function create_if_block_6$3(ctx) {
+    function create_if_block_7$2(ctx) {
     	let div;
     	let span;
     	let mounted;
@@ -11612,7 +11621,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "войти в аккаунт";
     			set_style(span, "cursor", "pointer");
-    			attr_dev(span, "class", "svelte-1ol0f7j");
+    			attr_dev(span, "class", "svelte-10ufo0x");
     			toggle_class(span, "mainViewMenuItemLine", true);
     			add_location(span, file$9, 267, 8, 6905);
     			set_style(div, "margin-top", "6px");
@@ -11638,7 +11647,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_6$3.name,
+    		id: create_if_block_7$2.name,
     		type: "if",
     		source: "(265:4) { #if AUTH == false }",
     		ctx
@@ -11843,10 +11852,10 @@ var app = (function () {
     }
 
     // (413:8) { #if questionsDataFilter.length > 0 }
-    function create_if_block_1$8(ctx) {
+    function create_if_block_2$8(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = (/*filterCategory*/ ctx[1] == 0 || /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].category == /*filterCategory*/ ctx[1]) && create_if_block_2$8(ctx);
+    	let if_block = (/*filterCategory*/ ctx[1] == 0 || /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].category == /*filterCategory*/ ctx[1]) && create_if_block_3$8(ctx);
 
     	const block = {
     		c: function create() {
@@ -11867,7 +11876,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block_2$8(ctx);
+    					if_block = create_if_block_3$8(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -11899,7 +11908,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$8.name,
+    		id: create_if_block_2$8.name,
     		type: "if",
     		source: "(413:8) { #if questionsDataFilter.length > 0 }",
     		ctx
@@ -11909,7 +11918,7 @@ var app = (function () {
     }
 
     // (415:12) { #if filterCategory == 0 || questionsDataFilter[questionsIndex].category == filterCategory }
-    function create_if_block_2$8(ctx) {
+    function create_if_block_3$8(ctx) {
     	let div3;
     	let span1;
     	let svg0;
@@ -12015,7 +12024,7 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*userAge*/ ctx[5] >= /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].target.age[0] && /*userAge*/ ctx[5] <= /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].target.age[1] && (/*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].target.gender[0] == true && /*userGender*/ ctx[6] == 'male' || /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].target.gender[1] == true && /*userGender*/ ctx[6] == 'female')) return create_if_block_5$4;
+    		if (/*userAge*/ ctx[5] >= /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].target.age[0] && /*userAge*/ ctx[5] <= /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].target.age[1] && (/*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].target.gender[0] == true && /*userGender*/ ctx[6] == 'male' || /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].target.gender[1] == true && /*userGender*/ ctx[6] == 'female')) return create_if_block_6$3;
     		return create_else_block$1;
     	}
 
@@ -12030,8 +12039,8 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	let if_block1 = /*text*/ ctx[7].length >= 40 && create_if_block_4$8(ctx);
-    	let if_block2 = /*text*/ ctx[7].length < 40 && create_if_block_3$8(ctx);
+    	let if_block1 = /*text*/ ctx[7].length >= 40 && create_if_block_5$4(ctx);
+    	let if_block2 = /*text*/ ctx[7].length < 40 && create_if_block_4$8(ctx);
 
     	const block = {
     		c: function create() {
@@ -12157,7 +12166,7 @@ var app = (function () {
     			attr_dev(textarea, "type", "text");
     			attr_dev(textarea, "placeholder", "Будьте собой, пишите так, как будто даете совет близкому другу, но помните, что один из главных принципов сервиса - не навредить другому. Ограничение по символам - от 40 до 1000 символов");
     			attr_dev(textarea, "maxlength", "1000");
-    			attr_dev(textarea, "class", "svelte-1ol0f7j");
+    			attr_dev(textarea, "class", "svelte-10ufo0x");
     			toggle_class(textarea, "mainViewContentText", true);
     			add_location(textarea, file$9, 512, 18, 16671);
     			add_location(style1, file$9, 546, 22, 18275);
@@ -12189,7 +12198,7 @@ var app = (function () {
     			set_style(div2, "position", "relative");
     			add_location(div2, file$9, 511, 16, 16605);
     			set_style(div3, "margin-top", "20px");
-    			attr_dev(div3, "class", "svelte-1ol0f7j");
+    			attr_dev(div3, "class", "svelte-10ufo0x");
     			toggle_class(div3, "mainViewContentQuestion", true);
     			add_location(div3, file$9, 416, 14, 11179);
     		},
@@ -12330,7 +12339,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_4$8(ctx);
+    					if_block1 = create_if_block_5$4(ctx);
     					if_block1.c();
     					if_block1.m(div2, t37);
     				}
@@ -12341,7 +12350,7 @@ var app = (function () {
 
     			if (/*text*/ ctx[7].length < 40) {
     				if (if_block2) ; else {
-    					if_block2 = create_if_block_3$8(ctx);
+    					if_block2 = create_if_block_4$8(ctx);
     					if_block2.c();
     					if_block2.m(div2, null);
     				}
@@ -12372,7 +12381,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$8.name,
+    		id: create_if_block_3$8.name,
     		type: "if",
     		source: "(415:12) { #if filterCategory == 0 || questionsDataFilter[questionsIndex].category == filterCategory }",
     		ctx
@@ -12434,7 +12443,7 @@ var app = (function () {
     }
 
     // (465:16) { #if userAge >= questionsDataFilter[questionsIndex].target.age[0]                                       && userAge <= questionsDataFilter[questionsIndex].target.age[1]                    && (                                             ( questionsDataFilter[questionsIndex].target.gender[0] == true && userGender == 'male' ) ||                      ( questionsDataFilter[questionsIndex].target.gender[1] == true && userGender == 'female' )                                           )                                       }
-    function create_if_block_5$4(ctx) {
+    function create_if_block_6$3(ctx) {
     	let span;
     	let t_value = /*questionsDataFilter*/ ctx[9][/*questionsIndex*/ ctx[10]].text + "";
     	let t;
@@ -12459,7 +12468,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_5$4.name,
+    		id: create_if_block_6$3.name,
     		type: "if",
     		source: "(465:16) { #if userAge >= questionsDataFilter[questionsIndex].target.age[0]                                       && userAge <= questionsDataFilter[questionsIndex].target.age[1]                    && (                                             ( questionsDataFilter[questionsIndex].target.gender[0] == true && userGender == 'male' ) ||                      ( questionsDataFilter[questionsIndex].target.gender[1] == true && userGender == 'female' )                                           )                                       }",
     		ctx
@@ -12469,7 +12478,7 @@ var app = (function () {
     }
 
     // (554:18) { #if text.length >= 40 }
-    function create_if_block_4$8(ctx) {
+    function create_if_block_5$4(ctx) {
     	let span;
     	let svg;
     	let style;
@@ -12510,7 +12519,7 @@ var app = (function () {
     			set_style(span, "box-sizing", "border-box");
     			set_style(span, "cursor", "pointer");
     			set_style(span, "box-shadow", "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)");
-    			attr_dev(span, "class", "svelte-1ol0f7j");
+    			attr_dev(span, "class", "svelte-10ufo0x");
     			toggle_class(span, "sendingData", /*sendData*/ ctx[8] ? true : false);
     			add_location(span, file$9, 555, 20, 18932);
     		},
@@ -12540,7 +12549,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$8.name,
+    		id: create_if_block_5$4.name,
     		type: "if",
     		source: "(554:18) { #if text.length >= 40 }",
     		ctx
@@ -12550,7 +12559,7 @@ var app = (function () {
     }
 
     // (593:18) { #if text.length < 40 }
-    function create_if_block_3$8(ctx) {
+    function create_if_block_4$8(ctx) {
     	let span;
     	let svg;
     	let style;
@@ -12606,7 +12615,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$8.name,
+    		id: create_if_block_4$8.name,
     		type: "if",
     		source: "(593:18) { #if text.length < 40 }",
     		ctx
@@ -12615,7 +12624,40 @@ var app = (function () {
     	return block;
     }
 
-    // (639:8) { #if questionsData.length === 0 }
+    // (639:8) { #if questionsDataFilter.length === 0 }
+    function create_if_block_1$8(ctx) {
+    	let span;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			span.textContent = "вопросов в данной категории не обнаружено";
+    			set_style(span, "color", "gray");
+    			set_style(span, "opacity", "0.8");
+    			set_style(span, "margin-top", "26px");
+    			set_style(span, "display", "block");
+    			add_location(span, file$9, 640, 10, 22544);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$8.name,
+    		type: "if",
+    		source: "(639:8) { #if questionsDataFilter.length === 0 }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (644:8) { #if questionsData.length === 0 }
     function create_if_block$8(ctx) {
     	let span;
 
@@ -12627,7 +12669,7 @@ var app = (function () {
     			set_style(span, "opacity", "0.8");
     			set_style(span, "margin-top", "26px");
     			set_style(span, "display", "block");
-    			add_location(span, file$9, 640, 10, 22538);
+    			add_location(span, file$9, 645, 10, 22744);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -12641,7 +12683,7 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(639:8) { #if questionsData.length === 0 }",
+    		source: "(644:8) { #if questionsData.length === 0 }",
     		ctx
     	});
 
@@ -12683,13 +12725,14 @@ var app = (function () {
     	let path;
     	let t16;
     	let t17;
+    	let t18;
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*AUTH*/ ctx[2] == true && create_if_block_9$1(ctx);
-    	let if_block1 = /*AUTH*/ ctx[2] == true && create_if_block_8$2(ctx);
-    	let if_block2 = /*AUTH*/ ctx[2] == true && create_if_block_7$2(ctx);
-    	let if_block3 = /*AUTH*/ ctx[2] == false && create_if_block_6$3(ctx);
+    	let if_block0 = /*AUTH*/ ctx[2] == true && create_if_block_10$1(ctx);
+    	let if_block1 = /*AUTH*/ ctx[2] == true && create_if_block_9$1(ctx);
+    	let if_block2 = /*AUTH*/ ctx[2] == true && create_if_block_8$2(ctx);
+    	let if_block3 = /*AUTH*/ ctx[2] == false && create_if_block_7$2(ctx);
 
     	function modal_open_binding(value) {
     		/*modal_open_binding*/ ctx[26](value);
@@ -12722,8 +12765,9 @@ var app = (function () {
     		});
 
     	radiochipgroup.$on("change", /*changeCategory*/ ctx[12]);
-    	let if_block4 = /*questionsDataFilter*/ ctx[9].length > 0 && create_if_block_1$8(ctx);
-    	let if_block5 = /*questionsData*/ ctx[0].length === 0 && create_if_block$8(ctx);
+    	let if_block4 = /*questionsDataFilter*/ ctx[9].length > 0 && create_if_block_2$8(ctx);
+    	let if_block5 = /*questionsDataFilter*/ ctx[9].length === 0 && create_if_block_1$8(ctx);
+    	let if_block6 = /*questionsData*/ ctx[0].length === 0 && create_if_block$8(ctx);
 
     	const block = {
     		c: function create() {
@@ -12770,6 +12814,8 @@ var app = (function () {
     			if (if_block4) if_block4.c();
     			t17 = space();
     			if (if_block5) if_block5.c();
+    			t18 = space();
+    			if (if_block6) if_block6.c();
     			set_style(span0, "display", "block");
     			set_style(span0, "position", "relative");
     			set_style(span0, "width", "80%");
@@ -12780,21 +12826,21 @@ var app = (function () {
     			set_style(span0, "margin-top", "20px");
     			add_location(span0, file$9, 279, 4, 7162);
     			set_style(span1, "cursor", "pointer");
-    			attr_dev(span1, "class", "svelte-1ol0f7j");
+    			attr_dev(span1, "class", "svelte-10ufo0x");
     			toggle_class(span1, "mainViewMenuItemLine", true);
     			add_location(span1, file$9, 292, 6, 7483);
     			set_style(div0, "margin-top", "18px");
     			toggle_class(div0, "mainViewMenuItem", true);
     			add_location(div0, file$9, 291, 4, 7414);
     			set_style(span2, "cursor", "pointer");
-    			attr_dev(span2, "class", "svelte-1ol0f7j");
+    			attr_dev(span2, "class", "svelte-10ufo0x");
     			toggle_class(span2, "mainViewMenuItemLine", true);
     			add_location(span2, file$9, 303, 6, 7769);
     			set_style(div1, "margin-top", "11px");
     			toggle_class(div1, "mainViewMenuItem", true);
     			add_location(div1, file$9, 302, 4, 7700);
     			set_style(span3, "cursor", "pointer");
-    			attr_dev(span3, "class", "svelte-1ol0f7j");
+    			attr_dev(span3, "class", "svelte-10ufo0x");
     			toggle_class(span3, "mainViewMenuItemLine", true);
     			add_location(span3, file$9, 314, 6, 8065);
     			set_style(div2, "margin-top", "11px");
@@ -12804,7 +12850,7 @@ var app = (function () {
     			set_style(div3, "padding-top", "30px");
     			toggle_class(div3, "mainViewMenu", true);
     			add_location(div3, file$9, 153, 2, 3624);
-    			attr_dev(h3, "class", "svelte-1ol0f7j");
+    			attr_dev(h3, "class", "svelte-10ufo0x");
     			toggle_class(h3, "mainViewContentTitle", true);
     			add_location(h3, file$9, 382, 8, 9857);
     			add_location(style, file$9, 398, 12, 10418);
@@ -12830,10 +12876,10 @@ var app = (function () {
     			set_style(div6, "height", "100%");
     			set_style(div6, "overflow", "hidden");
     			add_location(div6, file$9, 354, 4, 9187);
-    			attr_dev(div7, "class", "svelte-1ol0f7j");
+    			attr_dev(div7, "class", "svelte-10ufo0x");
     			toggle_class(div7, "mainViewContent", true);
     			add_location(div7, file$9, 325, 2, 8298);
-    			attr_dev(div8, "class", "svelte-1ol0f7j");
+    			attr_dev(div8, "class", "svelte-10ufo0x");
     			toggle_class(div8, "mainView", true);
     			add_location(div8, file$9, 152, 0, 3593);
     		},
@@ -12880,6 +12926,8 @@ var app = (function () {
     			if (if_block4) if_block4.m(div5, null);
     			append_dev(div5, t17);
     			if (if_block5) if_block5.m(div5, null);
+    			append_dev(div5, t18);
+    			if (if_block6) if_block6.m(div5, null);
     			current = true;
 
     			if (!mounted) {
@@ -12898,7 +12946,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_9$1(ctx);
+    					if_block0 = create_if_block_10$1(ctx);
     					if_block0.c();
     					if_block0.m(div3, t0);
     				}
@@ -12911,7 +12959,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_8$2(ctx);
+    					if_block1 = create_if_block_9$1(ctx);
     					if_block1.c();
     					if_block1.m(div3, t1);
     				}
@@ -12924,7 +12972,7 @@ var app = (function () {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
     				} else {
-    					if_block2 = create_if_block_7$2(ctx);
+    					if_block2 = create_if_block_8$2(ctx);
     					if_block2.c();
     					if_block2.m(div3, t2);
     				}
@@ -12937,7 +12985,7 @@ var app = (function () {
     				if (if_block3) {
     					if_block3.p(ctx, dirty);
     				} else {
-    					if_block3 = create_if_block_6$3(ctx);
+    					if_block3 = create_if_block_7$2(ctx);
     					if_block3.c();
     					if_block3.m(div3, t3);
     				}
@@ -12968,7 +13016,7 @@ var app = (function () {
     						transition_in(if_block4, 1);
     					}
     				} else {
-    					if_block4 = create_if_block_1$8(ctx);
+    					if_block4 = create_if_block_2$8(ctx);
     					if_block4.c();
     					transition_in(if_block4, 1);
     					if_block4.m(div5, t17);
@@ -12983,15 +13031,26 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (/*questionsData*/ ctx[0].length === 0) {
+    			if (/*questionsDataFilter*/ ctx[9].length === 0) {
     				if (if_block5) ; else {
-    					if_block5 = create_if_block$8(ctx);
+    					if_block5 = create_if_block_1$8(ctx);
     					if_block5.c();
-    					if_block5.m(div5, null);
+    					if_block5.m(div5, t18);
     				}
     			} else if (if_block5) {
     				if_block5.d(1);
     				if_block5 = null;
+    			}
+
+    			if (/*questionsData*/ ctx[0].length === 0) {
+    				if (if_block6) ; else {
+    					if_block6 = create_if_block$8(ctx);
+    					if_block6.c();
+    					if_block6.m(div5, null);
+    				}
+    			} else if (if_block6) {
+    				if_block6.d(1);
+    				if_block6 = null;
     			}
     		},
     		i: function intro(local) {
@@ -13017,6 +13076,7 @@ var app = (function () {
     			destroy_component(radiochipgroup);
     			if (if_block4) if_block4.d();
     			if (if_block5) if_block5.d();
+    			if (if_block6) if_block6.d();
     			mounted = false;
     			run_all(dispose);
     		}
